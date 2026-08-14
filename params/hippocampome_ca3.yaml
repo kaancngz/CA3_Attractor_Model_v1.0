@@ -1,0 +1,152 @@
+# Data-driven mouse CA3 parameters from Hippocampome.org.
+#
+# These are the first parameters in this project with a real literature source
+# rather than a value inherited from another model.  They are recorded here but
+# NOT yet wired into src/ca3 -- adopting them changes the network's behaviour
+# and requires recalibration.  See notes/04_hippocampome_karsilastirmasi.md.
+#
+# Primary source, read directly (tables extracted from the PDF, not from an
+# abstract or a search result):
+#   Kopsick JD, Tecuatl C, Moradi K, Attili SM, Kashyap HJ, Xing J, Chen K,
+#   Krichmar JL, Ascoli GA (2023) "Robust Resting-State Dynamics in a
+#   Large-Scale Spiking Neural Network Model of Area CA3 in the Mouse
+#   Hippocampus." Cognit Comput 15(4):1190-1210.
+#   doi:10.1007/s12559-021-09954-2
+#   Table 1 = population sizes, Table 2 = Izhikevich parameters,
+#   Table 3 = connection probabilities, Table 4 = short-term plasticity.
+#
+# Kopsick et al. in turn take these from Hippocampome.org, which derives
+# connection probabilities from axon/dendrite overlap per CA3 layer.  The
+# Hippocampome pages themselves (counts.php, connprob.php) are password
+# protected, so the paper's tables are our accessible copy of them.
+#
+# verified: true means the number was read off the table in the PDF.
+# It does NOT mean the underlying Hippocampome estimate has been checked
+# against its own primary literature -- that is a further step.
+
+- name: ca3_pyramidal_cell_count
+  value: 74366
+  unit: cells
+  source: literature
+  reference: "Kopsick et al. 2023, Cognit Comput 15(4):1190-1210, Table 1"
+  verified: true
+  note: "Mouse, whole CA3, one side. Our model currently uses 2400 (3.2%)."
+
+- name: ca3_interneuron_count_total
+  value: 14860
+  unit: cells
+  source: literature
+  reference: "Kopsick et al. 2023, Table 1 (sum of the seven interneuron types)"
+  verified: true
+  note: >
+    axo-axonic 1909, basket 515, basket CCK+ 665, bistratified 4631,
+    Ivy 2334, MFA-ORDEN 1526, QuadD-LM 3280.
+    Local circuit total 89226 matches the paper.
+
+- name: ca3_excitatory_to_inhibitory_ratio
+  value: 5.0
+  unit: dimensionless
+  source: literature
+  reference: "Kopsick et al. 2023, Table 1 (74366 / 14860)"
+  verified: true
+  note: "Our model uses 2400/120 = 20. We have four times too few interneurons."
+
+- name: ca3_recurrent_connection_probability
+  value: 0.025
+  unit: dimensionless
+  source: literature
+  reference: "Kopsick et al. 2023, Table 3, CA3 pyramidal -> CA3 pyramidal"
+  verified: true
+  note: >
+    Our model uses c_rc/n_exc = 600/2400 = 0.25, which is ten times denser.
+    The value inherited from Kim & Kim (2025) Table 2.
+
+- name: ca3_basket_to_pyramidal_connection_probability
+  value: 0.150
+  unit: dimensionless
+  source: literature
+  reference: "Kopsick et al. 2023, Table 3, CA3 basket -> CA3 pyramidal"
+  verified: true
+  note: >
+    Perisomatic inhibition is the densest inhibitory pathway onto pyramidal
+    cells; axo-axonic and basket CCK+ are also 0.150.  Weaker pathways:
+    QuadD-LM 0.119, Ivy 0.072, MFA-ORDEN 0.042, bistratified 0.028.
+    Our single lumped inh->exc probability is 0.25.
+
+- name: ca3_pyramidal_to_basket_connection_probability
+  value: 0.020
+  unit: dimensionless
+  source: literature
+  reference: "Kopsick et al. 2023, Table 3"
+  verified: true
+  note: "Other E->I: axo-axonic 0.015, CCK+ 0.017, bistratified 0.016, Ivy 0.025."
+
+- name: ca3_pyramidal_izhikevich
+  value:
+    k: 0.792
+    a: 0.008
+    b: -42.552
+    d: 588
+    C: 366
+    v_rest: -63.204
+    v_th: -33.604
+    v_min: -38.868
+    v_peak: 35.861
+  unit: mixed
+  source: literature
+  reference: "Kopsick et al. 2023, Table 2, CA3 pyramidal"
+  verified: true
+  note: >
+    Very different from the values we currently use (Kim & Kim: C 80, k 3,
+    b +5, d 10, v_peak 50).  Note b is NEGATIVE here, which is a qualitatively
+    different cell, not a rescaling.
+
+- name: ca3_basket_izhikevich
+  value:
+    k: 0.995
+    a: 0.004
+    b: 9.264
+    d: -6
+    C: 45
+    v_rest: -57.506
+    v_th: -23.379
+    v_min: -47.556
+    v_peak: 18.455
+  unit: mixed
+  source: literature
+  reference: "Kopsick et al. 2023, Table 2, CA3 basket"
+  verified: true
+
+- name: ca3_pyr_pyr_short_term_plasticity
+  value:
+    g: 0.30
+    tau_d: 10.22
+    tau_r: 318.51
+    tau_f: 21.45
+    U: 0.28
+    delay_ms: [1, 2]
+  unit: mixed
+  source: literature
+  reference: "Kopsick et al. 2023, Table 4, CA3 pyramidal -> CA3 pyramidal"
+  verified: true
+  note: "Tsodyks-Markram formalism. Our model has no short-term plasticity."
+
+- name: ca3_grand_average_firing_rate_resting
+  value: 3.0
+  unit: Hz
+  source: literature
+  reference: "Kopsick et al. 2023, Results (network grand average firing frequency)"
+  verified: true
+  note: >
+    A biological calibration target, and a much better one than the 80%
+    retrieval rate we currently calibrate against, because it is an observable
+    rather than a model output.  Our network's winner engram fires far above
+    this; Kim & Kim acknowledge the same problem for their own model.
+
+- name: dg_granule_cell_count
+  value: 394502
+  unit: cells
+  source: literature
+  reference: "Kopsick et al. 2023, Table 1"
+  verified: true
+  note: "External afferent population; we do not model DG explicitly."
