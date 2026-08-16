@@ -1,0 +1,280 @@
+{
+  "status": "frozen_ca3_mechanism_ablations_v1",
+  "architecture_retained": true,
+  "design": {
+    "profile": "pilot",
+    "seeds": [
+      20260815,
+      20260816,
+      20260817,
+      20260818,
+      20260819,
+      20260820,
+      20260821,
+      20260822,
+      20260823,
+      20260824,
+      20260825,
+      20260826,
+      20260827,
+      20260828,
+      20260829,
+      20260830,
+      20260831,
+      20260832,
+      20260833,
+      20260834,
+      20260835,
+      20260836,
+      20260837,
+      20260838,
+      20260839
+    ],
+    "primary_point": {
+      "engram_fraction": 0.08,
+      "overlap_fraction": 0.2,
+      "activation_threshold": 0.12,
+      "effective_access_fraction": 0.25,
+      "manipulation_strength": 1.0,
+      "tone_scale": 0.5
+    }
+  },
+  "interpretation_contract": {
+    "no_recurrence": "must abolish autonomous pattern completion/basin recovery",
+    "no_sparse_inhibition": "must degrade selective competition under ambiguous cue if normalization is causal",
+    "zero_overlap": "tests whether the selected 65/35 tone regime can establish the H3 competition"
+  },
+  "regimes": [
+    {
+      "regime": "intact",
+      "overrides": {},
+      "validation_all_gates_fraction": 1,
+      "mean_validation_gate_fraction": 1.0,
+      "validation_gate_pass_fraction": {
+        "silent_rest_fixed": 1,
+        "A_is_fixed_point": 1,
+        "B_is_fixed_point": 1,
+        "A_partial_pattern_completion": 1,
+        "B_partial_pattern_completion": 1,
+        "A_weak_cue_no_false_recall": 1,
+        "B_weak_cue_no_false_recall": 1,
+        "A_local_basin_recovery": 1,
+        "B_local_basin_recovery": 1,
+        "A_B_recall_symmetry": 1
+      },
+      "H1": {
+        "mean_delta_evidence": -0.23714285714285713,
+        "on_state_fractions": {
+          "A": 0.96,
+          "B": 0,
+          "mixed": 0,
+          "silent": 0.04,
+          "undecided": 0
+        }
+      },
+      "H2": {
+        "mean_delta_evidence": 1.6103896103896105,
+        "on_state_fractions": {
+          "A": 1,
+          "B": 0,
+          "mixed": 0,
+          "silent": 0,
+          "undecided": 0
+        }
+      },
+      "H3": {
+        "baseline_qualified_fraction": 1.0,
+        "mean_signed_interaction": -0.5953246753246753,
+        "leading_on_state_fractions": {
+          "A": 1,
+          "B": 0,
+          "mixed": 0,
+          "silent": 0,
+          "undecided": 0
+        },
+        "trailing_on_state_fractions": {
+          "A": 0,
+          "B": 1,
+          "mixed": 0,
+          "silent": 0,
+          "undecided": 0
+        }
+      }
+    },
+    {
+      "regime": "no_recurrence",
+      "overrides": {
+        "recurrent_gain": 0.0
+      },
+      "validation_all_gates_fraction": 0,
+      "mean_validation_gate_fraction": 0.4,
+      "validation_gate_pass_fraction": {
+        "silent_rest_fixed": 1,
+        "A_is_fixed_point": 0,
+        "B_is_fixed_point": 0,
+        "A_partial_pattern_completion": 0,
+        "B_partial_pattern_completion": 0,
+        "A_weak_cue_no_false_recall": 1,
+        "B_weak_cue_no_false_recall": 1,
+        "A_local_basin_recovery": 0,
+        "B_local_basin_recovery": 0,
+        "A_B_recall_symmetry": 1
+      },
+      "H1": {
+        "mean_delta_evidence": -0.050649350649350666,
+        "on_state_fractions": {
+          "A": 0,
+          "B": 0,
+          "mixed": 0,
+          "silent": 0.04,
+          "undecided": 0.96
+        }
+      },
+      "H2": {
+        "mean_delta_evidence": 0.24909090909090909,
+        "on_state_fractions": {
+          "A": 0,
+          "B": 0,
+          "mixed": 0,
+          "silent": 0,
+          "undecided": 1
+        }
+      },
+      "H3": {
+        "baseline_qualified_fraction": 0.0,
+        "mean_signed_interaction": null,
+        "leading_on_state_fractions": {
+          "A": 0,
+          "B": 0,
+          "mixed": 0,
+          "silent": 0,
+          "undecided": 1
+        },
+        "trailing_on_state_fractions": {
+          "A": 0,
+          "B": 0,
+          "mixed": 0,
+          "silent": 0,
+          "undecided": 1
+        }
+      }
+    },
+    {
+      "regime": "no_sparse_inhibition",
+      "overrides": {
+        "max_active_fraction": 1.0
+      },
+      "validation_all_gates_fraction": 1,
+      "mean_validation_gate_fraction": 1.0,
+      "validation_gate_pass_fraction": {
+        "silent_rest_fixed": 1,
+        "A_is_fixed_point": 1,
+        "B_is_fixed_point": 1,
+        "A_partial_pattern_completion": 1,
+        "B_partial_pattern_completion": 1,
+        "A_weak_cue_no_false_recall": 1,
+        "B_weak_cue_no_false_recall": 1,
+        "A_local_basin_recovery": 1,
+        "B_local_basin_recovery": 1,
+        "A_B_recall_symmetry": 1
+      },
+      "H1": {
+        "mean_delta_evidence": -0.26805194805194804,
+        "on_state_fractions": {
+          "A": 0.92,
+          "B": 0,
+          "mixed": 0.04,
+          "silent": 0.04,
+          "undecided": 0
+        }
+      },
+      "H2": {
+        "mean_delta_evidence": 1.0,
+        "on_state_fractions": {
+          "A": 0,
+          "B": 0,
+          "mixed": 1,
+          "silent": 0,
+          "undecided": 0
+        }
+      },
+      "H3": {
+        "baseline_qualified_fraction": 0.48,
+        "mean_signed_interaction": -1.6358225108225108,
+        "leading_on_state_fractions": {
+          "A": 0,
+          "B": 0,
+          "mixed": 1,
+          "silent": 0,
+          "undecided": 0
+        },
+        "trailing_on_state_fractions": {
+          "A": 0,
+          "B": 0.36,
+          "mixed": 0.64,
+          "silent": 0,
+          "undecided": 0
+        }
+      }
+    },
+    {
+      "regime": "zero_overlap",
+      "overrides": {
+        "overlap_fraction": 0.0
+      },
+      "validation_all_gates_fraction": 1,
+      "mean_validation_gate_fraction": 1.0,
+      "validation_gate_pass_fraction": {
+        "silent_rest_fixed": 1,
+        "A_is_fixed_point": 1,
+        "B_is_fixed_point": 1,
+        "A_partial_pattern_completion": 1,
+        "B_partial_pattern_completion": 1,
+        "A_weak_cue_no_false_recall": 1,
+        "B_weak_cue_no_false_recall": 1,
+        "A_local_basin_recovery": 1,
+        "B_local_basin_recovery": 1,
+        "A_B_recall_symmetry": 1
+      },
+      "H1": {
+        "mean_delta_evidence": -0.20375,
+        "on_state_fractions": {
+          "A": 1,
+          "B": 0,
+          "mixed": 0,
+          "silent": 0,
+          "undecided": 0
+        }
+      },
+      "H2": {
+        "mean_delta_evidence": 1.6041666666666667,
+        "on_state_fractions": {
+          "A": 1,
+          "B": 0,
+          "mixed": 0,
+          "silent": 0,
+          "undecided": 0
+        }
+      },
+      "H3": {
+        "baseline_qualified_fraction": 0.0,
+        "mean_signed_interaction": null,
+        "leading_on_state_fractions": {
+          "A": 0,
+          "B": 0,
+          "mixed": 0,
+          "silent": 0,
+          "undecided": 1
+        },
+        "trailing_on_state_fractions": {
+          "A": 0,
+          "B": 0,
+          "mixed": 0,
+          "silent": 0,
+          "undecided": 1
+        }
+      }
+    }
+  ],
+  "runtime_seconds": 0.5326323509216309
+}

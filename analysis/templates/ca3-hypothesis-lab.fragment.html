@@ -1,0 +1,284 @@
+<meta charset="utf-8">
+<div id="ca3-hypothesis-lab">
+  <style>
+    #ca3-hypothesis-lab { color: var(--foreground); width: 100%; }
+    #ca3-hypothesis-lab .lab-controls { margin-block: 0.5rem 0.75rem; }
+    #ca3-hypothesis-lab .lab-plot { width: 100%; min-height: 360px; }
+    #ca3-hypothesis-lab .lab-plot svg { display: block; width: 100%; }
+    #ca3-hypothesis-lab .lab-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.75rem; margin-block: 0.75rem; }
+    #ca3-hypothesis-lab .lab-stat { min-width: 0; }
+    #ca3-hypothesis-lab .lab-stat .viz-stat-value { overflow-wrap: anywhere; }
+    #ca3-hypothesis-lab .lab-bottom { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr); gap: 1rem; align-items: start; }
+    #ca3-hypothesis-lab .lab-engrams { min-height: 180px; }
+    #ca3-hypothesis-lab .lab-engrams svg { width: 100%; display: block; }
+    #ca3-hypothesis-lab .lab-ablation { width: 100%; border-collapse: collapse; }
+    #ca3-hypothesis-lab .lab-ablation th, #ca3-hypothesis-lab .lab-ablation td { padding: 0.35rem 0.45rem; border-bottom: 1px solid var(--border); text-align: end; }
+    #ca3-hypothesis-lab .lab-ablation th:first-child, #ca3-hypothesis-lab .lab-ablation td:first-child { text-align: start; }
+    #ca3-hypothesis-lab .lab-frame { fill: transparent; stroke: var(--border); stroke-width: 1; }
+    #ca3-hypothesis-lab .lab-axis { fill: var(--foreground); font-size: 12px; }
+    #ca3-hypothesis-lab .lab-muted { fill: var(--muted-foreground); color: var(--muted-foreground); }
+    #ca3-hypothesis-lab .lab-cell { stroke: var(--background); stroke-width: 1; cursor: pointer; }
+    #ca3-hypothesis-lab .lab-cell.is-selected { stroke: var(--foreground); stroke-width: 3; }
+    #ca3-hypothesis-lab .lab-na { fill: var(--muted); }
+    #ca3-hypothesis-lab .lab-tooltip { position: absolute; pointer-events: none; z-index: 10; padding: 0.4rem 0.55rem; background: var(--popover); color: var(--popover-foreground); border: 1px solid var(--border); border-radius: 0.35rem; display: none; }
+    #ca3-hypothesis-lab .lab-dot-a { fill: var(--viz-series-1); }
+    #ca3-hypothesis-lab .lab-dot-b { fill: var(--viz-series-2); }
+    #ca3-hypothesis-lab .lab-dot-shared { fill: var(--viz-series-3); }
+    #ca3-hypothesis-lab .lab-dot-off { opacity: 0.18; }
+    #ca3-hypothesis-lab .lab-dot-on { stroke: var(--foreground); stroke-width: 2; }
+    @media (max-width: 620px) {
+      #ca3-hypothesis-lab .lab-grid { grid-template-columns: 1fr; }
+      #ca3-hypothesis-lab .lab-bottom { grid-template-columns: 1fr; }
+      #ca3-hypothesis-lab .lab-plot { min-height: 330px; }
+    }
+  </style>
+
+  <h2>CA3 hipotez laboratuvarı</h2>
+  <div class="viz-controls lab-controls">
+    <label class="form-label" for="ca3-hypothesis">Hipotez
+      <select class="form-select" id="ca3-hypothesis">
+        <option value="H1">H1 — gereklilik</option>
+        <option value="H2">H2 — yeterlilik</option>
+        <option value="H3">H3 — konumsal rekabet</option>
+      </select>
+    </label>
+    <label class="form-label" for="ca3-strength">Manipülasyon gücü
+      <select class="form-select" id="ca3-strength"></select>
+    </label>
+    <label class="form-label" for="ca3-beta">Davranış eğimi β
+      <select class="form-select" id="ca3-beta"></select>
+    </label>
+    <label class="form-label" for="ca3-overlap">Örtüşme <span id="ca3-overlap-value"></span>
+      <input class="form-range" id="ca3-overlap" type="range" min="0" step="1">
+    </label>
+    <label class="form-label" for="ca3-access">Etkili erişim <span id="ca3-access-value"></span>
+      <input class="form-range" id="ca3-access" type="range" min="0" step="1">
+    </label>
+  </div>
+
+  <div class="lab-plot" id="ca3-phase-container">
+    <svg id="ca3-phase-svg" role="img" aria-labelledby="ca3-phase-title ca3-phase-desc">
+      <title id="ca3-phase-title">CA3 hipotez faz haritası</title>
+      <desc id="ca3-phase-desc">Örtüşme ve etkili erişime göre model sonucu; hücre seçimi ayrıntıları günceller.</desc>
+    </svg>
+  </div>
+
+  <div class="lab-grid">
+    <div class="card viz-stat lab-stat"><div class="text-muted" id="ca3-metric-label"></div><div class="viz-stat-value" id="ca3-metric-value"></div><div class="text-small text-muted" id="ca3-metric-context"></div></div>
+    <div class="card viz-stat lab-stat"><div class="text-muted" id="ca3-state-label"></div><div class="viz-stat-value" id="ca3-state-value"></div><div class="text-small text-muted" id="ca3-state-context"></div></div>
+    <div class="card viz-stat lab-stat"><div class="text-muted">Model kararı</div><div class="viz-stat-value" id="ca3-decision"></div><div class="text-small text-muted" id="ca3-falsifier"></div></div>
+  </div>
+
+  <div class="lab-bottom">
+    <section>
+      <h3>Engram durumu</h3>
+      <div class="lab-engrams"><svg id="ca3-engram-svg" role="img" aria-label="A, B ve ortak hücrelerin seçili koşuldaki şematik durumu"></svg></div>
+    </section>
+    <section>
+      <h3>Mekanizma ablasyonları</h3>
+      <div class="table-responsive"><table class="table table-sm lab-ablation"><thead><tr><th>Devre</th><th>10 kapı</th><th>H2 A</th><th>H3 kurulur</th></tr></thead><tbody id="ca3-ablation-body"></tbody></table></div>
+    </section>
+  </div>
+  <div class="lab-tooltip text-small" id="ca3-tooltip" role="tooltip"></div>
+
+  <script>
+    (() => {
+      const DATA = __CA3_DATA__;
+      const root = document.getElementById('ca3-hypothesis-lab');
+      const controls = {
+        hypothesis: root.querySelector('#ca3-hypothesis'),
+        strength: root.querySelector('#ca3-strength'),
+        beta: root.querySelector('#ca3-beta'),
+        overlap: root.querySelector('#ca3-overlap'),
+        access: root.querySelector('#ca3-access')
+      };
+      DATA.strengths.forEach(value => controls.strength.add(new Option(String(value), String(value))));
+      DATA.betas.forEach(value => controls.beta.add(new Option(String(value), String(value))));
+      controls.strength.value = '1';
+      controls.beta.value = '2';
+      controls.overlap.max = String(DATA.overlaps.length - 1);
+      controls.access.max = String(DATA.accesses.length - 1);
+      controls.overlap.value = String(DATA.overlaps.indexOf(0.2));
+      controls.access.value = String(DATA.accesses.indexOf(0.25));
+      const svg = root.querySelector('#ca3-phase-svg');
+      const engramSvg = root.querySelector('#ca3-engram-svg');
+      const tooltip = root.querySelector('#ca3-tooltip');
+      let selected = null;
+
+      const close = (a, b) => Math.abs(a - b) < 1e-9;
+      const cellFor = (o, a, s) => DATA.cells.find(d => close(d.o, o) && close(d.a, a) && close(d.s, s));
+      const pct = value => `${Math.round(100 * value)}%`;
+      const signed = value => value == null ? 'NA' : `${value >= 0 ? '+' : ''}${value.toFixed(2)}`;
+      const svgEl = name => document.createElementNS('http://www.w3.org/2000/svg', name);
+      const css = name => getComputedStyle(root).getPropertyValue(name).trim();
+
+      function metric(cell, hypothesis) {
+        if (hypothesis === 'H1') return { value: cell.h1de, max: 1, series: '--viz-series-1', label: 'Δ geri-getirme kanıtı' };
+        if (hypothesis === 'H2') return { value: cell.h2a, max: 1, series: '--viz-series-2', label: 'A çekicisine geçiş oranı' };
+        return { value: cell.h3q < 0.8 ? null : cell.h3i, max: 2, series: '--viz-series-1', label: 'Konum × susturma etkileşimi' };
+      }
+
+      function drawHeatmap() {
+        const width = Math.max(320, root.querySelector('#ca3-phase-container').clientWidth);
+        const height = width < 520 ? 340 : 390;
+        svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
+        svg.setAttribute('height', String(height));
+        svg.replaceChildren(svg.querySelector('title'), svg.querySelector('desc'));
+        const margin = { left: width < 520 ? 52 : 68, right: 18, top: 16, bottom: 54 };
+        const plotW = width - margin.left - margin.right;
+        const plotH = height - margin.top - margin.bottom;
+        const cellW = plotW / DATA.accesses.length;
+        const cellH = plotH / DATA.overlaps.length;
+        const frame = svgEl('rect');
+        frame.setAttribute('x', margin.left); frame.setAttribute('y', margin.top);
+        frame.setAttribute('width', plotW); frame.setAttribute('height', plotH);
+        frame.setAttribute('class', 'lab-frame'); frame.setAttribute('data-chart-frame', 'true');
+        svg.appendChild(frame);
+        const hypothesis = controls.hypothesis.value;
+        const strength = Number(controls.strength.value);
+        DATA.overlaps.forEach((o, row) => DATA.accesses.forEach((a, col) => {
+          const d = cellFor(o, a, strength);
+          const m = metric(d, hypothesis);
+          const rect = svgEl('rect');
+          rect.setAttribute('x', margin.left + col * cellW);
+          rect.setAttribute('y', margin.top + row * cellH);
+          rect.setAttribute('width', cellW + 0.2); rect.setAttribute('height', cellH + 0.2);
+          rect.setAttribute('class', `lab-cell${selected && close(selected.o, o) && close(selected.a, a) ? ' is-selected' : ''}${m.value == null ? ' lab-na' : ''}`);
+          if (m.value != null) {
+            rect.style.fill = css(m.value < 0 ? '--viz-series-1' : m.series);
+            rect.style.fillOpacity = String(0.10 + 0.86 * Math.min(1, Math.abs(m.value) / m.max));
+          }
+          rect.setAttribute('aria-label', `Örtüşme ${pct(o)}, erişim ${pct(a)}, ${m.label} ${m.value == null ? 'tanımsız' : signed(m.value)}`);
+          rect.addEventListener('click', () => {
+            controls.overlap.value = String(row); controls.access.value = String(col); update();
+          });
+          rect.addEventListener('pointermove', event => {
+            tooltip.style.display = 'block';
+            tooltip.style.left = `${event.clientX - root.getBoundingClientRect().left + 12}px`;
+            tooltip.style.top = `${event.clientY - root.getBoundingClientRect().top + 12}px`;
+            tooltip.textContent = `${pct(o)} örtüşme · ${pct(a)} erişim · ${m.value == null ? 'H3 başlangıcı kurulmadı' : `${m.label}: ${signed(m.value)}`}`;
+          });
+          rect.addEventListener('pointerleave', () => { tooltip.style.display = 'none'; });
+          svg.appendChild(rect);
+        }));
+        const tickStep = width < 520 ? 4 : 2;
+        DATA.accesses.forEach((value, index) => {
+          if (index % tickStep !== 0 && index !== DATA.accesses.length - 1) return;
+          const text = svgEl('text');
+          text.setAttribute('x', margin.left + (index + 0.5) * cellW);
+          text.setAttribute('y', height - 30); text.setAttribute('text-anchor', 'middle');
+          text.setAttribute('class', 'lab-axis'); text.textContent = String(Math.round(100 * value));
+          svg.appendChild(text);
+        });
+        DATA.overlaps.forEach((value, index) => {
+          const text = svgEl('text');
+          text.setAttribute('x', margin.left - 8);
+          text.setAttribute('y', margin.top + (index + 0.5) * cellH + 4);
+          text.setAttribute('text-anchor', 'end'); text.setAttribute('class', 'lab-axis');
+          text.textContent = String(Math.round(100 * value)); svg.appendChild(text);
+        });
+        const xTitle = svgEl('text'); xTitle.setAttribute('x', margin.left + plotW / 2); xTitle.setAttribute('y', height - 6);
+        xTitle.setAttribute('text-anchor', 'middle'); xTitle.setAttribute('class', 'lab-axis'); xTitle.setAttribute('data-axis', 'x');
+        xTitle.textContent = 'Etkili nihai-A erişimi (%)'; svg.appendChild(xTitle);
+        const yTitle = svgEl('text'); yTitle.setAttribute('x', 14); yTitle.setAttribute('y', margin.top + plotH / 2);
+        yTitle.setAttribute('text-anchor', 'middle'); yTitle.setAttribute('class', 'lab-axis'); yTitle.setAttribute('data-axis', 'y');
+        yTitle.setAttribute('transform', `rotate(-90 14 ${margin.top + plotH / 2})`); yTitle.textContent = 'A/B hücresel örtüşmesi (%)'; svg.appendChild(yTitle);
+      }
+
+      function drawEngrams(cell) {
+        const width = Math.max(300, engramSvg.parentElement.clientWidth);
+        const height = 180; engramSvg.setAttribute('viewBox', `0 0 ${width} ${height}`); engramSvg.setAttribute('height', height);
+        engramSvg.replaceChildren();
+        const total = 70;
+        const shared = Math.round(total * cell.o / (2 - cell.o));
+        const eachOnly = Math.floor((total - shared) / 2);
+        const accessibleA = Math.round((eachOnly + shared) * cell.a);
+        const hypothesis = controls.hypothesis.value;
+        const points = [];
+        for (let i = 0; i < eachOnly; i++) points.push({ type: 'a' });
+        for (let i = 0; i < shared; i++) points.push({ type: 'shared' });
+        for (let i = 0; i < eachOnly; i++) points.push({ type: 'b' });
+        let touched = 0;
+        points.forEach((point, index) => {
+          const cols = Math.max(10, Math.floor(width / 28));
+          const x = 18 + (index % cols) * ((width - 36) / (cols - 1));
+          const y = 28 + Math.floor(index / cols) * 25;
+          const circle = svgEl('circle'); circle.setAttribute('cx', x); circle.setAttribute('cy', y); circle.setAttribute('r', 7);
+          circle.setAttribute('class', `lab-dot-${point.type}`);
+          if ((point.type === 'a' || point.type === 'shared') && touched < accessibleA) {
+            circle.classList.add('lab-dot-on');
+            if (hypothesis !== 'H2') circle.classList.add('lab-dot-off');
+            touched += 1;
+          }
+          engramSvg.appendChild(circle);
+        });
+        const label = svgEl('text'); label.setAttribute('x', 12); label.setAttribute('y', height - 8); label.setAttribute('class', 'lab-axis');
+        label.textContent = `A-özgün · ortak A∩B · B-özgün · halkalı: manipüle edilen A altkümesi (${pct(cell.a)})`;
+        engramSvg.appendChild(label);
+      }
+
+      function updateDetails(cell) {
+        const hypothesis = controls.hypothesis.value;
+        const beta = controls.beta.value;
+        const metricLabel = root.querySelector('#ca3-metric-label');
+        const metricValue = root.querySelector('#ca3-metric-value');
+        const metricContext = root.querySelector('#ca3-metric-context');
+        const stateLabel = root.querySelector('#ca3-state-label');
+        const stateValue = root.querySelector('#ca3-state-value');
+        const stateContext = root.querySelector('#ca3-state-context');
+        const decision = root.querySelector('#ca3-decision');
+        const falsifier = root.querySelector('#ca3-falsifier');
+        if (hypothesis === 'H1') {
+          metricLabel.textContent = 'Nöral gereklilik'; metricValue.textContent = signed(cell.h1de);
+          metricContext.textContent = `Δ reaktivasyon ${signed(cell.h1react)} · beklenen ΔDR(β=${beta}) ${signed(cell.h1dr[beta])}`;
+          stateLabel.textContent = 'A çekicisi bozuldu'; stateValue.textContent = pct(cell.h1non);
+          stateContext.textContent = `Şansa-yakın kanıt ${pct(cell.h1chance)}`;
+          const minimal = cell.h1de < 0; const strong = cell.h1chance >= 0.8;
+          decision.textContent = strong ? 'Güçlü H1 desteklenir' : minimal ? 'Kısmi H1; çöküş yok' : 'H1 desteklenmez';
+          falsifier.textContent = 'Doğrulanmış erişimde beklenen nöral azalma yoksa minimal H1 reddedilir.';
+        } else if (hypothesis === 'H2') {
+          metricLabel.textContent = 'A yönlü kanıt değişimi'; metricValue.textContent = signed(cell.h2de);
+          metricContext.textContent = `Beklenen ΔDR(β=${beta}) ${signed(cell.h2dr[beta])}`;
+          stateLabel.textContent = 'A çekicisine geçiş'; stateValue.textContent = pct(cell.h2a);
+          stateContext.textContent = `${DATA.nStructures} yapısal ağ`;
+          decision.textContent = cell.h2a >= 0.8 ? 'H2 desteklenir' : cell.h2de > 0 ? 'A yönlü kayma; eşik altı' : 'H2 desteklenmez';
+          falsifier.textContent = 'Etkili erişim ≥%22,5 iken A yönlü kayma yoksa bu yüzey reddedilir.';
+        } else {
+          metricLabel.textContent = 'Konum × susturma'; metricValue.textContent = cell.h3i == null ? 'NA' : signed(cell.h3i);
+          metricContext.textContent = `ΔE önde ${signed(cell.h3lead)} · geride ${signed(cell.h3trail)} · ΔDR etkileşimi ${signed(cell.h3dr[beta])}`;
+          stateLabel.textContent = 'Rakip B’ye tam geçiş'; stateValue.textContent = pct(cell.h3b);
+          stateContext.textContent = `Başlangıç ayrışması ${pct(cell.h3q)}`;
+          const positional = cell.h3q >= 0.8 && cell.h3i < 0 && cell.h3as >= 0.8;
+          decision.textContent = cell.h3q < 0.8 ? 'H3 test edilemez' : cell.h3b >= 0.8 ? 'Güçlü H3 desteklenir' : positional ? 'Asimetri var; tam flip yok' : 'H3 desteklenmez';
+          falsifier.textContent = '65/35–35/65 başlangıcı kurulmuşken etkileşim ≥0 ise H3 reddedilir.';
+        }
+      }
+
+      function renderAblations() {
+        const labels = { intact: 'Sağlam çekirdek', no_recurrence: 'Rekürrens yok', no_sparse_inhibition: 'Seyrek inhibisyon yok', zero_overlap: 'Örtüşme yok' };
+        const body = root.querySelector('#ca3-ablation-body'); body.replaceChildren();
+        DATA.ablations.forEach(row => {
+          const tr = document.createElement('tr');
+          [labels[row.name], pct(row.gates), pct(row.h2A), pct(row.h3Qualified)].forEach((value, index) => {
+            const td = document.createElement(index === 0 ? 'th' : 'td'); td.textContent = value; tr.appendChild(td);
+          });
+          body.appendChild(tr);
+        });
+      }
+
+      function update() {
+        const o = DATA.overlaps[Number(controls.overlap.value)];
+        const a = DATA.accesses[Number(controls.access.value)];
+        const s = Number(controls.strength.value);
+        selected = cellFor(o, a, s);
+        root.querySelector('#ca3-overlap-value').textContent = pct(o);
+        root.querySelector('#ca3-access-value').textContent = pct(a);
+        drawHeatmap(); updateDetails(selected); drawEngrams(selected);
+      }
+      Object.values(controls).forEach(control => control.addEventListener('input', update));
+      new ResizeObserver(update).observe(root.querySelector('#ca3-phase-container'));
+      new ResizeObserver(() => selected && drawEngrams(selected)).observe(engramSvg.parentElement);
+      renderAblations(); update();
+    })();
+  </script>
+</div>

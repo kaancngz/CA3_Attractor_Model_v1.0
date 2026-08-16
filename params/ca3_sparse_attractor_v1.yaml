@@ -1,0 +1,177 @@
+schema_version: 1
+model: ca3_sparse_attractor
+status: primary_theory_core_independently_qualified_predata
+
+theoretical_choices:
+  - name: recurrent_learning_rule
+    value: centered_covariance_hebbian
+    source: literature
+    reference: "Gastaldi et al. (2021), doi:10.1371/journal.pcbi.1009691, Eq. 5"
+    verified: true
+    note: "Factorized exact equivalent of the two-pattern dense matrix with W_ii=0."
+
+  - name: recurrent_gain
+    value: 1.0
+    unit: normalized_model_unit
+    source: design
+    reference: "Normalization of the covariance rule"
+    verified: true
+    note: "Defines the field unit; not a biological conductance."
+
+  - name: sparse_activity_cap
+    value: 0.08
+    unit: fraction_of_cells
+    source: design
+    reference: "README.md section 5, sparse autoassociative network"
+    verified: true
+    note: "Reduced fast global inhibition; tied to the current engram activity fraction."
+
+  - name: activation_threshold
+    value: 0.12
+    unit: normalized_model_unit
+    source: free
+    reference: "outputs/ca3_sparse_attractor/independent_validation_pilot_v1.json"
+    verified: true
+    note: >-
+      Midpoint of the H1-H3-independent 0.08-0.16 validity plateau. All five
+      pilot-scale seeds passed all ten attractor gates throughout that plateau.
+
+cellular_structure:
+  - name: n_cells_pilot
+    value: 2400
+    unit: cells
+    source: design
+    reference: "Computational profile; not a biological CA3 cell count"
+    verified: true
+
+  - name: engram_fraction
+    value: 0.08
+    unit: fraction_of_cells
+    source: free
+    reference: null
+    verified: false
+    note: "Inherited working value; must be swept and replaced if pilot histology permits."
+
+  - name: a_b_overlap_fraction
+    value: 0.20
+    unit: fraction_of_one_engram
+    source: free
+    reference: null
+    verified: false
+    note: "Placeholder until the planned cellular-overlap pilot is available."
+
+cue_mapping:
+  - name: tone_probability_to_context_support
+    value: normalized_likelihood_support
+    source: design
+    reference: "notes/14_butuncul_kuramsal_cerceve.md"
+    verified: true
+    note: >-
+      p(tone|A/B) is converted to normalized learned support under equal context
+      priors. This is a reduced-form mapping, not an implemented learning process.
+
+  - name: cue_support_encoding
+    value: fixed_total_target_slots
+    source: design
+    reference: "models/ca3_sparse_attractor/model.py"
+    verified: true
+    note: >-
+      Lambda allocates a fixed total afferent target budget between A and B;
+      physical cue scale remains a separate free variable.
+
+  - name: strong_partial_cue_fraction
+    value: 0.20
+    unit: fraction_of_one_engram
+    source: free
+    reference: "independent attractor qualification"
+    verified: false
+
+  - name: weak_partial_cue_fraction
+    value: 0.05
+    unit: fraction_of_one_engram
+    source: free
+    reference: "independent attractor qualification"
+    verified: false
+
+experimental_access:
+  - name: ram_tagging_efficiency
+    value: 0.50
+    unit: fraction_of_bare_A_representation
+    source: free
+    reference: null
+    verified: false
+
+  - name: fiber_coverage_of_tagged_cells
+    value: 0.50
+    unit: fraction_of_tagged_cells
+    source: free
+    reference: null
+    verified: false
+
+  - name: bare_A_to_test_A_match
+    value: [0.50, 0.75, 1.00]
+    unit: fraction
+    source: free
+    reference: "sensitivity range; pilot value unavailable"
+    verified: false
+
+measurement_model:
+  - name: neural_competition_index
+    value: "(A_unique_activity-B_unique_activity)/(A_unique_activity+B_unique_activity)"
+    source: design
+    reference: "models/ca3_sparse_attractor/model.py"
+    verified: true
+
+  - name: signed_retrieval_evidence
+    value: "A_unique_activity-B_unique_activity"
+    source: design
+    reference: "models/ca3_sparse_attractor/model.py"
+    verified: true
+    note: "Retains absolute evidence; the behavioral sensitivity envelope uses this variable."
+
+  - name: behavior_inverse_temperature
+    value: [1.0, 2.0, 4.0, 8.0]
+    unit: inverse_signed_retrieval_evidence
+    source: free
+    reference: null
+    verified: false
+    note: "Sensitivity envelope only; must not be called observed digging discrimination."
+
+known_limits:
+  - "Only two stored memories are represented; memory-load interference is not yet tested."
+  - "Training dynamics are reduced to learned support and stored patterns."
+  - "Global inhibition is a hard sparse activity constraint, not an interneuron circuit."
+  - "Context C is represented only by absence of A/B-specific context drive in the A/B subspace."
+  - "Structural seeds are not animal trial noise; current neural dz values are not power-analysis inputs."
+
+hypothesis_phase_map:
+  status: frozen_predata_v1
+  source: "outputs/ca3_sparse_attractor/hypothesis_phase_map_v1.json"
+  axes:
+    overlap_fraction: [0.00, 0.05, 0.10, 0.15, 0.20, 0.25, 0.30, 0.40, 0.50, 0.60]
+    effective_access_fraction: [0.000, 0.025, 0.050, 0.075, 0.100, 0.125, 0.150, 0.175, 0.200, 0.225, 0.250, 0.300, 0.350, 0.400, 0.500]
+    manipulation_strength: [0.25, 0.50, 1.00, 2.00, 4.00]
+  structural_seeds: 25
+  note: >-
+    Same-network light-off/light-on pairs. Structural realizations are not
+    virtual animals, biological noise, p-values or empirical power.
+
+parameter_role_audit:
+  source: "outputs/ca3_sparse_attractor/parameter_audit_v1.json"
+  all_config_fields_classified: true
+  fitted_to_H1_H2_H3: 0
+
+recall_probe_protocol:
+  status: predata_mechanistic_v1
+  source: "outputs/ca3_sparse_attractor/recall_probe_protocol_v1.json"
+  trial_table: "outputs/ca3_sparse_attractor/recall_probe_trials_v1.csv"
+  reward_during_probe: false
+  plasticity_during_probe: false
+  state_reset_between_probes: true
+  cue_and_light_sustained_during_probe: true
+  pre_cue_light_steps:
+    value: 1
+    source: computational_protocol
+    verified_as_biological_time: false
+    note: "Preserves light-before-cue ordering; does not represent 10-20 biological seconds."
+  asymptotic_readout: "fixed point or full synchronous microstate-cycle average"

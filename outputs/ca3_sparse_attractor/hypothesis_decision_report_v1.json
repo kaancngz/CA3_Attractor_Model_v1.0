@@ -1,0 +1,4389 @@
+{
+  "status": "predata_hypothesis_decision_report_v1",
+  "source": "outputs\\ca3_sparse_attractor\\hypothesis_phase_map_v1.json",
+  "decision_rule_note": "80% is a structural-robustness convention, not a p-value or empirical power target.",
+  "primary_point": {
+    "overlap_fraction": 0.2,
+    "effective_access_fraction": 0.25,
+    "manipulation_strength": 1.0,
+    "aggregate": {
+      "overlap_fraction": 0.2,
+      "effective_access_fraction": 0.25,
+      "manipulation_strength": 1.0,
+      "H1": {
+        "n_structural_realizations": 25,
+        "off_state_fractions": {
+          "A": 1,
+          "B": 0,
+          "mixed": 0,
+          "silent": 0,
+          "undecided": 0
+        },
+        "on_state_fractions": {
+          "A": 0.96,
+          "B": 0,
+          "mixed": 0,
+          "silent": 0.04,
+          "undecided": 0
+        },
+        "mean_off_evidence": 1.0,
+        "mean_on_evidence": 0.7628571428571429,
+        "mean_delta_evidence": -0.23714285714285713,
+        "sd_delta_evidence_across_structures": 0.14481295962719662,
+        "mean_delta_nci": -0.0175,
+        "mean_delta_tagged_reactivation": -0.22729166666666667,
+        "directional_negative_fraction": 1,
+        "directional_positive_fraction": 0,
+        "near_chance_on_fraction": 0,
+        "behavioral_envelope": {
+          "1.0": {
+            "mean_off_expected_discrimination": 0.46211715726000974,
+            "mean_on_expected_discrimination": 0.3626848260040321,
+            "mean_delta_expected_discrimination": -0.09943233125597763
+          },
+          "2.0": {
+            "mean_off_expected_discrimination": 0.7615941559557649,
+            "mean_on_expected_discrimination": 0.6356117928968017,
+            "mean_delta_expected_discrimination": -0.12598236305896318
+          },
+          "4.0": {
+            "mean_off_expected_discrimination": 0.9640275800758169,
+            "mean_on_expected_discrimination": 0.8887328324483377,
+            "mean_delta_expected_discrimination": -0.07529474762747927
+          },
+          "8.0": {
+            "mean_off_expected_discrimination": 0.999329299739067,
+            "mean_on_expected_discrimination": 0.9718910058095432,
+            "mean_delta_expected_discrimination": -0.027438293929523808
+          }
+        },
+        "non_A_on_fraction": 0.04
+      },
+      "H2": {
+        "n_structural_realizations": 25,
+        "off_state_fractions": {
+          "A": 0,
+          "B": 1,
+          "mixed": 0,
+          "silent": 0,
+          "undecided": 0
+        },
+        "on_state_fractions": {
+          "A": 1,
+          "B": 0,
+          "mixed": 0,
+          "silent": 0,
+          "undecided": 0
+        },
+        "mean_off_evidence": -1.0,
+        "mean_on_evidence": 0.6103896103896105,
+        "mean_delta_evidence": 1.6103896103896105,
+        "sd_delta_evidence_across_structures": 0.0,
+        "mean_delta_nci": 1.6103896103896105,
+        "mean_delta_tagged_reactivation": 0.6458333333333334,
+        "directional_negative_fraction": 0,
+        "directional_positive_fraction": 1,
+        "near_chance_on_fraction": 0,
+        "behavioral_envelope": {
+          "1.0": {
+            "mean_off_expected_discrimination": -0.46211715726000974,
+            "mean_on_expected_discrimination": 0.29605934470830425,
+            "mean_delta_expected_discrimination": 0.758176501968314
+          },
+          "2.0": {
+            "mean_off_expected_discrimination": -0.7615941559557649,
+            "mean_on_expected_discrimination": 0.5444012974765994,
+            "mean_delta_expected_discrimination": 1.3059954534323643
+          },
+          "4.0": {
+            "mean_off_expected_discrimination": -0.9640275800758169,
+            "mean_on_expected_discrimination": 0.8398838805372157,
+            "mean_delta_expected_discrimination": 1.8039114606130326
+          },
+          "8.0": {
+            "mean_off_expected_discrimination": -0.999329299739067,
+            "mean_on_expected_discrimination": 0.9849671059236734,
+            "mean_delta_expected_discrimination": 1.9842964056627403
+          }
+        },
+        "A_on_fraction": 1
+      },
+      "H3": {
+        "baseline_qualified_fraction": 1.0,
+        "n_baseline_qualified": 25,
+        "A_leading": {
+          "n_structural_realizations": 25,
+          "off_state_fractions": {
+            "A": 1,
+            "B": 0,
+            "mixed": 0,
+            "silent": 0,
+            "undecided": 0
+          },
+          "on_state_fractions": {
+            "A": 1,
+            "B": 0,
+            "mixed": 0,
+            "silent": 0,
+            "undecided": 0
+          },
+          "mean_off_evidence": 1.0,
+          "mean_on_evidence": 0.451948051948052,
+          "mean_delta_evidence": -0.548051948051948,
+          "sd_delta_evidence_across_structures": 0.020789364407249506,
+          "mean_delta_nci": -0.569583501598921,
+          "mean_delta_tagged_reactivation": -0.23979166666666665,
+          "directional_negative_fraction": 1,
+          "directional_positive_fraction": 0,
+          "near_chance_on_fraction": 0,
+          "behavioral_envelope": {
+            "1.0": {
+              "mean_off_expected_discrimination": 0.46211715726000974,
+              "mean_on_expected_discrimination": 0.22218257089834662,
+              "mean_delta_expected_discrimination": -0.23993458636166312
+            },
+            "2.0": {
+              "mean_off_expected_discrimination": 0.7615941559557649,
+              "mean_on_expected_discrimination": 0.4233544030688714,
+              "mean_delta_expected_discrimination": -0.33823975288689345
+            },
+            "4.0": {
+              "mean_off_expected_discrimination": 0.9640275800758169,
+              "mean_on_expected_discrimination": 0.7176154786767045,
+              "mean_delta_expected_discrimination": -0.24641210139911238
+            },
+            "8.0": {
+              "mean_off_expected_discrimination": 0.999329299739067,
+              "mean_on_expected_discrimination": 0.9469760942869687,
+              "mean_delta_expected_discrimination": -0.0523532054520983
+            }
+          }
+        },
+        "A_trailing": {
+          "n_structural_realizations": 25,
+          "off_state_fractions": {
+            "A": 0,
+            "B": 1,
+            "mixed": 0,
+            "silent": 0,
+            "undecided": 0
+          },
+          "on_state_fractions": {
+            "A": 0,
+            "B": 1,
+            "mixed": 0,
+            "silent": 0,
+            "undecided": 0
+          },
+          "mean_off_evidence": -1.0,
+          "mean_on_evidence": -0.9527272727272728,
+          "mean_delta_evidence": 0.047272727272727265,
+          "sd_delta_evidence_across_structures": 0.008695804946580376,
+          "mean_delta_nci": 0.09015104113173869,
+          "mean_delta_tagged_reactivation": -0.005416666666666658,
+          "directional_negative_fraction": 0,
+          "directional_positive_fraction": 1,
+          "near_chance_on_fraction": 0,
+          "behavioral_envelope": {
+            "1.0": {
+              "mean_off_expected_discrimination": -0.46211715726000974,
+              "mean_on_expected_discrimination": -0.4433201805775172,
+              "mean_delta_expected_discrimination": 0.01879697668249254
+            },
+            "2.0": {
+              "mean_off_expected_discrimination": -0.7615941559557649,
+              "mean_on_expected_discrimination": -0.7409910204905974,
+              "mean_delta_expected_discrimination": 0.020603135465167403
+            },
+            "4.0": {
+              "mean_off_expected_discrimination": -0.9640275800758169,
+              "mean_on_expected_discrimination": -0.9566785317384553,
+              "mean_delta_expected_discrimination": 0.007349048337361661
+            },
+            "8.0": {
+              "mean_off_expected_discrimination": -0.999329299739067,
+              "mean_on_expected_discrimination": -0.9990189218610773,
+              "mean_delta_expected_discrimination": 0.00031037787798969595
+            }
+          }
+        },
+        "mean_signed_interaction": -0.5953246753246753,
+        "mean_abs_effect_asymmetry": 0.5007792207792208,
+        "positional_asymmetry_support_fraction": 1,
+        "leading_rival_B_on_fraction": 0
+      }
+    },
+    "paired_structural_realizations": [
+      {
+        "seed": 20260815,
+        "H1": {
+          "off_state": "A",
+          "on_state": "A",
+          "off_evidence": 1.0,
+          "on_evidence": 0.8376623376623377,
+          "delta_evidence": -0.16233766233766234,
+          "off_nci": 1.0,
+          "on_nci": 1.0,
+          "delta_nci": 0.0,
+          "off_tagged_reactivation": 1.0,
+          "on_tagged_reactivation": 0.8125,
+          "delta_tagged_reactivation": -0.1875,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": 0.46211715726000974,
+              "on_expected_discrimination": 0.3959452979918316,
+              "delta_expected_discrimination": -0.06617185926817815
+            },
+            "2.0": {
+              "off_expected_discrimination": 0.7615941559557649,
+              "on_expected_discrimination": 0.6845688961697922,
+              "delta_expected_discrimination": -0.07702525978597263
+            },
+            "4.0": {
+              "off_expected_discrimination": 0.9640275800758169,
+              "on_expected_discrimination": 0.9322521864513653,
+              "delta_expected_discrimination": -0.03177539362445159
+            },
+            "8.0": {
+              "off_expected_discrimination": 0.999329299739067,
+              "on_expected_discrimination": 0.997544390009845,
+              "delta_expected_discrimination": -0.0017849097292220728
+            }
+          }
+        },
+        "H2": {
+          "off_state": "B",
+          "on_state": "A",
+          "off_evidence": -1.0,
+          "on_evidence": 0.6103896103896105,
+          "delta_evidence": 1.6103896103896105,
+          "off_nci": -1.0,
+          "on_nci": 0.6103896103896105,
+          "delta_nci": 1.6103896103896105,
+          "off_tagged_reactivation": 0.19791666666666666,
+          "on_tagged_reactivation": 0.84375,
+          "delta_tagged_reactivation": 0.6458333333333334,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": -0.46211715726000974,
+              "on_expected_discrimination": 0.29605934470830425,
+              "delta_expected_discrimination": 0.758176501968314
+            },
+            "2.0": {
+              "off_expected_discrimination": -0.7615941559557649,
+              "on_expected_discrimination": 0.5444012974765994,
+              "delta_expected_discrimination": 1.3059954534323643
+            },
+            "4.0": {
+              "off_expected_discrimination": -0.9640275800758169,
+              "on_expected_discrimination": 0.8398838805372157,
+              "delta_expected_discrimination": 1.8039114606130326
+            },
+            "8.0": {
+              "off_expected_discrimination": -0.999329299739067,
+              "on_expected_discrimination": 0.9849671059236734,
+              "delta_expected_discrimination": 1.9842964056627403
+            }
+          }
+        },
+        "H3_A_leading": {
+          "off_state": "A",
+          "on_state": "A",
+          "off_evidence": 1.0,
+          "on_evidence": 0.49350649350649356,
+          "delta_evidence": -0.5064935064935064,
+          "off_nci": 1.0,
+          "on_nci": 0.46341463414634143,
+          "delta_nci": -0.5365853658536586,
+          "off_tagged_reactivation": 1.0,
+          "on_tagged_reactivation": 0.7708333333333334,
+          "delta_tagged_reactivation": -0.22916666666666663,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": 0.46211715726000974,
+              "on_expected_discrimination": 0.2418642480327754,
+              "delta_expected_discrimination": -0.22025290922723434
+            },
+            "2.0": {
+              "off_expected_discrimination": 0.7615941559557649,
+              "on_expected_discrimination": 0.45699505558948955,
+              "delta_expected_discrimination": -0.3045991003662753
+            },
+            "4.0": {
+              "off_expected_discrimination": 0.9640275800758169,
+              "on_expected_discrimination": 0.7560857708917013,
+              "delta_expected_discrimination": -0.20794180918411564
+            },
+            "8.0": {
+              "off_expected_discrimination": 0.999329299739067,
+              "on_expected_discrimination": 0.9621457976536862,
+              "delta_expected_discrimination": -0.03718350208538079
+            }
+          }
+        },
+        "H3_A_trailing": {
+          "off_state": "B",
+          "on_state": "B",
+          "off_evidence": -1.0,
+          "on_evidence": -0.9545454545454546,
+          "delta_evidence": 0.045454545454545414,
+          "off_nci": -1.0,
+          "on_nci": -0.9130434782608696,
+          "delta_nci": 0.08695652173913038,
+          "off_tagged_reactivation": 0.19791666666666666,
+          "on_tagged_reactivation": 0.18229166666666666,
+          "delta_tagged_reactivation": -0.015625,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": -0.46211715726000974,
+              "on_expected_discrimination": -0.44405677248152764,
+              "delta_expected_discrimination": 0.018060384778482097
+            },
+            "2.0": {
+              "off_expected_discrimination": -0.7615941559557649,
+              "on_expected_discrimination": -0.7418339635443313,
+              "delta_expected_discrimination": 0.019760192411433564
+            },
+            "4.0": {
+              "off_expected_discrimination": -0.9640275800758169,
+              "on_expected_discrimination": -0.9570090018249322,
+              "delta_expected_discrimination": 0.0070185782508846994
+            },
+            "8.0": {
+              "off_expected_discrimination": -0.999329299739067,
+              "on_expected_discrimination": -0.9990353053383588,
+              "delta_expected_discrimination": 0.0002939944007082085
+            }
+          }
+        }
+      },
+      {
+        "seed": 20260816,
+        "H1": {
+          "off_state": "A",
+          "on_state": "A",
+          "off_evidence": 1.0,
+          "on_evidence": 0.7792207792207793,
+          "delta_evidence": -0.22077922077922074,
+          "off_nci": 1.0,
+          "on_nci": 1.0,
+          "delta_nci": 0.0,
+          "off_tagged_reactivation": 1.0,
+          "on_tagged_reactivation": 0.8072916666666666,
+          "delta_tagged_reactivation": -0.19270833333333337,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": 0.46211715726000974,
+              "on_expected_discrimination": 0.3710242994526192,
+              "delta_expected_discrimination": -0.09109285780739051
+            },
+            "2.0": {
+              "off_expected_discrimination": 0.7615941559557649,
+              "on_expected_discrimination": 0.6522592260298474,
+              "delta_expected_discrimination": -0.10933492992591742
+            },
+            "4.0": {
+              "off_expected_discrimination": 0.9640275800758169,
+              "on_expected_discrimination": 0.9151676198871733,
+              "delta_expected_discrimination": -0.04885996018864358
+            },
+            "8.0": {
+              "off_expected_discrimination": 0.999329299739067,
+              "on_expected_discrimination": 0.9960835873298368,
+              "delta_expected_discrimination": -0.003245712409230217
+            }
+          }
+        },
+        "H2": {
+          "off_state": "B",
+          "on_state": "A",
+          "off_evidence": -1.0,
+          "on_evidence": 0.6103896103896105,
+          "delta_evidence": 1.6103896103896105,
+          "off_nci": -1.0,
+          "on_nci": 0.6103896103896105,
+          "delta_nci": 1.6103896103896105,
+          "off_tagged_reactivation": 0.19791666666666666,
+          "on_tagged_reactivation": 0.84375,
+          "delta_tagged_reactivation": 0.6458333333333334,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": -0.46211715726000974,
+              "on_expected_discrimination": 0.29605934470830425,
+              "delta_expected_discrimination": 0.758176501968314
+            },
+            "2.0": {
+              "off_expected_discrimination": -0.7615941559557649,
+              "on_expected_discrimination": 0.5444012974765994,
+              "delta_expected_discrimination": 1.3059954534323643
+            },
+            "4.0": {
+              "off_expected_discrimination": -0.9640275800758169,
+              "on_expected_discrimination": 0.8398838805372157,
+              "delta_expected_discrimination": 1.8039114606130326
+            },
+            "8.0": {
+              "off_expected_discrimination": -0.999329299739067,
+              "on_expected_discrimination": 0.9849671059236734,
+              "delta_expected_discrimination": 1.9842964056627403
+            }
+          }
+        },
+        "H3_A_leading": {
+          "off_state": "A",
+          "on_state": "A",
+          "off_evidence": 1.0,
+          "on_evidence": 0.4285714285714286,
+          "delta_evidence": -0.5714285714285714,
+          "off_nci": 1.0,
+          "on_nci": 0.4177215189873418,
+          "delta_nci": -0.5822784810126582,
+          "off_tagged_reactivation": 1.0,
+          "on_tagged_reactivation": 0.7604166666666666,
+          "delta_tagged_reactivation": -0.23958333333333337,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": 0.46211715726000974,
+              "on_expected_discrimination": 0.2110649744411714,
+              "delta_expected_discrimination": -0.25105218281883834
+            },
+            "2.0": {
+              "off_expected_discrimination": 0.7615941559557649,
+              "on_expected_discrimination": 0.4041267397578592,
+              "delta_expected_discrimination": -0.3574674161979057
+            },
+            "4.0": {
+              "off_expected_discrimination": 0.9640275800758169,
+              "on_expected_discrimination": 0.694782670314738,
+              "delta_expected_discrimination": -0.26924490976107895
+            },
+            "8.0": {
+              "off_expected_discrimination": 0.999329299739067,
+              "on_expected_discrimination": 0.9371712579368597,
+              "delta_expected_discrimination": -0.0621580418022073
+            }
+          }
+        },
+        "H3_A_trailing": {
+          "off_state": "B",
+          "on_state": "B",
+          "off_evidence": -1.0,
+          "on_evidence": -0.961038961038961,
+          "delta_evidence": 0.038961038961038974,
+          "off_nci": -1.0,
+          "on_nci": -0.925,
+          "delta_nci": 0.07499999999999996,
+          "off_tagged_reactivation": 0.19791666666666666,
+          "on_tagged_reactivation": 0.19791666666666666,
+          "delta_tagged_reactivation": 0.0,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": -0.46211715726000974,
+              "on_expected_discrimination": -0.4466595484090612,
+              "delta_expected_discrimination": 0.015457608850948545
+            },
+            "2.0": {
+              "off_expected_discrimination": -0.7615941559557649,
+              "on_expected_discrimination": -0.7447399397050122,
+              "delta_expected_discrimination": 0.016854216250752674
+            },
+            "4.0": {
+              "off_expected_discrimination": -0.9640275800758169,
+              "on_expected_discrimination": -0.9580881748179859,
+              "delta_expected_discrimination": 0.0059394052578309875
+            },
+            "8.0": {
+              "off_expected_discrimination": -0.999329299739067,
+              "on_expected_discrimination": -0.9990841175707301,
+              "delta_expected_discrimination": 0.0002451821683369104
+            }
+          }
+        }
+      },
+      {
+        "seed": 20260817,
+        "H1": {
+          "off_state": "A",
+          "on_state": "A",
+          "off_evidence": 1.0,
+          "on_evidence": 0.7792207792207793,
+          "delta_evidence": -0.22077922077922074,
+          "off_nci": 1.0,
+          "on_nci": 1.0,
+          "delta_nci": 0.0,
+          "off_tagged_reactivation": 1.0,
+          "on_tagged_reactivation": 0.78125,
+          "delta_tagged_reactivation": -0.21875,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": 0.46211715726000974,
+              "on_expected_discrimination": 0.3710242994526192,
+              "delta_expected_discrimination": -0.09109285780739051
+            },
+            "2.0": {
+              "off_expected_discrimination": 0.7615941559557649,
+              "on_expected_discrimination": 0.6522592260298474,
+              "delta_expected_discrimination": -0.10933492992591742
+            },
+            "4.0": {
+              "off_expected_discrimination": 0.9640275800758169,
+              "on_expected_discrimination": 0.9151676198871733,
+              "delta_expected_discrimination": -0.04885996018864358
+            },
+            "8.0": {
+              "off_expected_discrimination": 0.999329299739067,
+              "on_expected_discrimination": 0.9960835873298368,
+              "delta_expected_discrimination": -0.003245712409230217
+            }
+          }
+        },
+        "H2": {
+          "off_state": "B",
+          "on_state": "A",
+          "off_evidence": -1.0,
+          "on_evidence": 0.6103896103896105,
+          "delta_evidence": 1.6103896103896105,
+          "off_nci": -1.0,
+          "on_nci": 0.6103896103896105,
+          "delta_nci": 1.6103896103896105,
+          "off_tagged_reactivation": 0.19791666666666666,
+          "on_tagged_reactivation": 0.84375,
+          "delta_tagged_reactivation": 0.6458333333333334,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": -0.46211715726000974,
+              "on_expected_discrimination": 0.29605934470830425,
+              "delta_expected_discrimination": 0.758176501968314
+            },
+            "2.0": {
+              "off_expected_discrimination": -0.7615941559557649,
+              "on_expected_discrimination": 0.5444012974765994,
+              "delta_expected_discrimination": 1.3059954534323643
+            },
+            "4.0": {
+              "off_expected_discrimination": -0.9640275800758169,
+              "on_expected_discrimination": 0.8398838805372157,
+              "delta_expected_discrimination": 1.8039114606130326
+            },
+            "8.0": {
+              "off_expected_discrimination": -0.999329299739067,
+              "on_expected_discrimination": 0.9849671059236734,
+              "delta_expected_discrimination": 1.9842964056627403
+            }
+          }
+        },
+        "H3_A_leading": {
+          "off_state": "A",
+          "on_state": "A",
+          "off_evidence": 1.0,
+          "on_evidence": 0.4480519480519481,
+          "delta_evidence": -0.551948051948052,
+          "off_nci": 1.0,
+          "on_nci": 0.4233128834355828,
+          "delta_nci": -0.5766871165644172,
+          "off_tagged_reactivation": 1.0,
+          "on_tagged_reactivation": 0.7552083333333334,
+          "delta_tagged_reactivation": -0.24479166666666663,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": 0.46211715726000974,
+              "on_expected_discrimination": 0.22035193488484545,
+              "delta_expected_discrimination": -0.2417652223751643
+            },
+            "2.0": {
+              "off_expected_discrimination": 0.7615941559557649,
+              "on_expected_discrimination": 0.4202963890209776,
+              "delta_expected_discrimination": -0.34129776693478725
+            },
+            "4.0": {
+              "off_expected_discrimination": 0.9640275800758169,
+              "on_expected_discrimination": 0.7143954900898771,
+              "delta_expected_discrimination": -0.24963208998593978
+            },
+            "8.0": {
+              "off_expected_discrimination": 0.999329299739067,
+              "on_expected_discrimination": 0.9459930833731142,
+              "delta_expected_discrimination": -0.05333621636595287
+            }
+          }
+        },
+        "H3_A_trailing": {
+          "off_state": "B",
+          "on_state": "B",
+          "off_evidence": -1.0,
+          "on_evidence": -0.948051948051948,
+          "delta_evidence": 0.051948051948051965,
+          "off_nci": -1.0,
+          "on_nci": -0.9012345679012346,
+          "delta_nci": 0.09876543209876543,
+          "off_tagged_reactivation": 0.19791666666666666,
+          "on_tagged_reactivation": 0.19270833333333334,
+          "delta_tagged_reactivation": -0.005208333333333315,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": -0.46211715726000974,
+              "on_expected_discrimination": -0.44144648067770365,
+              "delta_expected_discrimination": 0.02067067658230609
+            },
+            "2.0": {
+              "off_expected_discrimination": -0.7615941559557649,
+              "on_expected_discrimination": -0.7388998554879961,
+              "delta_expected_discrimination": 0.02269430046776877
+            },
+            "4.0": {
+              "off_expected_discrimination": -0.9640275800758169,
+              "on_expected_discrimination": -0.9559026673679503,
+              "delta_expected_discrimination": 0.008124912707866638
+            },
+            "8.0": {
+              "off_expected_discrimination": -0.999329299739067,
+              "on_expected_discrimination": -0.9989838929655188,
+              "delta_expected_discrimination": 0.000345406773548218
+            }
+          }
+        }
+      },
+      {
+        "seed": 20260818,
+        "H1": {
+          "off_state": "A",
+          "on_state": "A",
+          "off_evidence": 1.0,
+          "on_evidence": 0.8051948051948052,
+          "delta_evidence": -0.19480519480519476,
+          "off_nci": 1.0,
+          "on_nci": 1.0,
+          "delta_nci": 0.0,
+          "off_tagged_reactivation": 1.0,
+          "on_tagged_reactivation": 0.8072916666666666,
+          "delta_tagged_reactivation": -0.19270833333333337,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": 0.46211715726000974,
+              "on_expected_discrimination": 0.3821692045540222,
+              "delta_expected_discrimination": -0.07994795270598754
+            },
+            "2.0": {
+              "off_expected_discrimination": 0.7615941559557649,
+              "on_expected_discrimination": 0.6669309433527231,
+              "delta_expected_discrimination": -0.09466321260304178
+            },
+            "4.0": {
+              "off_expected_discrimination": 0.9640275800758169,
+              "on_expected_discrimination": 0.9232175831871263,
+              "delta_expected_discrimination": -0.04080999688869058
+            },
+            "8.0": {
+              "off_expected_discrimination": 0.999329299739067,
+              "on_expected_discrimination": 0.996817231656945,
+              "delta_expected_discrimination": -0.00251206808212201
+            }
+          }
+        },
+        "H2": {
+          "off_state": "B",
+          "on_state": "A",
+          "off_evidence": -1.0,
+          "on_evidence": 0.6103896103896105,
+          "delta_evidence": 1.6103896103896105,
+          "off_nci": -1.0,
+          "on_nci": 0.6103896103896105,
+          "delta_nci": 1.6103896103896105,
+          "off_tagged_reactivation": 0.19791666666666666,
+          "on_tagged_reactivation": 0.84375,
+          "delta_tagged_reactivation": 0.6458333333333334,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": -0.46211715726000974,
+              "on_expected_discrimination": 0.29605934470830425,
+              "delta_expected_discrimination": 0.758176501968314
+            },
+            "2.0": {
+              "off_expected_discrimination": -0.7615941559557649,
+              "on_expected_discrimination": 0.5444012974765994,
+              "delta_expected_discrimination": 1.3059954534323643
+            },
+            "4.0": {
+              "off_expected_discrimination": -0.9640275800758169,
+              "on_expected_discrimination": 0.8398838805372157,
+              "delta_expected_discrimination": 1.8039114606130326
+            },
+            "8.0": {
+              "off_expected_discrimination": -0.999329299739067,
+              "on_expected_discrimination": 0.9849671059236734,
+              "delta_expected_discrimination": 1.9842964056627403
+            }
+          }
+        },
+        "H3_A_leading": {
+          "off_state": "A",
+          "on_state": "A",
+          "off_evidence": 1.0,
+          "on_evidence": 0.45454545454545453,
+          "delta_evidence": -0.5454545454545454,
+          "off_nci": 1.0,
+          "on_nci": 0.4375,
+          "delta_nci": -0.5625,
+          "off_tagged_reactivation": 1.0,
+          "on_tagged_reactivation": 0.765625,
+          "delta_tagged_reactivation": -0.234375,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": 0.46211715726000974,
+              "on_expected_discrimination": 0.22343882281432276,
+              "delta_expected_discrimination": -0.23867833444568698
+            },
+            "2.0": {
+              "off_expected_discrimination": 0.7615941559557649,
+              "on_expected_discrimination": 0.42562819723499473,
+              "delta_expected_discrimination": -0.3359659587207701
+            },
+            "4.0": {
+              "off_expected_discrimination": 0.9640275800758169,
+              "on_expected_discrimination": 0.7206956331664798,
+              "delta_expected_discrimination": -0.24333194690933713
+            },
+            "8.0": {
+              "off_expected_discrimination": 0.999329299739067,
+              "on_expected_discrimination": 0.948656827300346,
+              "delta_expected_discrimination": -0.05067247243872108
+            }
+          }
+        },
+        "H3_A_trailing": {
+          "off_state": "B",
+          "on_state": "B",
+          "off_evidence": -1.0,
+          "on_evidence": -0.948051948051948,
+          "delta_evidence": 0.051948051948051965,
+          "off_nci": -1.0,
+          "on_nci": -0.9012345679012346,
+          "delta_nci": 0.09876543209876543,
+          "off_tagged_reactivation": 0.19791666666666666,
+          "on_tagged_reactivation": 0.19791666666666666,
+          "delta_tagged_reactivation": 0.0,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": -0.46211715726000974,
+              "on_expected_discrimination": -0.44144648067770365,
+              "delta_expected_discrimination": 0.02067067658230609
+            },
+            "2.0": {
+              "off_expected_discrimination": -0.7615941559557649,
+              "on_expected_discrimination": -0.7388998554879961,
+              "delta_expected_discrimination": 0.02269430046776877
+            },
+            "4.0": {
+              "off_expected_discrimination": -0.9640275800758169,
+              "on_expected_discrimination": -0.9559026673679503,
+              "delta_expected_discrimination": 0.008124912707866638
+            },
+            "8.0": {
+              "off_expected_discrimination": -0.999329299739067,
+              "on_expected_discrimination": -0.9989838929655188,
+              "delta_expected_discrimination": 0.000345406773548218
+            }
+          }
+        }
+      },
+      {
+        "seed": 20260819,
+        "H1": {
+          "off_state": "A",
+          "on_state": "A",
+          "off_evidence": 1.0,
+          "on_evidence": 0.7922077922077922,
+          "delta_evidence": -0.20779220779220775,
+          "off_nci": 1.0,
+          "on_nci": 1.0,
+          "delta_nci": 0.0,
+          "off_tagged_reactivation": 1.0,
+          "on_tagged_reactivation": 0.8020833333333334,
+          "delta_tagged_reactivation": -0.19791666666666663,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": 0.46211715726000974,
+              "on_expected_discrimination": 0.3766103793667801,
+              "delta_expected_discrimination": -0.08550677789322964
+            },
+            "2.0": {
+              "off_expected_discrimination": 0.7615941559557649,
+              "on_expected_discrimination": 0.6596579273572187,
+              "delta_expected_discrimination": -0.10193622859854612
+            },
+            "4.0": {
+              "off_expected_discrimination": 0.9640275800758169,
+              "on_expected_discrimination": 0.9192886869455941,
+              "delta_expected_discrimination": -0.044738893130222834
+            },
+            "8.0": {
+              "off_expected_discrimination": 0.999329299739067,
+              "on_expected_discrimination": 0.9964693808494924,
+              "delta_expected_discrimination": -0.0028599188895745975
+            }
+          }
+        },
+        "H2": {
+          "off_state": "B",
+          "on_state": "A",
+          "off_evidence": -1.0,
+          "on_evidence": 0.6103896103896105,
+          "delta_evidence": 1.6103896103896105,
+          "off_nci": -1.0,
+          "on_nci": 0.6103896103896105,
+          "delta_nci": 1.6103896103896105,
+          "off_tagged_reactivation": 0.19791666666666666,
+          "on_tagged_reactivation": 0.84375,
+          "delta_tagged_reactivation": 0.6458333333333334,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": -0.46211715726000974,
+              "on_expected_discrimination": 0.29605934470830425,
+              "delta_expected_discrimination": 0.758176501968314
+            },
+            "2.0": {
+              "off_expected_discrimination": -0.7615941559557649,
+              "on_expected_discrimination": 0.5444012974765994,
+              "delta_expected_discrimination": 1.3059954534323643
+            },
+            "4.0": {
+              "off_expected_discrimination": -0.9640275800758169,
+              "on_expected_discrimination": 0.8398838805372157,
+              "delta_expected_discrimination": 1.8039114606130326
+            },
+            "8.0": {
+              "off_expected_discrimination": -0.999329299739067,
+              "on_expected_discrimination": 0.9849671059236734,
+              "delta_expected_discrimination": 1.9842964056627403
+            }
+          }
+        },
+        "H3_A_leading": {
+          "off_state": "A",
+          "on_state": "A",
+          "off_evidence": 1.0,
+          "on_evidence": 0.45454545454545453,
+          "delta_evidence": -0.5454545454545454,
+          "off_nci": 1.0,
+          "on_nci": 0.4375,
+          "delta_nci": -0.5625,
+          "off_tagged_reactivation": 1.0,
+          "on_tagged_reactivation": 0.765625,
+          "delta_tagged_reactivation": -0.234375,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": 0.46211715726000974,
+              "on_expected_discrimination": 0.22343882281432276,
+              "delta_expected_discrimination": -0.23867833444568698
+            },
+            "2.0": {
+              "off_expected_discrimination": 0.7615941559557649,
+              "on_expected_discrimination": 0.42562819723499473,
+              "delta_expected_discrimination": -0.3359659587207701
+            },
+            "4.0": {
+              "off_expected_discrimination": 0.9640275800758169,
+              "on_expected_discrimination": 0.7206956331664798,
+              "delta_expected_discrimination": -0.24333194690933713
+            },
+            "8.0": {
+              "off_expected_discrimination": 0.999329299739067,
+              "on_expected_discrimination": 0.948656827300346,
+              "delta_expected_discrimination": -0.05067247243872108
+            }
+          }
+        },
+        "H3_A_trailing": {
+          "off_state": "B",
+          "on_state": "B",
+          "off_evidence": -1.0,
+          "on_evidence": -0.9545454545454546,
+          "delta_evidence": 0.045454545454545414,
+          "off_nci": -1.0,
+          "on_nci": -0.9130434782608696,
+          "delta_nci": 0.08695652173913038,
+          "off_tagged_reactivation": 0.19791666666666666,
+          "on_tagged_reactivation": 0.19791666666666666,
+          "delta_tagged_reactivation": 0.0,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": -0.46211715726000974,
+              "on_expected_discrimination": -0.44405677248152764,
+              "delta_expected_discrimination": 0.018060384778482097
+            },
+            "2.0": {
+              "off_expected_discrimination": -0.7615941559557649,
+              "on_expected_discrimination": -0.7418339635443313,
+              "delta_expected_discrimination": 0.019760192411433564
+            },
+            "4.0": {
+              "off_expected_discrimination": -0.9640275800758169,
+              "on_expected_discrimination": -0.9570090018249322,
+              "delta_expected_discrimination": 0.0070185782508846994
+            },
+            "8.0": {
+              "off_expected_discrimination": -0.999329299739067,
+              "on_expected_discrimination": -0.9990353053383588,
+              "delta_expected_discrimination": 0.0002939944007082085
+            }
+          }
+        }
+      },
+      {
+        "seed": 20260820,
+        "H1": {
+          "off_state": "A",
+          "on_state": "A",
+          "off_evidence": 1.0,
+          "on_evidence": 0.8246753246753247,
+          "delta_evidence": -0.17532467532467533,
+          "off_nci": 1.0,
+          "on_nci": 1.0,
+          "delta_nci": 0.0,
+          "off_tagged_reactivation": 1.0,
+          "on_tagged_reactivation": 0.8125,
+          "delta_tagged_reactivation": -0.1875,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": 0.46211715726000974,
+              "on_expected_discrimination": 0.3904557590564924,
+              "delta_expected_discrimination": -0.07166139820351736
+            },
+            "2.0": {
+              "off_expected_discrimination": 0.7615941559557649,
+              "on_expected_discrimination": 0.6776065390294825,
+              "delta_expected_discrimination": -0.08398761692628232
+            },
+            "4.0": {
+              "off_expected_discrimination": 0.9640275800758169,
+              "on_expected_discrimination": 0.9287684615088432,
+              "delta_expected_discrimination": -0.035259118566973724
+            },
+            "8.0": {
+              "off_expected_discrimination": 0.999329299739067,
+              "on_expected_discrimination": 0.997275903304256,
+              "delta_expected_discrimination": -0.002053396434811061
+            }
+          }
+        },
+        "H2": {
+          "off_state": "B",
+          "on_state": "A",
+          "off_evidence": -1.0,
+          "on_evidence": 0.6103896103896105,
+          "delta_evidence": 1.6103896103896105,
+          "off_nci": -1.0,
+          "on_nci": 0.6103896103896105,
+          "delta_nci": 1.6103896103896105,
+          "off_tagged_reactivation": 0.19791666666666666,
+          "on_tagged_reactivation": 0.84375,
+          "delta_tagged_reactivation": 0.6458333333333334,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": -0.46211715726000974,
+              "on_expected_discrimination": 0.29605934470830425,
+              "delta_expected_discrimination": 0.758176501968314
+            },
+            "2.0": {
+              "off_expected_discrimination": -0.7615941559557649,
+              "on_expected_discrimination": 0.5444012974765994,
+              "delta_expected_discrimination": 1.3059954534323643
+            },
+            "4.0": {
+              "off_expected_discrimination": -0.9640275800758169,
+              "on_expected_discrimination": 0.8398838805372157,
+              "delta_expected_discrimination": 1.8039114606130326
+            },
+            "8.0": {
+              "off_expected_discrimination": -0.999329299739067,
+              "on_expected_discrimination": 0.9849671059236734,
+              "delta_expected_discrimination": 1.9842964056627403
+            }
+          }
+        },
+        "H3_A_leading": {
+          "off_state": "A",
+          "on_state": "A",
+          "off_evidence": 1.0,
+          "on_evidence": 0.474025974025974,
+          "delta_evidence": -0.525974025974026,
+          "off_nci": 1.0,
+          "on_nci": 0.453416149068323,
+          "delta_nci": -0.5465838509316769,
+          "off_tagged_reactivation": 1.0,
+          "on_tagged_reactivation": 0.7708333333333334,
+          "delta_tagged_reactivation": -0.22916666666666663,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": 0.46211715726000974,
+              "on_expected_discrimination": 0.23267241343937803,
+              "delta_expected_discrimination": -0.2294447438206317
+            },
+            "2.0": {
+              "off_expected_discrimination": 0.7615941559557649,
+              "on_expected_discrimination": 0.44144648067770365,
+              "delta_expected_discrimination": -0.3201476752780612
+            },
+            "4.0": {
+              "off_expected_discrimination": 0.9640275800758169,
+              "on_expected_discrimination": 0.7388998554879961,
+              "delta_expected_discrimination": -0.22512772458782082
+            },
+            "8.0": {
+              "off_expected_discrimination": 0.999329299739067,
+              "on_expected_discrimination": 0.9559026673679503,
+              "delta_expected_discrimination": -0.04342663237111677
+            }
+          }
+        },
+        "H3_A_trailing": {
+          "off_state": "B",
+          "on_state": "B",
+          "off_evidence": -1.0,
+          "on_evidence": -0.9415584415584416,
+          "delta_evidence": 0.058441558441558406,
+          "off_nci": -1.0,
+          "on_nci": -0.8895705521472392,
+          "delta_nci": 0.11042944785276076,
+          "off_tagged_reactivation": 0.19791666666666666,
+          "on_tagged_reactivation": 0.19791666666666666,
+          "delta_tagged_reactivation": 0.0,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": -0.46211715726000974,
+              "on_expected_discrimination": -0.43882869566608307,
+              "delta_expected_discrimination": 0.023288461593926668
+            },
+            "2.0": {
+              "off_expected_discrimination": -0.7615941559557649,
+              "on_expected_discrimination": -0.7359374560857354,
+              "delta_expected_discrimination": 0.025656699870029498
+            },
+            "4.0": {
+              "off_expected_discrimination": -0.9640275800758169,
+              "on_expected_discrimination": -0.9547685204206896,
+              "delta_expected_discrimination": 0.0092590596551273
+            },
+            "8.0": {
+              "off_expected_discrimination": -0.999329299739067,
+              "on_expected_discrimination": -0.9989297420920593,
+              "delta_expected_discrimination": 0.00039955764700772
+            }
+          }
+        }
+      },
+      {
+        "seed": 20260821,
+        "H1": {
+          "off_state": "A",
+          "on_state": "A",
+          "off_evidence": 1.0,
+          "on_evidence": 0.7792207792207793,
+          "delta_evidence": -0.22077922077922074,
+          "off_nci": 1.0,
+          "on_nci": 1.0,
+          "delta_nci": 0.0,
+          "off_tagged_reactivation": 1.0,
+          "on_tagged_reactivation": 0.7916666666666666,
+          "delta_tagged_reactivation": -0.20833333333333337,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": 0.46211715726000974,
+              "on_expected_discrimination": 0.3710242994526192,
+              "delta_expected_discrimination": -0.09109285780739051
+            },
+            "2.0": {
+              "off_expected_discrimination": 0.7615941559557649,
+              "on_expected_discrimination": 0.6522592260298474,
+              "delta_expected_discrimination": -0.10933492992591742
+            },
+            "4.0": {
+              "off_expected_discrimination": 0.9640275800758169,
+              "on_expected_discrimination": 0.9151676198871733,
+              "delta_expected_discrimination": -0.04885996018864358
+            },
+            "8.0": {
+              "off_expected_discrimination": 0.999329299739067,
+              "on_expected_discrimination": 0.9960835873298368,
+              "delta_expected_discrimination": -0.003245712409230217
+            }
+          }
+        },
+        "H2": {
+          "off_state": "B",
+          "on_state": "A",
+          "off_evidence": -1.0,
+          "on_evidence": 0.6103896103896105,
+          "delta_evidence": 1.6103896103896105,
+          "off_nci": -1.0,
+          "on_nci": 0.6103896103896105,
+          "delta_nci": 1.6103896103896105,
+          "off_tagged_reactivation": 0.19791666666666666,
+          "on_tagged_reactivation": 0.84375,
+          "delta_tagged_reactivation": 0.6458333333333334,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": -0.46211715726000974,
+              "on_expected_discrimination": 0.29605934470830425,
+              "delta_expected_discrimination": 0.758176501968314
+            },
+            "2.0": {
+              "off_expected_discrimination": -0.7615941559557649,
+              "on_expected_discrimination": 0.5444012974765994,
+              "delta_expected_discrimination": 1.3059954534323643
+            },
+            "4.0": {
+              "off_expected_discrimination": -0.9640275800758169,
+              "on_expected_discrimination": 0.8398838805372157,
+              "delta_expected_discrimination": 1.8039114606130326
+            },
+            "8.0": {
+              "off_expected_discrimination": -0.999329299739067,
+              "on_expected_discrimination": 0.9849671059236734,
+              "delta_expected_discrimination": 1.9842964056627403
+            }
+          }
+        },
+        "H3_A_leading": {
+          "off_state": "A",
+          "on_state": "A",
+          "off_evidence": 1.0,
+          "on_evidence": 0.42857142857142855,
+          "delta_evidence": -0.5714285714285714,
+          "off_nci": 1.0,
+          "on_nci": 0.41250000000000003,
+          "delta_nci": -0.5874999999999999,
+          "off_tagged_reactivation": 1.0,
+          "on_tagged_reactivation": 0.7552083333333334,
+          "delta_tagged_reactivation": -0.24479166666666663,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": 0.46211715726000974,
+              "on_expected_discrimination": 0.21106497444117137,
+              "delta_expected_discrimination": -0.25105218281883834
+            },
+            "2.0": {
+              "off_expected_discrimination": 0.7615941559557649,
+              "on_expected_discrimination": 0.4041267397578591,
+              "delta_expected_discrimination": -0.35746741619790573
+            },
+            "4.0": {
+              "off_expected_discrimination": 0.9640275800758169,
+              "on_expected_discrimination": 0.694782670314738,
+              "delta_expected_discrimination": -0.26924490976107895
+            },
+            "8.0": {
+              "off_expected_discrimination": 0.999329299739067,
+              "on_expected_discrimination": 0.9371712579368597,
+              "delta_expected_discrimination": -0.0621580418022073
+            }
+          }
+        },
+        "H3_A_trailing": {
+          "off_state": "B",
+          "on_state": "B",
+          "off_evidence": -1.0,
+          "on_evidence": -0.9545454545454546,
+          "delta_evidence": 0.045454545454545414,
+          "off_nci": -1.0,
+          "on_nci": -0.9130434782608696,
+          "delta_nci": 0.08695652173913038,
+          "off_tagged_reactivation": 0.19791666666666666,
+          "on_tagged_reactivation": 0.19791666666666666,
+          "delta_tagged_reactivation": 0.0,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": -0.46211715726000974,
+              "on_expected_discrimination": -0.44405677248152764,
+              "delta_expected_discrimination": 0.018060384778482097
+            },
+            "2.0": {
+              "off_expected_discrimination": -0.7615941559557649,
+              "on_expected_discrimination": -0.7418339635443313,
+              "delta_expected_discrimination": 0.019760192411433564
+            },
+            "4.0": {
+              "off_expected_discrimination": -0.9640275800758169,
+              "on_expected_discrimination": -0.9570090018249322,
+              "delta_expected_discrimination": 0.0070185782508846994
+            },
+            "8.0": {
+              "off_expected_discrimination": -0.999329299739067,
+              "on_expected_discrimination": -0.9990353053383588,
+              "delta_expected_discrimination": 0.0002939944007082085
+            }
+          }
+        }
+      },
+      {
+        "seed": 20260822,
+        "H1": {
+          "off_state": "A",
+          "on_state": "silent",
+          "off_evidence": 1.0,
+          "on_evidence": 0.1038961038961039,
+          "delta_evidence": -0.8961038961038961,
+          "off_nci": 1.0,
+          "on_nci": 1.0,
+          "delta_nci": 0.0,
+          "off_tagged_reactivation": 1.0,
+          "on_tagged_reactivation": 0.109375,
+          "delta_tagged_reactivation": -0.890625,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": 0.46211715726000974,
+              "on_expected_discrimination": 0.05190137332809461,
+              "delta_expected_discrimination": -0.41021578393191516
+            },
+            "2.0": {
+              "off_expected_discrimination": 0.7615941559557649,
+              "on_expected_discrimination": 0.10352387894295474,
+              "delta_expected_discrimination": -0.6580702770128101
+            },
+            "4.0": {
+              "off_expected_discrimination": 0.9640275800758169,
+              "on_expected_discrimination": 0.20485231597435477,
+              "delta_expected_discrimination": -0.7591752641014622
+            },
+            "8.0": {
+              "off_expected_discrimination": 0.999329299739067,
+              "on_expected_discrimination": 0.39320403258465203,
+              "delta_expected_discrimination": -0.6061252671544151
+            }
+          }
+        },
+        "H2": {
+          "off_state": "B",
+          "on_state": "A",
+          "off_evidence": -1.0,
+          "on_evidence": 0.6103896103896105,
+          "delta_evidence": 1.6103896103896105,
+          "off_nci": -1.0,
+          "on_nci": 0.6103896103896105,
+          "delta_nci": 1.6103896103896105,
+          "off_tagged_reactivation": 0.19791666666666666,
+          "on_tagged_reactivation": 0.84375,
+          "delta_tagged_reactivation": 0.6458333333333334,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": -0.46211715726000974,
+              "on_expected_discrimination": 0.29605934470830425,
+              "delta_expected_discrimination": 0.758176501968314
+            },
+            "2.0": {
+              "off_expected_discrimination": -0.7615941559557649,
+              "on_expected_discrimination": 0.5444012974765994,
+              "delta_expected_discrimination": 1.3059954534323643
+            },
+            "4.0": {
+              "off_expected_discrimination": -0.9640275800758169,
+              "on_expected_discrimination": 0.8398838805372157,
+              "delta_expected_discrimination": 1.8039114606130326
+            },
+            "8.0": {
+              "off_expected_discrimination": -0.999329299739067,
+              "on_expected_discrimination": 0.9849671059236734,
+              "delta_expected_discrimination": 1.9842964056627403
+            }
+          }
+        },
+        "H3_A_leading": {
+          "off_state": "A",
+          "on_state": "A",
+          "off_evidence": 1.0,
+          "on_evidence": 0.4545454545454546,
+          "delta_evidence": -0.5454545454545454,
+          "off_nci": 1.0,
+          "on_nci": 0.4320987654320988,
+          "delta_nci": -0.5679012345679012,
+          "off_tagged_reactivation": 1.0,
+          "on_tagged_reactivation": 0.7604166666666666,
+          "delta_tagged_reactivation": -0.23958333333333337,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": 0.46211715726000974,
+              "on_expected_discrimination": 0.22343882281432279,
+              "delta_expected_discrimination": -0.23867833444568695
+            },
+            "2.0": {
+              "off_expected_discrimination": 0.7615941559557649,
+              "on_expected_discrimination": 0.4256281972349948,
+              "delta_expected_discrimination": -0.33596595872077006
+            },
+            "4.0": {
+              "off_expected_discrimination": 0.9640275800758169,
+              "on_expected_discrimination": 0.7206956331664798,
+              "delta_expected_discrimination": -0.24333194690933713
+            },
+            "8.0": {
+              "off_expected_discrimination": 0.999329299739067,
+              "on_expected_discrimination": 0.948656827300346,
+              "delta_expected_discrimination": -0.05067247243872108
+            }
+          }
+        },
+        "H3_A_trailing": {
+          "off_state": "B",
+          "on_state": "B",
+          "off_evidence": -1.0,
+          "on_evidence": -0.961038961038961,
+          "delta_evidence": 0.038961038961038974,
+          "off_nci": -1.0,
+          "on_nci": -0.925,
+          "delta_nci": 0.07499999999999996,
+          "off_tagged_reactivation": 0.19791666666666666,
+          "on_tagged_reactivation": 0.19270833333333334,
+          "delta_tagged_reactivation": -0.005208333333333315,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": -0.46211715726000974,
+              "on_expected_discrimination": -0.4466595484090612,
+              "delta_expected_discrimination": 0.015457608850948545
+            },
+            "2.0": {
+              "off_expected_discrimination": -0.7615941559557649,
+              "on_expected_discrimination": -0.7447399397050122,
+              "delta_expected_discrimination": 0.016854216250752674
+            },
+            "4.0": {
+              "off_expected_discrimination": -0.9640275800758169,
+              "on_expected_discrimination": -0.9580881748179859,
+              "delta_expected_discrimination": 0.0059394052578309875
+            },
+            "8.0": {
+              "off_expected_discrimination": -0.999329299739067,
+              "on_expected_discrimination": -0.9990841175707301,
+              "delta_expected_discrimination": 0.0002451821683369104
+            }
+          }
+        }
+      },
+      {
+        "seed": 20260823,
+        "H1": {
+          "off_state": "A",
+          "on_state": "A",
+          "off_evidence": 1.0,
+          "on_evidence": 0.7857142857142857,
+          "delta_evidence": -0.2142857142857143,
+          "off_nci": 1.0,
+          "on_nci": 1.0,
+          "delta_nci": 0.0,
+          "off_tagged_reactivation": 1.0,
+          "on_tagged_reactivation": 0.796875,
+          "delta_tagged_reactivation": -0.203125,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": 0.46211715726000974,
+              "on_expected_discrimination": 0.3738207293206251,
+              "delta_expected_discrimination": -0.08829642793938464
+            },
+            "2.0": {
+              "off_expected_discrimination": 0.7615941559557649,
+              "on_expected_discrimination": 0.6559743341284774,
+              "delta_expected_discrimination": -0.10561982182728746
+            },
+            "4.0": {
+              "off_expected_discrimination": 0.9640275800758169,
+              "on_expected_discrimination": 0.9172526978798492,
+              "delta_expected_discrimination": -0.046774882195967704
+            },
+            "8.0": {
+              "off_expected_discrimination": 0.999329299739067,
+              "on_expected_discrimination": 0.9962814746419252,
+              "delta_expected_discrimination": -0.003047825097141854
+            }
+          }
+        },
+        "H2": {
+          "off_state": "B",
+          "on_state": "A",
+          "off_evidence": -1.0,
+          "on_evidence": 0.6103896103896105,
+          "delta_evidence": 1.6103896103896105,
+          "off_nci": -1.0,
+          "on_nci": 0.6103896103896105,
+          "delta_nci": 1.6103896103896105,
+          "off_tagged_reactivation": 0.19791666666666666,
+          "on_tagged_reactivation": 0.84375,
+          "delta_tagged_reactivation": 0.6458333333333334,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": -0.46211715726000974,
+              "on_expected_discrimination": 0.29605934470830425,
+              "delta_expected_discrimination": 0.758176501968314
+            },
+            "2.0": {
+              "off_expected_discrimination": -0.7615941559557649,
+              "on_expected_discrimination": 0.5444012974765994,
+              "delta_expected_discrimination": 1.3059954534323643
+            },
+            "4.0": {
+              "off_expected_discrimination": -0.9640275800758169,
+              "on_expected_discrimination": 0.8398838805372157,
+              "delta_expected_discrimination": 1.8039114606130326
+            },
+            "8.0": {
+              "off_expected_discrimination": -0.999329299739067,
+              "on_expected_discrimination": 0.9849671059236734,
+              "delta_expected_discrimination": 1.9842964056627403
+            }
+          }
+        },
+        "H3_A_leading": {
+          "off_state": "A",
+          "on_state": "A",
+          "off_evidence": 1.0,
+          "on_evidence": 0.42857142857142855,
+          "delta_evidence": -0.5714285714285714,
+          "off_nci": 1.0,
+          "on_nci": 0.41250000000000003,
+          "delta_nci": -0.5874999999999999,
+          "off_tagged_reactivation": 1.0,
+          "on_tagged_reactivation": 0.7552083333333334,
+          "delta_tagged_reactivation": -0.24479166666666663,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": 0.46211715726000974,
+              "on_expected_discrimination": 0.21106497444117137,
+              "delta_expected_discrimination": -0.25105218281883834
+            },
+            "2.0": {
+              "off_expected_discrimination": 0.7615941559557649,
+              "on_expected_discrimination": 0.4041267397578591,
+              "delta_expected_discrimination": -0.35746741619790573
+            },
+            "4.0": {
+              "off_expected_discrimination": 0.9640275800758169,
+              "on_expected_discrimination": 0.694782670314738,
+              "delta_expected_discrimination": -0.26924490976107895
+            },
+            "8.0": {
+              "off_expected_discrimination": 0.999329299739067,
+              "on_expected_discrimination": 0.9371712579368597,
+              "delta_expected_discrimination": -0.0621580418022073
+            }
+          }
+        },
+        "H3_A_trailing": {
+          "off_state": "B",
+          "on_state": "B",
+          "off_evidence": -1.0,
+          "on_evidence": -0.9675324675324676,
+          "delta_evidence": 0.03246753246753242,
+          "off_nci": -1.0,
+          "on_nci": -0.9371069182389937,
+          "delta_nci": 0.06289308176100628,
+          "off_tagged_reactivation": 0.19791666666666666,
+          "on_tagged_reactivation": 0.19270833333333334,
+          "delta_tagged_reactivation": -0.005208333333333315,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": -0.46211715726000974,
+              "on_expected_discrimination": -0.4492547862381563,
+              "delta_expected_discrimination": 0.012862371021853447
+            },
+            "2.0": {
+              "off_expected_discrimination": -0.7615941559557649,
+              "on_expected_discrimination": -0.7476179450766349,
+              "delta_expected_discrimination": 0.013976210879129924
+            },
+            "4.0": {
+              "off_expected_discrimination": -0.9640275800758169,
+              "on_expected_discrimination": -0.9591408236748908,
+              "delta_expected_discrimination": 0.004886756400926062
+            },
+            "8.0": {
+              "off_expected_discrimination": -0.999329299739067,
+              "on_expected_discrimination": -0.9991304610451335,
+              "delta_expected_discrimination": 0.00019883869393355624
+            }
+          }
+        }
+      },
+      {
+        "seed": 20260824,
+        "H1": {
+          "off_state": "A",
+          "on_state": "A",
+          "off_evidence": 1.0,
+          "on_evidence": 0.7792207792207793,
+          "delta_evidence": -0.22077922077922074,
+          "off_nci": 1.0,
+          "on_nci": 1.0,
+          "delta_nci": 0.0,
+          "off_tagged_reactivation": 1.0,
+          "on_tagged_reactivation": 0.7864583333333334,
+          "delta_tagged_reactivation": -0.21354166666666663,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": 0.46211715726000974,
+              "on_expected_discrimination": 0.3710242994526192,
+              "delta_expected_discrimination": -0.09109285780739051
+            },
+            "2.0": {
+              "off_expected_discrimination": 0.7615941559557649,
+              "on_expected_discrimination": 0.6522592260298474,
+              "delta_expected_discrimination": -0.10933492992591742
+            },
+            "4.0": {
+              "off_expected_discrimination": 0.9640275800758169,
+              "on_expected_discrimination": 0.9151676198871733,
+              "delta_expected_discrimination": -0.04885996018864358
+            },
+            "8.0": {
+              "off_expected_discrimination": 0.999329299739067,
+              "on_expected_discrimination": 0.9960835873298368,
+              "delta_expected_discrimination": -0.003245712409230217
+            }
+          }
+        },
+        "H2": {
+          "off_state": "B",
+          "on_state": "A",
+          "off_evidence": -1.0,
+          "on_evidence": 0.6103896103896105,
+          "delta_evidence": 1.6103896103896105,
+          "off_nci": -1.0,
+          "on_nci": 0.6103896103896105,
+          "delta_nci": 1.6103896103896105,
+          "off_tagged_reactivation": 0.19791666666666666,
+          "on_tagged_reactivation": 0.84375,
+          "delta_tagged_reactivation": 0.6458333333333334,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": -0.46211715726000974,
+              "on_expected_discrimination": 0.29605934470830425,
+              "delta_expected_discrimination": 0.758176501968314
+            },
+            "2.0": {
+              "off_expected_discrimination": -0.7615941559557649,
+              "on_expected_discrimination": 0.5444012974765994,
+              "delta_expected_discrimination": 1.3059954534323643
+            },
+            "4.0": {
+              "off_expected_discrimination": -0.9640275800758169,
+              "on_expected_discrimination": 0.8398838805372157,
+              "delta_expected_discrimination": 1.8039114606130326
+            },
+            "8.0": {
+              "off_expected_discrimination": -0.999329299739067,
+              "on_expected_discrimination": 0.9849671059236734,
+              "delta_expected_discrimination": 1.9842964056627403
+            }
+          }
+        },
+        "H3_A_leading": {
+          "off_state": "A",
+          "on_state": "A",
+          "off_evidence": 1.0,
+          "on_evidence": 0.44805194805194803,
+          "delta_evidence": -0.551948051948052,
+          "off_nci": 1.0,
+          "on_nci": 0.42857142857142855,
+          "delta_nci": -0.5714285714285714,
+          "off_tagged_reactivation": 1.0,
+          "on_tagged_reactivation": 0.7604166666666666,
+          "delta_tagged_reactivation": -0.23958333333333337,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": 0.46211715726000974,
+              "on_expected_discrimination": 0.22035193488484542,
+              "delta_expected_discrimination": -0.24176522237516432
+            },
+            "2.0": {
+              "off_expected_discrimination": 0.7615941559557649,
+              "on_expected_discrimination": 0.42029638902097755,
+              "delta_expected_discrimination": -0.3412977669347873
+            },
+            "4.0": {
+              "off_expected_discrimination": 0.9640275800758169,
+              "on_expected_discrimination": 0.714395490089877,
+              "delta_expected_discrimination": -0.2496320899859399
+            },
+            "8.0": {
+              "off_expected_discrimination": 0.999329299739067,
+              "on_expected_discrimination": 0.9459930833731142,
+              "delta_expected_discrimination": -0.05333621636595287
+            }
+          }
+        },
+        "H3_A_trailing": {
+          "off_state": "B",
+          "on_state": "B",
+          "off_evidence": -1.0,
+          "on_evidence": -0.9415584415584416,
+          "delta_evidence": 0.058441558441558406,
+          "off_nci": -1.0,
+          "on_nci": -0.8895705521472392,
+          "delta_nci": 0.11042944785276076,
+          "off_tagged_reactivation": 0.19791666666666666,
+          "on_tagged_reactivation": 0.19791666666666666,
+          "delta_tagged_reactivation": 0.0,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": -0.46211715726000974,
+              "on_expected_discrimination": -0.43882869566608307,
+              "delta_expected_discrimination": 0.023288461593926668
+            },
+            "2.0": {
+              "off_expected_discrimination": -0.7615941559557649,
+              "on_expected_discrimination": -0.7359374560857354,
+              "delta_expected_discrimination": 0.025656699870029498
+            },
+            "4.0": {
+              "off_expected_discrimination": -0.9640275800758169,
+              "on_expected_discrimination": -0.9547685204206896,
+              "delta_expected_discrimination": 0.0092590596551273
+            },
+            "8.0": {
+              "off_expected_discrimination": -0.999329299739067,
+              "on_expected_discrimination": -0.9989297420920593,
+              "delta_expected_discrimination": 0.00039955764700772
+            }
+          }
+        }
+      },
+      {
+        "seed": 20260825,
+        "H1": {
+          "off_state": "A",
+          "on_state": "A",
+          "off_evidence": 1.0,
+          "on_evidence": 0.7792207792207793,
+          "delta_evidence": -0.22077922077922074,
+          "off_nci": 1.0,
+          "on_nci": 1.0,
+          "delta_nci": 0.0,
+          "off_tagged_reactivation": 1.0,
+          "on_tagged_reactivation": 0.7916666666666666,
+          "delta_tagged_reactivation": -0.20833333333333337,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": 0.46211715726000974,
+              "on_expected_discrimination": 0.3710242994526192,
+              "delta_expected_discrimination": -0.09109285780739051
+            },
+            "2.0": {
+              "off_expected_discrimination": 0.7615941559557649,
+              "on_expected_discrimination": 0.6522592260298474,
+              "delta_expected_discrimination": -0.10933492992591742
+            },
+            "4.0": {
+              "off_expected_discrimination": 0.9640275800758169,
+              "on_expected_discrimination": 0.9151676198871733,
+              "delta_expected_discrimination": -0.04885996018864358
+            },
+            "8.0": {
+              "off_expected_discrimination": 0.999329299739067,
+              "on_expected_discrimination": 0.9960835873298368,
+              "delta_expected_discrimination": -0.003245712409230217
+            }
+          }
+        },
+        "H2": {
+          "off_state": "B",
+          "on_state": "A",
+          "off_evidence": -1.0,
+          "on_evidence": 0.6103896103896105,
+          "delta_evidence": 1.6103896103896105,
+          "off_nci": -1.0,
+          "on_nci": 0.6103896103896105,
+          "delta_nci": 1.6103896103896105,
+          "off_tagged_reactivation": 0.19791666666666666,
+          "on_tagged_reactivation": 0.84375,
+          "delta_tagged_reactivation": 0.6458333333333334,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": -0.46211715726000974,
+              "on_expected_discrimination": 0.29605934470830425,
+              "delta_expected_discrimination": 0.758176501968314
+            },
+            "2.0": {
+              "off_expected_discrimination": -0.7615941559557649,
+              "on_expected_discrimination": 0.5444012974765994,
+              "delta_expected_discrimination": 1.3059954534323643
+            },
+            "4.0": {
+              "off_expected_discrimination": -0.9640275800758169,
+              "on_expected_discrimination": 0.8398838805372157,
+              "delta_expected_discrimination": 1.8039114606130326
+            },
+            "8.0": {
+              "off_expected_discrimination": -0.999329299739067,
+              "on_expected_discrimination": 0.9849671059236734,
+              "delta_expected_discrimination": 1.9842964056627403
+            }
+          }
+        },
+        "H3_A_leading": {
+          "off_state": "A",
+          "on_state": "A",
+          "off_evidence": 1.0,
+          "on_evidence": 0.4350649350649351,
+          "delta_evidence": -0.5649350649350648,
+          "off_nci": 1.0,
+          "on_nci": 0.41614906832298143,
+          "delta_nci": -0.5838509316770186,
+          "off_tagged_reactivation": 1.0,
+          "on_tagged_reactivation": 0.7552083333333334,
+          "delta_tagged_reactivation": -0.24479166666666663,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": 0.46211715726000974,
+              "on_expected_discrimination": 0.21416495471504227,
+              "delta_expected_discrimination": -0.24795220254496747
+            },
+            "2.0": {
+              "off_expected_discrimination": 0.7615941559557649,
+              "on_expected_discrimination": 0.4095454411042619,
+              "delta_expected_discrimination": -0.35204871485150296
+            },
+            "4.0": {
+              "off_expected_discrimination": 0.9640275800758169,
+              "on_expected_discrimination": 0.7014401086072171,
+              "delta_expected_discrimination": -0.26258747146859984
+            },
+            "8.0": {
+              "off_expected_discrimination": 0.999329299739067,
+              "on_expected_discrimination": 0.940256756119086,
+              "delta_expected_discrimination": -0.059072543619981044
+            }
+          }
+        },
+        "H3_A_trailing": {
+          "off_state": "B",
+          "on_state": "B",
+          "off_evidence": -1.0,
+          "on_evidence": -0.948051948051948,
+          "delta_evidence": 0.051948051948051965,
+          "off_nci": -1.0,
+          "on_nci": -0.9012345679012346,
+          "delta_nci": 0.09876543209876543,
+          "off_tagged_reactivation": 0.19791666666666666,
+          "on_tagged_reactivation": 0.19791666666666666,
+          "delta_tagged_reactivation": 0.0,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": -0.46211715726000974,
+              "on_expected_discrimination": -0.44144648067770365,
+              "delta_expected_discrimination": 0.02067067658230609
+            },
+            "2.0": {
+              "off_expected_discrimination": -0.7615941559557649,
+              "on_expected_discrimination": -0.7388998554879961,
+              "delta_expected_discrimination": 0.02269430046776877
+            },
+            "4.0": {
+              "off_expected_discrimination": -0.9640275800758169,
+              "on_expected_discrimination": -0.9559026673679503,
+              "delta_expected_discrimination": 0.008124912707866638
+            },
+            "8.0": {
+              "off_expected_discrimination": -0.999329299739067,
+              "on_expected_discrimination": -0.9989838929655188,
+              "delta_expected_discrimination": 0.000345406773548218
+            }
+          }
+        }
+      },
+      {
+        "seed": 20260826,
+        "H1": {
+          "off_state": "A",
+          "on_state": "A",
+          "off_evidence": 1.0,
+          "on_evidence": 0.8051948051948052,
+          "delta_evidence": -0.19480519480519476,
+          "off_nci": 1.0,
+          "on_nci": 1.0,
+          "delta_nci": 0.0,
+          "off_tagged_reactivation": 1.0,
+          "on_tagged_reactivation": 0.8125,
+          "delta_tagged_reactivation": -0.1875,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": 0.46211715726000974,
+              "on_expected_discrimination": 0.3821692045540222,
+              "delta_expected_discrimination": -0.07994795270598754
+            },
+            "2.0": {
+              "off_expected_discrimination": 0.7615941559557649,
+              "on_expected_discrimination": 0.6669309433527231,
+              "delta_expected_discrimination": -0.09466321260304178
+            },
+            "4.0": {
+              "off_expected_discrimination": 0.9640275800758169,
+              "on_expected_discrimination": 0.9232175831871263,
+              "delta_expected_discrimination": -0.04080999688869058
+            },
+            "8.0": {
+              "off_expected_discrimination": 0.999329299739067,
+              "on_expected_discrimination": 0.996817231656945,
+              "delta_expected_discrimination": -0.00251206808212201
+            }
+          }
+        },
+        "H2": {
+          "off_state": "B",
+          "on_state": "A",
+          "off_evidence": -1.0,
+          "on_evidence": 0.6103896103896105,
+          "delta_evidence": 1.6103896103896105,
+          "off_nci": -1.0,
+          "on_nci": 0.6103896103896105,
+          "delta_nci": 1.6103896103896105,
+          "off_tagged_reactivation": 0.19791666666666666,
+          "on_tagged_reactivation": 0.84375,
+          "delta_tagged_reactivation": 0.6458333333333334,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": -0.46211715726000974,
+              "on_expected_discrimination": 0.29605934470830425,
+              "delta_expected_discrimination": 0.758176501968314
+            },
+            "2.0": {
+              "off_expected_discrimination": -0.7615941559557649,
+              "on_expected_discrimination": 0.5444012974765994,
+              "delta_expected_discrimination": 1.3059954534323643
+            },
+            "4.0": {
+              "off_expected_discrimination": -0.9640275800758169,
+              "on_expected_discrimination": 0.8398838805372157,
+              "delta_expected_discrimination": 1.8039114606130326
+            },
+            "8.0": {
+              "off_expected_discrimination": -0.999329299739067,
+              "on_expected_discrimination": 0.9849671059236734,
+              "delta_expected_discrimination": 1.9842964056627403
+            }
+          }
+        },
+        "H3_A_leading": {
+          "off_state": "A",
+          "on_state": "A",
+          "off_evidence": 1.0,
+          "on_evidence": 0.45454545454545453,
+          "delta_evidence": -0.5454545454545454,
+          "off_nci": 1.0,
+          "on_nci": 0.4375,
+          "delta_nci": -0.5625,
+          "off_tagged_reactivation": 1.0,
+          "on_tagged_reactivation": 0.765625,
+          "delta_tagged_reactivation": -0.234375,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": 0.46211715726000974,
+              "on_expected_discrimination": 0.22343882281432276,
+              "delta_expected_discrimination": -0.23867833444568698
+            },
+            "2.0": {
+              "off_expected_discrimination": 0.7615941559557649,
+              "on_expected_discrimination": 0.42562819723499473,
+              "delta_expected_discrimination": -0.3359659587207701
+            },
+            "4.0": {
+              "off_expected_discrimination": 0.9640275800758169,
+              "on_expected_discrimination": 0.7206956331664798,
+              "delta_expected_discrimination": -0.24333194690933713
+            },
+            "8.0": {
+              "off_expected_discrimination": 0.999329299739067,
+              "on_expected_discrimination": 0.948656827300346,
+              "delta_expected_discrimination": -0.05067247243872108
+            }
+          }
+        },
+        "H3_A_trailing": {
+          "off_state": "B",
+          "on_state": "B",
+          "off_evidence": -1.0,
+          "on_evidence": -0.961038961038961,
+          "delta_evidence": 0.038961038961038974,
+          "off_nci": -1.0,
+          "on_nci": -0.925,
+          "delta_nci": 0.07499999999999996,
+          "off_tagged_reactivation": 0.19791666666666666,
+          "on_tagged_reactivation": 0.19270833333333334,
+          "delta_tagged_reactivation": -0.005208333333333315,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": -0.46211715726000974,
+              "on_expected_discrimination": -0.4466595484090612,
+              "delta_expected_discrimination": 0.015457608850948545
+            },
+            "2.0": {
+              "off_expected_discrimination": -0.7615941559557649,
+              "on_expected_discrimination": -0.7447399397050122,
+              "delta_expected_discrimination": 0.016854216250752674
+            },
+            "4.0": {
+              "off_expected_discrimination": -0.9640275800758169,
+              "on_expected_discrimination": -0.9580881748179859,
+              "delta_expected_discrimination": 0.0059394052578309875
+            },
+            "8.0": {
+              "off_expected_discrimination": -0.999329299739067,
+              "on_expected_discrimination": -0.9990841175707301,
+              "delta_expected_discrimination": 0.0002451821683369104
+            }
+          }
+        }
+      },
+      {
+        "seed": 20260827,
+        "H1": {
+          "off_state": "A",
+          "on_state": "A",
+          "off_evidence": 1.0,
+          "on_evidence": 0.8246753246753247,
+          "delta_evidence": -0.17532467532467533,
+          "off_nci": 1.0,
+          "on_nci": 1.0,
+          "delta_nci": 0.0,
+          "off_tagged_reactivation": 1.0,
+          "on_tagged_reactivation": 0.8125,
+          "delta_tagged_reactivation": -0.1875,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": 0.46211715726000974,
+              "on_expected_discrimination": 0.3904557590564924,
+              "delta_expected_discrimination": -0.07166139820351736
+            },
+            "2.0": {
+              "off_expected_discrimination": 0.7615941559557649,
+              "on_expected_discrimination": 0.6776065390294825,
+              "delta_expected_discrimination": -0.08398761692628232
+            },
+            "4.0": {
+              "off_expected_discrimination": 0.9640275800758169,
+              "on_expected_discrimination": 0.9287684615088432,
+              "delta_expected_discrimination": -0.035259118566973724
+            },
+            "8.0": {
+              "off_expected_discrimination": 0.999329299739067,
+              "on_expected_discrimination": 0.997275903304256,
+              "delta_expected_discrimination": -0.002053396434811061
+            }
+          }
+        },
+        "H2": {
+          "off_state": "B",
+          "on_state": "A",
+          "off_evidence": -1.0,
+          "on_evidence": 0.6103896103896105,
+          "delta_evidence": 1.6103896103896105,
+          "off_nci": -1.0,
+          "on_nci": 0.6103896103896105,
+          "delta_nci": 1.6103896103896105,
+          "off_tagged_reactivation": 0.19791666666666666,
+          "on_tagged_reactivation": 0.84375,
+          "delta_tagged_reactivation": 0.6458333333333334,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": -0.46211715726000974,
+              "on_expected_discrimination": 0.29605934470830425,
+              "delta_expected_discrimination": 0.758176501968314
+            },
+            "2.0": {
+              "off_expected_discrimination": -0.7615941559557649,
+              "on_expected_discrimination": 0.5444012974765994,
+              "delta_expected_discrimination": 1.3059954534323643
+            },
+            "4.0": {
+              "off_expected_discrimination": -0.9640275800758169,
+              "on_expected_discrimination": 0.8398838805372157,
+              "delta_expected_discrimination": 1.8039114606130326
+            },
+            "8.0": {
+              "off_expected_discrimination": -0.999329299739067,
+              "on_expected_discrimination": 0.9849671059236734,
+              "delta_expected_discrimination": 1.9842964056627403
+            }
+          }
+        },
+        "H3_A_leading": {
+          "off_state": "A",
+          "on_state": "A",
+          "off_evidence": 1.0,
+          "on_evidence": 0.461038961038961,
+          "delta_evidence": -0.538961038961039,
+          "off_nci": 1.0,
+          "on_nci": 0.43558282208588955,
+          "delta_nci": -0.5644171779141105,
+          "off_tagged_reactivation": 1.0,
+          "on_tagged_reactivation": 0.7604166666666666,
+          "delta_tagged_reactivation": -0.23958333333333337,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": 0.46211715726000974,
+              "on_expected_discrimination": 0.22652123523612328,
+              "delta_expected_discrimination": -0.23559592202388646
+            },
+            "2.0": {
+              "off_expected_discrimination": 0.7615941559557649,
+              "on_expected_discrimination": 0.43093061478197514,
+              "delta_expected_discrimination": -0.3306635411737897
+            },
+            "4.0": {
+              "off_expected_discrimination": 0.9640275800758169,
+              "on_expected_discrimination": 0.7268789416553123,
+              "delta_expected_discrimination": -0.2371486384205046
+            },
+            "8.0": {
+              "off_expected_discrimination": 0.999329299739067,
+              "on_expected_discrimination": 0.9511924845142171,
+              "delta_expected_discrimination": -0.048136815224849916
+            }
+          }
+        },
+        "H3_A_trailing": {
+          "off_state": "B",
+          "on_state": "B",
+          "off_evidence": -1.0,
+          "on_evidence": -0.961038961038961,
+          "delta_evidence": 0.038961038961038974,
+          "off_nci": -1.0,
+          "on_nci": -0.925,
+          "delta_nci": 0.07499999999999996,
+          "off_tagged_reactivation": 0.19791666666666666,
+          "on_tagged_reactivation": 0.17708333333333334,
+          "delta_tagged_reactivation": -0.020833333333333315,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": -0.46211715726000974,
+              "on_expected_discrimination": -0.4466595484090612,
+              "delta_expected_discrimination": 0.015457608850948545
+            },
+            "2.0": {
+              "off_expected_discrimination": -0.7615941559557649,
+              "on_expected_discrimination": -0.7447399397050122,
+              "delta_expected_discrimination": 0.016854216250752674
+            },
+            "4.0": {
+              "off_expected_discrimination": -0.9640275800758169,
+              "on_expected_discrimination": -0.9580881748179859,
+              "delta_expected_discrimination": 0.0059394052578309875
+            },
+            "8.0": {
+              "off_expected_discrimination": -0.999329299739067,
+              "on_expected_discrimination": -0.9990841175707301,
+              "delta_expected_discrimination": 0.0002451821683369104
+            }
+          }
+        }
+      },
+      {
+        "seed": 20260828,
+        "H1": {
+          "off_state": "A",
+          "on_state": "A",
+          "off_evidence": 1.0,
+          "on_evidence": 0.7987012987012987,
+          "delta_evidence": -0.2012987012987013,
+          "off_nci": 1.0,
+          "on_nci": 1.0,
+          "delta_nci": 0.0,
+          "off_tagged_reactivation": 1.0,
+          "on_tagged_reactivation": 0.8072916666666666,
+          "delta_tagged_reactivation": -0.19270833333333337,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": 0.46211715726000974,
+              "on_expected_discrimination": 0.37939321561811595,
+              "delta_expected_discrimination": -0.08272394164189378
+            },
+            "2.0": {
+              "off_expected_discrimination": 0.7615941559557649,
+              "on_expected_discrimination": 0.6633100983327314,
+              "delta_expected_discrimination": -0.0982840576230335
+            },
+            "4.0": {
+              "off_expected_discrimination": 0.9640275800758169,
+              "on_expected_discrimination": 0.9212766376432162,
+              "delta_expected_discrimination": -0.04275094243260069
+            },
+            "8.0": {
+              "off_expected_discrimination": 0.999329299739067,
+              "on_expected_discrimination": 0.9966478076402583,
+              "delta_expected_discrimination": -0.0026814920988087465
+            }
+          }
+        },
+        "H2": {
+          "off_state": "B",
+          "on_state": "A",
+          "off_evidence": -1.0,
+          "on_evidence": 0.6103896103896105,
+          "delta_evidence": 1.6103896103896105,
+          "off_nci": -1.0,
+          "on_nci": 0.6103896103896105,
+          "delta_nci": 1.6103896103896105,
+          "off_tagged_reactivation": 0.19791666666666666,
+          "on_tagged_reactivation": 0.84375,
+          "delta_tagged_reactivation": 0.6458333333333334,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": -0.46211715726000974,
+              "on_expected_discrimination": 0.29605934470830425,
+              "delta_expected_discrimination": 0.758176501968314
+            },
+            "2.0": {
+              "off_expected_discrimination": -0.7615941559557649,
+              "on_expected_discrimination": 0.5444012974765994,
+              "delta_expected_discrimination": 1.3059954534323643
+            },
+            "4.0": {
+              "off_expected_discrimination": -0.9640275800758169,
+              "on_expected_discrimination": 0.8398838805372157,
+              "delta_expected_discrimination": 1.8039114606130326
+            },
+            "8.0": {
+              "off_expected_discrimination": -0.999329299739067,
+              "on_expected_discrimination": 0.9849671059236734,
+              "delta_expected_discrimination": 1.9842964056627403
+            }
+          }
+        },
+        "H3_A_leading": {
+          "off_state": "A",
+          "on_state": "A",
+          "off_evidence": 1.0,
+          "on_evidence": 0.4285714285714286,
+          "delta_evidence": -0.5714285714285714,
+          "off_nci": 1.0,
+          "on_nci": 0.40740740740740744,
+          "delta_nci": -0.5925925925925926,
+          "off_tagged_reactivation": 1.0,
+          "on_tagged_reactivation": 0.75,
+          "delta_tagged_reactivation": -0.25,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": 0.46211715726000974,
+              "on_expected_discrimination": 0.2110649744411714,
+              "delta_expected_discrimination": -0.25105218281883834
+            },
+            "2.0": {
+              "off_expected_discrimination": 0.7615941559557649,
+              "on_expected_discrimination": 0.4041267397578592,
+              "delta_expected_discrimination": -0.3574674161979057
+            },
+            "4.0": {
+              "off_expected_discrimination": 0.9640275800758169,
+              "on_expected_discrimination": 0.694782670314738,
+              "delta_expected_discrimination": -0.26924490976107895
+            },
+            "8.0": {
+              "off_expected_discrimination": 0.999329299739067,
+              "on_expected_discrimination": 0.9371712579368597,
+              "delta_expected_discrimination": -0.0621580418022073
+            }
+          }
+        },
+        "H3_A_trailing": {
+          "off_state": "B",
+          "on_state": "B",
+          "off_evidence": -1.0,
+          "on_evidence": -0.9545454545454546,
+          "delta_evidence": 0.045454545454545414,
+          "off_nci": -1.0,
+          "on_nci": -0.9130434782608696,
+          "delta_nci": 0.08695652173913038,
+          "off_tagged_reactivation": 0.19791666666666666,
+          "on_tagged_reactivation": 0.19270833333333334,
+          "delta_tagged_reactivation": -0.005208333333333315,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": -0.46211715726000974,
+              "on_expected_discrimination": -0.44405677248152764,
+              "delta_expected_discrimination": 0.018060384778482097
+            },
+            "2.0": {
+              "off_expected_discrimination": -0.7615941559557649,
+              "on_expected_discrimination": -0.7418339635443313,
+              "delta_expected_discrimination": 0.019760192411433564
+            },
+            "4.0": {
+              "off_expected_discrimination": -0.9640275800758169,
+              "on_expected_discrimination": -0.9570090018249322,
+              "delta_expected_discrimination": 0.0070185782508846994
+            },
+            "8.0": {
+              "off_expected_discrimination": -0.999329299739067,
+              "on_expected_discrimination": -0.9990353053383588,
+              "delta_expected_discrimination": 0.0002939944007082085
+            }
+          }
+        }
+      },
+      {
+        "seed": 20260829,
+        "H1": {
+          "off_state": "A",
+          "on_state": "A",
+          "off_evidence": 1.0,
+          "on_evidence": 0.8116883116883117,
+          "delta_evidence": -0.18831168831168832,
+          "off_nci": 1.0,
+          "on_nci": 1.0,
+          "delta_nci": 0.0,
+          "off_tagged_reactivation": 1.0,
+          "on_tagged_reactivation": 0.8072916666666666,
+          "delta_tagged_reactivation": -0.19270833333333337,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": 0.46211715726000974,
+              "on_expected_discrimination": 0.38493831310664894,
+              "delta_expected_discrimination": -0.07717884415336079
+            },
+            "2.0": {
+              "off_expected_discrimination": 0.7615941559557649,
+              "on_expected_discrimination": 0.6705205623080887,
+              "delta_expected_discrimination": -0.0910735936476762
+            },
+            "4.0": {
+              "off_expected_discrimination": 0.9640275800758169,
+              "on_expected_discrimination": 0.9251125394721997,
+              "delta_expected_discrimination": -0.03891504060361717
+            },
+            "8.0": {
+              "off_expected_discrimination": 0.999329299739067,
+              "on_expected_discrimination": 0.9969781057306213,
+              "delta_expected_discrimination": -0.002351194008445745
+            }
+          }
+        },
+        "H2": {
+          "off_state": "B",
+          "on_state": "A",
+          "off_evidence": -1.0,
+          "on_evidence": 0.6103896103896105,
+          "delta_evidence": 1.6103896103896105,
+          "off_nci": -1.0,
+          "on_nci": 0.6103896103896105,
+          "delta_nci": 1.6103896103896105,
+          "off_tagged_reactivation": 0.19791666666666666,
+          "on_tagged_reactivation": 0.84375,
+          "delta_tagged_reactivation": 0.6458333333333334,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": -0.46211715726000974,
+              "on_expected_discrimination": 0.29605934470830425,
+              "delta_expected_discrimination": 0.758176501968314
+            },
+            "2.0": {
+              "off_expected_discrimination": -0.7615941559557649,
+              "on_expected_discrimination": 0.5444012974765994,
+              "delta_expected_discrimination": 1.3059954534323643
+            },
+            "4.0": {
+              "off_expected_discrimination": -0.9640275800758169,
+              "on_expected_discrimination": 0.8398838805372157,
+              "delta_expected_discrimination": 1.8039114606130326
+            },
+            "8.0": {
+              "off_expected_discrimination": -0.999329299739067,
+              "on_expected_discrimination": 0.9849671059236734,
+              "delta_expected_discrimination": 1.9842964056627403
+            }
+          }
+        },
+        "H3_A_leading": {
+          "off_state": "A",
+          "on_state": "A",
+          "off_evidence": 1.0,
+          "on_evidence": 0.4285714285714286,
+          "delta_evidence": -0.5714285714285714,
+          "off_nci": 1.0,
+          "on_nci": 0.40740740740740744,
+          "delta_nci": -0.5925925925925926,
+          "off_tagged_reactivation": 1.0,
+          "on_tagged_reactivation": 0.75,
+          "delta_tagged_reactivation": -0.25,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": 0.46211715726000974,
+              "on_expected_discrimination": 0.2110649744411714,
+              "delta_expected_discrimination": -0.25105218281883834
+            },
+            "2.0": {
+              "off_expected_discrimination": 0.7615941559557649,
+              "on_expected_discrimination": 0.4041267397578592,
+              "delta_expected_discrimination": -0.3574674161979057
+            },
+            "4.0": {
+              "off_expected_discrimination": 0.9640275800758169,
+              "on_expected_discrimination": 0.694782670314738,
+              "delta_expected_discrimination": -0.26924490976107895
+            },
+            "8.0": {
+              "off_expected_discrimination": 0.999329299739067,
+              "on_expected_discrimination": 0.9371712579368597,
+              "delta_expected_discrimination": -0.0621580418022073
+            }
+          }
+        },
+        "H3_A_trailing": {
+          "off_state": "B",
+          "on_state": "B",
+          "off_evidence": -1.0,
+          "on_evidence": -0.948051948051948,
+          "delta_evidence": 0.051948051948051965,
+          "off_nci": -1.0,
+          "on_nci": -0.9012345679012346,
+          "delta_nci": 0.09876543209876543,
+          "off_tagged_reactivation": 0.19791666666666666,
+          "on_tagged_reactivation": 0.19791666666666666,
+          "delta_tagged_reactivation": 0.0,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": -0.46211715726000974,
+              "on_expected_discrimination": -0.44144648067770365,
+              "delta_expected_discrimination": 0.02067067658230609
+            },
+            "2.0": {
+              "off_expected_discrimination": -0.7615941559557649,
+              "on_expected_discrimination": -0.7388998554879961,
+              "delta_expected_discrimination": 0.02269430046776877
+            },
+            "4.0": {
+              "off_expected_discrimination": -0.9640275800758169,
+              "on_expected_discrimination": -0.9559026673679503,
+              "delta_expected_discrimination": 0.008124912707866638
+            },
+            "8.0": {
+              "off_expected_discrimination": -0.999329299739067,
+              "on_expected_discrimination": -0.9989838929655188,
+              "delta_expected_discrimination": 0.000345406773548218
+            }
+          }
+        }
+      },
+      {
+        "seed": 20260830,
+        "H1": {
+          "off_state": "A",
+          "on_state": "A",
+          "off_evidence": 1.0,
+          "on_evidence": 0.8051948051948052,
+          "delta_evidence": -0.19480519480519476,
+          "off_nci": 1.0,
+          "on_nci": 1.0,
+          "delta_nci": 0.0,
+          "off_tagged_reactivation": 1.0,
+          "on_tagged_reactivation": 0.8020833333333334,
+          "delta_tagged_reactivation": -0.19791666666666663,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": 0.46211715726000974,
+              "on_expected_discrimination": 0.3821692045540222,
+              "delta_expected_discrimination": -0.07994795270598754
+            },
+            "2.0": {
+              "off_expected_discrimination": 0.7615941559557649,
+              "on_expected_discrimination": 0.6669309433527231,
+              "delta_expected_discrimination": -0.09466321260304178
+            },
+            "4.0": {
+              "off_expected_discrimination": 0.9640275800758169,
+              "on_expected_discrimination": 0.9232175831871263,
+              "delta_expected_discrimination": -0.04080999688869058
+            },
+            "8.0": {
+              "off_expected_discrimination": 0.999329299739067,
+              "on_expected_discrimination": 0.996817231656945,
+              "delta_expected_discrimination": -0.00251206808212201
+            }
+          }
+        },
+        "H2": {
+          "off_state": "B",
+          "on_state": "A",
+          "off_evidence": -1.0,
+          "on_evidence": 0.6103896103896105,
+          "delta_evidence": 1.6103896103896105,
+          "off_nci": -1.0,
+          "on_nci": 0.6103896103896105,
+          "delta_nci": 1.6103896103896105,
+          "off_tagged_reactivation": 0.19791666666666666,
+          "on_tagged_reactivation": 0.84375,
+          "delta_tagged_reactivation": 0.6458333333333334,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": -0.46211715726000974,
+              "on_expected_discrimination": 0.29605934470830425,
+              "delta_expected_discrimination": 0.758176501968314
+            },
+            "2.0": {
+              "off_expected_discrimination": -0.7615941559557649,
+              "on_expected_discrimination": 0.5444012974765994,
+              "delta_expected_discrimination": 1.3059954534323643
+            },
+            "4.0": {
+              "off_expected_discrimination": -0.9640275800758169,
+              "on_expected_discrimination": 0.8398838805372157,
+              "delta_expected_discrimination": 1.8039114606130326
+            },
+            "8.0": {
+              "off_expected_discrimination": -0.999329299739067,
+              "on_expected_discrimination": 0.9849671059236734,
+              "delta_expected_discrimination": 1.9842964056627403
+            }
+          }
+        },
+        "H3_A_leading": {
+          "off_state": "A",
+          "on_state": "A",
+          "off_evidence": 1.0,
+          "on_evidence": 0.4610389610389611,
+          "delta_evidence": -0.5389610389610389,
+          "off_nci": 1.0,
+          "on_nci": 0.44099378881987583,
+          "delta_nci": -0.5590062111801242,
+          "off_tagged_reactivation": 1.0,
+          "on_tagged_reactivation": 0.765625,
+          "delta_tagged_reactivation": -0.234375,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": 0.46211715726000974,
+              "on_expected_discrimination": 0.2265212352361233,
+              "delta_expected_discrimination": -0.23559592202388643
+            },
+            "2.0": {
+              "off_expected_discrimination": 0.7615941559557649,
+              "on_expected_discrimination": 0.4309306147819752,
+              "delta_expected_discrimination": -0.33066354117378965
+            },
+            "4.0": {
+              "off_expected_discrimination": 0.9640275800758169,
+              "on_expected_discrimination": 0.7268789416553123,
+              "delta_expected_discrimination": -0.2371486384205046
+            },
+            "8.0": {
+              "off_expected_discrimination": 0.999329299739067,
+              "on_expected_discrimination": 0.9511924845142171,
+              "delta_expected_discrimination": -0.048136815224849916
+            }
+          }
+        },
+        "H3_A_trailing": {
+          "off_state": "B",
+          "on_state": "B",
+          "off_evidence": -1.0,
+          "on_evidence": -0.9415584415584416,
+          "delta_evidence": 0.058441558441558406,
+          "off_nci": -1.0,
+          "on_nci": -0.8895705521472392,
+          "delta_nci": 0.11042944785276076,
+          "off_tagged_reactivation": 0.19791666666666666,
+          "on_tagged_reactivation": 0.19791666666666666,
+          "delta_tagged_reactivation": 0.0,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": -0.46211715726000974,
+              "on_expected_discrimination": -0.43882869566608307,
+              "delta_expected_discrimination": 0.023288461593926668
+            },
+            "2.0": {
+              "off_expected_discrimination": -0.7615941559557649,
+              "on_expected_discrimination": -0.7359374560857354,
+              "delta_expected_discrimination": 0.025656699870029498
+            },
+            "4.0": {
+              "off_expected_discrimination": -0.9640275800758169,
+              "on_expected_discrimination": -0.9547685204206896,
+              "delta_expected_discrimination": 0.0092590596551273
+            },
+            "8.0": {
+              "off_expected_discrimination": -0.999329299739067,
+              "on_expected_discrimination": -0.9989297420920593,
+              "delta_expected_discrimination": 0.00039955764700772
+            }
+          }
+        }
+      },
+      {
+        "seed": 20260831,
+        "H1": {
+          "off_state": "A",
+          "on_state": "A",
+          "off_evidence": 1.0,
+          "on_evidence": 0.7922077922077922,
+          "delta_evidence": -0.20779220779220775,
+          "off_nci": 1.0,
+          "on_nci": 1.0,
+          "delta_nci": 0.0,
+          "off_tagged_reactivation": 1.0,
+          "on_tagged_reactivation": 0.7916666666666666,
+          "delta_tagged_reactivation": -0.20833333333333337,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": 0.46211715726000974,
+              "on_expected_discrimination": 0.3766103793667801,
+              "delta_expected_discrimination": -0.08550677789322964
+            },
+            "2.0": {
+              "off_expected_discrimination": 0.7615941559557649,
+              "on_expected_discrimination": 0.6596579273572187,
+              "delta_expected_discrimination": -0.10193622859854612
+            },
+            "4.0": {
+              "off_expected_discrimination": 0.9640275800758169,
+              "on_expected_discrimination": 0.9192886869455941,
+              "delta_expected_discrimination": -0.044738893130222834
+            },
+            "8.0": {
+              "off_expected_discrimination": 0.999329299739067,
+              "on_expected_discrimination": 0.9964693808494924,
+              "delta_expected_discrimination": -0.0028599188895745975
+            }
+          }
+        },
+        "H2": {
+          "off_state": "B",
+          "on_state": "A",
+          "off_evidence": -1.0,
+          "on_evidence": 0.6103896103896105,
+          "delta_evidence": 1.6103896103896105,
+          "off_nci": -1.0,
+          "on_nci": 0.6103896103896105,
+          "delta_nci": 1.6103896103896105,
+          "off_tagged_reactivation": 0.19791666666666666,
+          "on_tagged_reactivation": 0.84375,
+          "delta_tagged_reactivation": 0.6458333333333334,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": -0.46211715726000974,
+              "on_expected_discrimination": 0.29605934470830425,
+              "delta_expected_discrimination": 0.758176501968314
+            },
+            "2.0": {
+              "off_expected_discrimination": -0.7615941559557649,
+              "on_expected_discrimination": 0.5444012974765994,
+              "delta_expected_discrimination": 1.3059954534323643
+            },
+            "4.0": {
+              "off_expected_discrimination": -0.9640275800758169,
+              "on_expected_discrimination": 0.8398838805372157,
+              "delta_expected_discrimination": 1.8039114606130326
+            },
+            "8.0": {
+              "off_expected_discrimination": -0.999329299739067,
+              "on_expected_discrimination": 0.9849671059236734,
+              "delta_expected_discrimination": 1.9842964056627403
+            }
+          }
+        },
+        "H3_A_leading": {
+          "off_state": "A",
+          "on_state": "A",
+          "off_evidence": 1.0,
+          "on_evidence": 0.4545454545454546,
+          "delta_evidence": -0.5454545454545454,
+          "off_nci": 1.0,
+          "on_nci": 0.4320987654320988,
+          "delta_nci": -0.5679012345679012,
+          "off_tagged_reactivation": 1.0,
+          "on_tagged_reactivation": 0.7604166666666666,
+          "delta_tagged_reactivation": -0.23958333333333337,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": 0.46211715726000974,
+              "on_expected_discrimination": 0.22343882281432279,
+              "delta_expected_discrimination": -0.23867833444568695
+            },
+            "2.0": {
+              "off_expected_discrimination": 0.7615941559557649,
+              "on_expected_discrimination": 0.4256281972349948,
+              "delta_expected_discrimination": -0.33596595872077006
+            },
+            "4.0": {
+              "off_expected_discrimination": 0.9640275800758169,
+              "on_expected_discrimination": 0.7206956331664798,
+              "delta_expected_discrimination": -0.24333194690933713
+            },
+            "8.0": {
+              "off_expected_discrimination": 0.999329299739067,
+              "on_expected_discrimination": 0.948656827300346,
+              "delta_expected_discrimination": -0.05067247243872108
+            }
+          }
+        },
+        "H3_A_trailing": {
+          "off_state": "B",
+          "on_state": "B",
+          "off_evidence": -1.0,
+          "on_evidence": -0.948051948051948,
+          "delta_evidence": 0.051948051948051965,
+          "off_nci": -1.0,
+          "on_nci": -0.9012345679012346,
+          "delta_nci": 0.09876543209876543,
+          "off_tagged_reactivation": 0.19791666666666666,
+          "on_tagged_reactivation": 0.19270833333333334,
+          "delta_tagged_reactivation": -0.005208333333333315,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": -0.46211715726000974,
+              "on_expected_discrimination": -0.44144648067770365,
+              "delta_expected_discrimination": 0.02067067658230609
+            },
+            "2.0": {
+              "off_expected_discrimination": -0.7615941559557649,
+              "on_expected_discrimination": -0.7388998554879961,
+              "delta_expected_discrimination": 0.02269430046776877
+            },
+            "4.0": {
+              "off_expected_discrimination": -0.9640275800758169,
+              "on_expected_discrimination": -0.9559026673679503,
+              "delta_expected_discrimination": 0.008124912707866638
+            },
+            "8.0": {
+              "off_expected_discrimination": -0.999329299739067,
+              "on_expected_discrimination": -0.9989838929655188,
+              "delta_expected_discrimination": 0.000345406773548218
+            }
+          }
+        }
+      },
+      {
+        "seed": 20260832,
+        "H1": {
+          "off_state": "A",
+          "on_state": "A",
+          "off_evidence": 1.0,
+          "on_evidence": 0.7987012987012987,
+          "delta_evidence": -0.2012987012987013,
+          "off_nci": 1.0,
+          "on_nci": 1.0,
+          "delta_nci": 0.0,
+          "off_tagged_reactivation": 1.0,
+          "on_tagged_reactivation": 0.7916666666666666,
+          "delta_tagged_reactivation": -0.20833333333333337,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": 0.46211715726000974,
+              "on_expected_discrimination": 0.37939321561811595,
+              "delta_expected_discrimination": -0.08272394164189378
+            },
+            "2.0": {
+              "off_expected_discrimination": 0.7615941559557649,
+              "on_expected_discrimination": 0.6633100983327314,
+              "delta_expected_discrimination": -0.0982840576230335
+            },
+            "4.0": {
+              "off_expected_discrimination": 0.9640275800758169,
+              "on_expected_discrimination": 0.9212766376432162,
+              "delta_expected_discrimination": -0.04275094243260069
+            },
+            "8.0": {
+              "off_expected_discrimination": 0.999329299739067,
+              "on_expected_discrimination": 0.9966478076402583,
+              "delta_expected_discrimination": -0.0026814920988087465
+            }
+          }
+        },
+        "H2": {
+          "off_state": "B",
+          "on_state": "A",
+          "off_evidence": -1.0,
+          "on_evidence": 0.6103896103896105,
+          "delta_evidence": 1.6103896103896105,
+          "off_nci": -1.0,
+          "on_nci": 0.6103896103896105,
+          "delta_nci": 1.6103896103896105,
+          "off_tagged_reactivation": 0.19791666666666666,
+          "on_tagged_reactivation": 0.84375,
+          "delta_tagged_reactivation": 0.6458333333333334,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": -0.46211715726000974,
+              "on_expected_discrimination": 0.29605934470830425,
+              "delta_expected_discrimination": 0.758176501968314
+            },
+            "2.0": {
+              "off_expected_discrimination": -0.7615941559557649,
+              "on_expected_discrimination": 0.5444012974765994,
+              "delta_expected_discrimination": 1.3059954534323643
+            },
+            "4.0": {
+              "off_expected_discrimination": -0.9640275800758169,
+              "on_expected_discrimination": 0.8398838805372157,
+              "delta_expected_discrimination": 1.8039114606130326
+            },
+            "8.0": {
+              "off_expected_discrimination": -0.999329299739067,
+              "on_expected_discrimination": 0.9849671059236734,
+              "delta_expected_discrimination": 1.9842964056627403
+            }
+          }
+        },
+        "H3_A_leading": {
+          "off_state": "A",
+          "on_state": "A",
+          "off_evidence": 1.0,
+          "on_evidence": 0.4480519480519481,
+          "delta_evidence": -0.551948051948052,
+          "off_nci": 1.0,
+          "on_nci": 0.4233128834355828,
+          "delta_nci": -0.5766871165644172,
+          "off_tagged_reactivation": 1.0,
+          "on_tagged_reactivation": 0.7552083333333334,
+          "delta_tagged_reactivation": -0.24479166666666663,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": 0.46211715726000974,
+              "on_expected_discrimination": 0.22035193488484545,
+              "delta_expected_discrimination": -0.2417652223751643
+            },
+            "2.0": {
+              "off_expected_discrimination": 0.7615941559557649,
+              "on_expected_discrimination": 0.4202963890209776,
+              "delta_expected_discrimination": -0.34129776693478725
+            },
+            "4.0": {
+              "off_expected_discrimination": 0.9640275800758169,
+              "on_expected_discrimination": 0.7143954900898771,
+              "delta_expected_discrimination": -0.24963208998593978
+            },
+            "8.0": {
+              "off_expected_discrimination": 0.999329299739067,
+              "on_expected_discrimination": 0.9459930833731142,
+              "delta_expected_discrimination": -0.05333621636595287
+            }
+          }
+        },
+        "H3_A_trailing": {
+          "off_state": "B",
+          "on_state": "B",
+          "off_evidence": -1.0,
+          "on_evidence": -0.9675324675324676,
+          "delta_evidence": 0.03246753246753242,
+          "off_nci": -1.0,
+          "on_nci": -0.9371069182389937,
+          "delta_nci": 0.06289308176100628,
+          "off_tagged_reactivation": 0.19791666666666666,
+          "on_tagged_reactivation": 0.1875,
+          "delta_tagged_reactivation": -0.010416666666666657,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": -0.46211715726000974,
+              "on_expected_discrimination": -0.4492547862381563,
+              "delta_expected_discrimination": 0.012862371021853447
+            },
+            "2.0": {
+              "off_expected_discrimination": -0.7615941559557649,
+              "on_expected_discrimination": -0.7476179450766349,
+              "delta_expected_discrimination": 0.013976210879129924
+            },
+            "4.0": {
+              "off_expected_discrimination": -0.9640275800758169,
+              "on_expected_discrimination": -0.9591408236748908,
+              "delta_expected_discrimination": 0.004886756400926062
+            },
+            "8.0": {
+              "off_expected_discrimination": -0.999329299739067,
+              "on_expected_discrimination": -0.9991304610451335,
+              "delta_expected_discrimination": 0.00019883869393355624
+            }
+          }
+        }
+      },
+      {
+        "seed": 20260833,
+        "H1": {
+          "off_state": "A",
+          "on_state": "A",
+          "off_evidence": 1.0,
+          "on_evidence": 0.8246753246753247,
+          "delta_evidence": -0.17532467532467533,
+          "off_nci": 1.0,
+          "on_nci": 1.0,
+          "delta_nci": 0.0,
+          "off_tagged_reactivation": 1.0,
+          "on_tagged_reactivation": 0.8020833333333334,
+          "delta_tagged_reactivation": -0.19791666666666663,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": 0.46211715726000974,
+              "on_expected_discrimination": 0.3904557590564924,
+              "delta_expected_discrimination": -0.07166139820351736
+            },
+            "2.0": {
+              "off_expected_discrimination": 0.7615941559557649,
+              "on_expected_discrimination": 0.6776065390294825,
+              "delta_expected_discrimination": -0.08398761692628232
+            },
+            "4.0": {
+              "off_expected_discrimination": 0.9640275800758169,
+              "on_expected_discrimination": 0.9287684615088432,
+              "delta_expected_discrimination": -0.035259118566973724
+            },
+            "8.0": {
+              "off_expected_discrimination": 0.999329299739067,
+              "on_expected_discrimination": 0.997275903304256,
+              "delta_expected_discrimination": -0.002053396434811061
+            }
+          }
+        },
+        "H2": {
+          "off_state": "B",
+          "on_state": "A",
+          "off_evidence": -1.0,
+          "on_evidence": 0.6103896103896105,
+          "delta_evidence": 1.6103896103896105,
+          "off_nci": -1.0,
+          "on_nci": 0.6103896103896105,
+          "delta_nci": 1.6103896103896105,
+          "off_tagged_reactivation": 0.19791666666666666,
+          "on_tagged_reactivation": 0.84375,
+          "delta_tagged_reactivation": 0.6458333333333334,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": -0.46211715726000974,
+              "on_expected_discrimination": 0.29605934470830425,
+              "delta_expected_discrimination": 0.758176501968314
+            },
+            "2.0": {
+              "off_expected_discrimination": -0.7615941559557649,
+              "on_expected_discrimination": 0.5444012974765994,
+              "delta_expected_discrimination": 1.3059954534323643
+            },
+            "4.0": {
+              "off_expected_discrimination": -0.9640275800758169,
+              "on_expected_discrimination": 0.8398838805372157,
+              "delta_expected_discrimination": 1.8039114606130326
+            },
+            "8.0": {
+              "off_expected_discrimination": -0.999329299739067,
+              "on_expected_discrimination": 0.9849671059236734,
+              "delta_expected_discrimination": 1.9842964056627403
+            }
+          }
+        },
+        "H3_A_leading": {
+          "off_state": "A",
+          "on_state": "A",
+          "off_evidence": 1.0,
+          "on_evidence": 0.49350649350649356,
+          "delta_evidence": -0.5064935064935064,
+          "off_nci": 1.0,
+          "on_nci": 0.46341463414634143,
+          "delta_nci": -0.5365853658536586,
+          "off_tagged_reactivation": 1.0,
+          "on_tagged_reactivation": 0.7708333333333334,
+          "delta_tagged_reactivation": -0.22916666666666663,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": 0.46211715726000974,
+              "on_expected_discrimination": 0.2418642480327754,
+              "delta_expected_discrimination": -0.22025290922723434
+            },
+            "2.0": {
+              "off_expected_discrimination": 0.7615941559557649,
+              "on_expected_discrimination": 0.45699505558948955,
+              "delta_expected_discrimination": -0.3045991003662753
+            },
+            "4.0": {
+              "off_expected_discrimination": 0.9640275800758169,
+              "on_expected_discrimination": 0.7560857708917013,
+              "delta_expected_discrimination": -0.20794180918411564
+            },
+            "8.0": {
+              "off_expected_discrimination": 0.999329299739067,
+              "on_expected_discrimination": 0.9621457976536862,
+              "delta_expected_discrimination": -0.03718350208538079
+            }
+          }
+        },
+        "H3_A_trailing": {
+          "off_state": "B",
+          "on_state": "B",
+          "off_evidence": -1.0,
+          "on_evidence": -0.9415584415584416,
+          "delta_evidence": 0.058441558441558406,
+          "off_nci": -1.0,
+          "on_nci": -0.8895705521472392,
+          "delta_nci": 0.11042944785276076,
+          "off_tagged_reactivation": 0.19791666666666666,
+          "on_tagged_reactivation": 0.19270833333333334,
+          "delta_tagged_reactivation": -0.005208333333333315,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": -0.46211715726000974,
+              "on_expected_discrimination": -0.43882869566608307,
+              "delta_expected_discrimination": 0.023288461593926668
+            },
+            "2.0": {
+              "off_expected_discrimination": -0.7615941559557649,
+              "on_expected_discrimination": -0.7359374560857354,
+              "delta_expected_discrimination": 0.025656699870029498
+            },
+            "4.0": {
+              "off_expected_discrimination": -0.9640275800758169,
+              "on_expected_discrimination": -0.9547685204206896,
+              "delta_expected_discrimination": 0.0092590596551273
+            },
+            "8.0": {
+              "off_expected_discrimination": -0.999329299739067,
+              "on_expected_discrimination": -0.9989297420920593,
+              "delta_expected_discrimination": 0.00039955764700772
+            }
+          }
+        }
+      },
+      {
+        "seed": 20260834,
+        "H1": {
+          "off_state": "A",
+          "on_state": "A",
+          "off_evidence": 1.0,
+          "on_evidence": 0.8051948051948052,
+          "delta_evidence": -0.19480519480519476,
+          "off_nci": 1.0,
+          "on_nci": 1.0,
+          "delta_nci": 0.0,
+          "off_tagged_reactivation": 1.0,
+          "on_tagged_reactivation": 0.8020833333333334,
+          "delta_tagged_reactivation": -0.19791666666666663,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": 0.46211715726000974,
+              "on_expected_discrimination": 0.3821692045540222,
+              "delta_expected_discrimination": -0.07994795270598754
+            },
+            "2.0": {
+              "off_expected_discrimination": 0.7615941559557649,
+              "on_expected_discrimination": 0.6669309433527231,
+              "delta_expected_discrimination": -0.09466321260304178
+            },
+            "4.0": {
+              "off_expected_discrimination": 0.9640275800758169,
+              "on_expected_discrimination": 0.9232175831871263,
+              "delta_expected_discrimination": -0.04080999688869058
+            },
+            "8.0": {
+              "off_expected_discrimination": 0.999329299739067,
+              "on_expected_discrimination": 0.996817231656945,
+              "delta_expected_discrimination": -0.00251206808212201
+            }
+          }
+        },
+        "H2": {
+          "off_state": "B",
+          "on_state": "A",
+          "off_evidence": -1.0,
+          "on_evidence": 0.6103896103896105,
+          "delta_evidence": 1.6103896103896105,
+          "off_nci": -1.0,
+          "on_nci": 0.6103896103896105,
+          "delta_nci": 1.6103896103896105,
+          "off_tagged_reactivation": 0.19791666666666666,
+          "on_tagged_reactivation": 0.84375,
+          "delta_tagged_reactivation": 0.6458333333333334,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": -0.46211715726000974,
+              "on_expected_discrimination": 0.29605934470830425,
+              "delta_expected_discrimination": 0.758176501968314
+            },
+            "2.0": {
+              "off_expected_discrimination": -0.7615941559557649,
+              "on_expected_discrimination": 0.5444012974765994,
+              "delta_expected_discrimination": 1.3059954534323643
+            },
+            "4.0": {
+              "off_expected_discrimination": -0.9640275800758169,
+              "on_expected_discrimination": 0.8398838805372157,
+              "delta_expected_discrimination": 1.8039114606130326
+            },
+            "8.0": {
+              "off_expected_discrimination": -0.999329299739067,
+              "on_expected_discrimination": 0.9849671059236734,
+              "delta_expected_discrimination": 1.9842964056627403
+            }
+          }
+        },
+        "H3_A_leading": {
+          "off_state": "A",
+          "on_state": "A",
+          "off_evidence": 1.0,
+          "on_evidence": 0.4415584415584416,
+          "delta_evidence": -0.5584415584415584,
+          "off_nci": 1.0,
+          "on_nci": 0.4146341463414634,
+          "delta_nci": -0.5853658536585367,
+          "off_tagged_reactivation": 1.0,
+          "on_tagged_reactivation": 0.75,
+          "delta_tagged_reactivation": -0.25,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": 0.46211715726000974,
+              "on_expected_discrimination": 0.21726062691433867,
+              "delta_expected_discrimination": -0.24485653034567106
+            },
+            "2.0": {
+              "off_expected_discrimination": 0.7615941559557649,
+              "on_expected_discrimination": 0.41493539845924027,
+              "delta_expected_discrimination": -0.3466587574965246
+            },
+            "4.0": {
+              "off_expected_discrimination": 0.9640275800758169,
+              "on_expected_discrimination": 0.7079773551997706,
+              "delta_expected_discrimination": -0.25605022487604634
+            },
+            "8.0": {
+              "off_expected_discrimination": 0.999329299739067,
+              "on_expected_discrimination": 0.9431951698728678,
+              "delta_expected_discrimination": -0.056134129866199256
+            }
+          }
+        },
+        "H3_A_trailing": {
+          "off_state": "B",
+          "on_state": "B",
+          "off_evidence": -1.0,
+          "on_evidence": -0.9415584415584416,
+          "delta_evidence": 0.058441558441558406,
+          "off_nci": -1.0,
+          "on_nci": -0.8895705521472392,
+          "delta_nci": 0.11042944785276076,
+          "off_tagged_reactivation": 0.19791666666666666,
+          "on_tagged_reactivation": 0.19270833333333334,
+          "delta_tagged_reactivation": -0.005208333333333315,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": -0.46211715726000974,
+              "on_expected_discrimination": -0.43882869566608307,
+              "delta_expected_discrimination": 0.023288461593926668
+            },
+            "2.0": {
+              "off_expected_discrimination": -0.7615941559557649,
+              "on_expected_discrimination": -0.7359374560857354,
+              "delta_expected_discrimination": 0.025656699870029498
+            },
+            "4.0": {
+              "off_expected_discrimination": -0.9640275800758169,
+              "on_expected_discrimination": -0.9547685204206896,
+              "delta_expected_discrimination": 0.0092590596551273
+            },
+            "8.0": {
+              "off_expected_discrimination": -0.999329299739067,
+              "on_expected_discrimination": -0.9989297420920593,
+              "delta_expected_discrimination": 0.00039955764700772
+            }
+          }
+        }
+      },
+      {
+        "seed": 20260835,
+        "H1": {
+          "off_state": "A",
+          "on_state": "A",
+          "off_evidence": 1.0,
+          "on_evidence": 0.7857142857142857,
+          "delta_evidence": -0.2142857142857143,
+          "off_nci": 1.0,
+          "on_nci": 1.0,
+          "delta_nci": 0.0,
+          "off_tagged_reactivation": 1.0,
+          "on_tagged_reactivation": 0.7864583333333334,
+          "delta_tagged_reactivation": -0.21354166666666663,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": 0.46211715726000974,
+              "on_expected_discrimination": 0.3738207293206251,
+              "delta_expected_discrimination": -0.08829642793938464
+            },
+            "2.0": {
+              "off_expected_discrimination": 0.7615941559557649,
+              "on_expected_discrimination": 0.6559743341284774,
+              "delta_expected_discrimination": -0.10561982182728746
+            },
+            "4.0": {
+              "off_expected_discrimination": 0.9640275800758169,
+              "on_expected_discrimination": 0.9172526978798492,
+              "delta_expected_discrimination": -0.046774882195967704
+            },
+            "8.0": {
+              "off_expected_discrimination": 0.999329299739067,
+              "on_expected_discrimination": 0.9962814746419252,
+              "delta_expected_discrimination": -0.003047825097141854
+            }
+          }
+        },
+        "H2": {
+          "off_state": "B",
+          "on_state": "A",
+          "off_evidence": -1.0,
+          "on_evidence": 0.6103896103896105,
+          "delta_evidence": 1.6103896103896105,
+          "off_nci": -1.0,
+          "on_nci": 0.6103896103896105,
+          "delta_nci": 1.6103896103896105,
+          "off_tagged_reactivation": 0.19791666666666666,
+          "on_tagged_reactivation": 0.84375,
+          "delta_tagged_reactivation": 0.6458333333333334,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": -0.46211715726000974,
+              "on_expected_discrimination": 0.29605934470830425,
+              "delta_expected_discrimination": 0.758176501968314
+            },
+            "2.0": {
+              "off_expected_discrimination": -0.7615941559557649,
+              "on_expected_discrimination": 0.5444012974765994,
+              "delta_expected_discrimination": 1.3059954534323643
+            },
+            "4.0": {
+              "off_expected_discrimination": -0.9640275800758169,
+              "on_expected_discrimination": 0.8398838805372157,
+              "delta_expected_discrimination": 1.8039114606130326
+            },
+            "8.0": {
+              "off_expected_discrimination": -0.999329299739067,
+              "on_expected_discrimination": 0.9849671059236734,
+              "delta_expected_discrimination": 1.9842964056627403
+            }
+          }
+        },
+        "H3_A_leading": {
+          "off_state": "A",
+          "on_state": "A",
+          "off_evidence": 1.0,
+          "on_evidence": 0.45454545454545453,
+          "delta_evidence": -0.5454545454545454,
+          "off_nci": 1.0,
+          "on_nci": 0.426829268292683,
+          "delta_nci": -0.573170731707317,
+          "off_tagged_reactivation": 1.0,
+          "on_tagged_reactivation": 0.7552083333333334,
+          "delta_tagged_reactivation": -0.24479166666666663,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": 0.46211715726000974,
+              "on_expected_discrimination": 0.22343882281432276,
+              "delta_expected_discrimination": -0.23867833444568698
+            },
+            "2.0": {
+              "off_expected_discrimination": 0.7615941559557649,
+              "on_expected_discrimination": 0.42562819723499473,
+              "delta_expected_discrimination": -0.3359659587207701
+            },
+            "4.0": {
+              "off_expected_discrimination": 0.9640275800758169,
+              "on_expected_discrimination": 0.7206956331664798,
+              "delta_expected_discrimination": -0.24333194690933713
+            },
+            "8.0": {
+              "off_expected_discrimination": 0.999329299739067,
+              "on_expected_discrimination": 0.948656827300346,
+              "delta_expected_discrimination": -0.05067247243872108
+            }
+          }
+        },
+        "H3_A_trailing": {
+          "off_state": "B",
+          "on_state": "B",
+          "off_evidence": -1.0,
+          "on_evidence": -0.948051948051948,
+          "delta_evidence": 0.051948051948051965,
+          "off_nci": -1.0,
+          "on_nci": -0.9012345679012346,
+          "delta_nci": 0.09876543209876543,
+          "off_tagged_reactivation": 0.19791666666666666,
+          "on_tagged_reactivation": 0.1875,
+          "delta_tagged_reactivation": -0.010416666666666657,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": -0.46211715726000974,
+              "on_expected_discrimination": -0.44144648067770365,
+              "delta_expected_discrimination": 0.02067067658230609
+            },
+            "2.0": {
+              "off_expected_discrimination": -0.7615941559557649,
+              "on_expected_discrimination": -0.7388998554879961,
+              "delta_expected_discrimination": 0.02269430046776877
+            },
+            "4.0": {
+              "off_expected_discrimination": -0.9640275800758169,
+              "on_expected_discrimination": -0.9559026673679503,
+              "delta_expected_discrimination": 0.008124912707866638
+            },
+            "8.0": {
+              "off_expected_discrimination": -0.999329299739067,
+              "on_expected_discrimination": -0.9989838929655188,
+              "delta_expected_discrimination": 0.000345406773548218
+            }
+          }
+        }
+      },
+      {
+        "seed": 20260836,
+        "H1": {
+          "off_state": "A",
+          "on_state": "A",
+          "off_evidence": 1.0,
+          "on_evidence": 0.7987012987012987,
+          "delta_evidence": -0.2012987012987013,
+          "off_nci": 1.0,
+          "on_nci": 1.0,
+          "delta_nci": 0.0,
+          "off_tagged_reactivation": 1.0,
+          "on_tagged_reactivation": 0.7916666666666666,
+          "delta_tagged_reactivation": -0.20833333333333337,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": 0.46211715726000974,
+              "on_expected_discrimination": 0.37939321561811595,
+              "delta_expected_discrimination": -0.08272394164189378
+            },
+            "2.0": {
+              "off_expected_discrimination": 0.7615941559557649,
+              "on_expected_discrimination": 0.6633100983327314,
+              "delta_expected_discrimination": -0.0982840576230335
+            },
+            "4.0": {
+              "off_expected_discrimination": 0.9640275800758169,
+              "on_expected_discrimination": 0.9212766376432162,
+              "delta_expected_discrimination": -0.04275094243260069
+            },
+            "8.0": {
+              "off_expected_discrimination": 0.999329299739067,
+              "on_expected_discrimination": 0.9966478076402583,
+              "delta_expected_discrimination": -0.0026814920988087465
+            }
+          }
+        },
+        "H2": {
+          "off_state": "B",
+          "on_state": "A",
+          "off_evidence": -1.0,
+          "on_evidence": 0.6103896103896105,
+          "delta_evidence": 1.6103896103896105,
+          "off_nci": -1.0,
+          "on_nci": 0.6103896103896105,
+          "delta_nci": 1.6103896103896105,
+          "off_tagged_reactivation": 0.19791666666666666,
+          "on_tagged_reactivation": 0.84375,
+          "delta_tagged_reactivation": 0.6458333333333334,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": -0.46211715726000974,
+              "on_expected_discrimination": 0.29605934470830425,
+              "delta_expected_discrimination": 0.758176501968314
+            },
+            "2.0": {
+              "off_expected_discrimination": -0.7615941559557649,
+              "on_expected_discrimination": 0.5444012974765994,
+              "delta_expected_discrimination": 1.3059954534323643
+            },
+            "4.0": {
+              "off_expected_discrimination": -0.9640275800758169,
+              "on_expected_discrimination": 0.8398838805372157,
+              "delta_expected_discrimination": 1.8039114606130326
+            },
+            "8.0": {
+              "off_expected_discrimination": -0.999329299739067,
+              "on_expected_discrimination": 0.9849671059236734,
+              "delta_expected_discrimination": 1.9842964056627403
+            }
+          }
+        },
+        "H3_A_leading": {
+          "off_state": "A",
+          "on_state": "A",
+          "off_evidence": 1.0,
+          "on_evidence": 0.4740259740259741,
+          "delta_evidence": -0.525974025974026,
+          "off_nci": 1.0,
+          "on_nci": 0.44785276073619634,
+          "delta_nci": -0.5521472392638036,
+          "off_tagged_reactivation": 1.0,
+          "on_tagged_reactivation": 0.765625,
+          "delta_tagged_reactivation": -0.234375,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": 0.46211715726000974,
+              "on_expected_discrimination": 0.23267241343937806,
+              "delta_expected_discrimination": -0.22944474382063168
+            },
+            "2.0": {
+              "off_expected_discrimination": 0.7615941559557649,
+              "on_expected_discrimination": 0.4414464806777037,
+              "delta_expected_discrimination": -0.32014767527806115
+            },
+            "4.0": {
+              "off_expected_discrimination": 0.9640275800758169,
+              "on_expected_discrimination": 0.7388998554879961,
+              "delta_expected_discrimination": -0.22512772458782082
+            },
+            "8.0": {
+              "off_expected_discrimination": 0.999329299739067,
+              "on_expected_discrimination": 0.9559026673679503,
+              "delta_expected_discrimination": -0.04342663237111677
+            }
+          }
+        },
+        "H3_A_trailing": {
+          "off_state": "B",
+          "on_state": "B",
+          "off_evidence": -1.0,
+          "on_evidence": -0.948051948051948,
+          "delta_evidence": 0.051948051948051965,
+          "off_nci": -1.0,
+          "on_nci": -0.9012345679012346,
+          "delta_nci": 0.09876543209876543,
+          "off_tagged_reactivation": 0.19791666666666666,
+          "on_tagged_reactivation": 0.1875,
+          "delta_tagged_reactivation": -0.010416666666666657,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": -0.46211715726000974,
+              "on_expected_discrimination": -0.44144648067770365,
+              "delta_expected_discrimination": 0.02067067658230609
+            },
+            "2.0": {
+              "off_expected_discrimination": -0.7615941559557649,
+              "on_expected_discrimination": -0.7388998554879961,
+              "delta_expected_discrimination": 0.02269430046776877
+            },
+            "4.0": {
+              "off_expected_discrimination": -0.9640275800758169,
+              "on_expected_discrimination": -0.9559026673679503,
+              "delta_expected_discrimination": 0.008124912707866638
+            },
+            "8.0": {
+              "off_expected_discrimination": -0.999329299739067,
+              "on_expected_discrimination": -0.9989838929655188,
+              "delta_expected_discrimination": 0.000345406773548218
+            }
+          }
+        }
+      },
+      {
+        "seed": 20260837,
+        "H1": {
+          "off_state": "A",
+          "on_state": "A",
+          "off_evidence": 1.0,
+          "on_evidence": 0.7792207792207793,
+          "delta_evidence": -0.22077922077922074,
+          "off_nci": 1.0,
+          "on_nci": 1.0,
+          "delta_nci": 0.0,
+          "off_tagged_reactivation": 1.0,
+          "on_tagged_reactivation": 0.7916666666666666,
+          "delta_tagged_reactivation": -0.20833333333333337,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": 0.46211715726000974,
+              "on_expected_discrimination": 0.3710242994526192,
+              "delta_expected_discrimination": -0.09109285780739051
+            },
+            "2.0": {
+              "off_expected_discrimination": 0.7615941559557649,
+              "on_expected_discrimination": 0.6522592260298474,
+              "delta_expected_discrimination": -0.10933492992591742
+            },
+            "4.0": {
+              "off_expected_discrimination": 0.9640275800758169,
+              "on_expected_discrimination": 0.9151676198871733,
+              "delta_expected_discrimination": -0.04885996018864358
+            },
+            "8.0": {
+              "off_expected_discrimination": 0.999329299739067,
+              "on_expected_discrimination": 0.9960835873298368,
+              "delta_expected_discrimination": -0.003245712409230217
+            }
+          }
+        },
+        "H2": {
+          "off_state": "B",
+          "on_state": "A",
+          "off_evidence": -1.0,
+          "on_evidence": 0.6103896103896105,
+          "delta_evidence": 1.6103896103896105,
+          "off_nci": -1.0,
+          "on_nci": 0.6103896103896105,
+          "delta_nci": 1.6103896103896105,
+          "off_tagged_reactivation": 0.19791666666666666,
+          "on_tagged_reactivation": 0.84375,
+          "delta_tagged_reactivation": 0.6458333333333334,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": -0.46211715726000974,
+              "on_expected_discrimination": 0.29605934470830425,
+              "delta_expected_discrimination": 0.758176501968314
+            },
+            "2.0": {
+              "off_expected_discrimination": -0.7615941559557649,
+              "on_expected_discrimination": 0.5444012974765994,
+              "delta_expected_discrimination": 1.3059954534323643
+            },
+            "4.0": {
+              "off_expected_discrimination": -0.9640275800758169,
+              "on_expected_discrimination": 0.8398838805372157,
+              "delta_expected_discrimination": 1.8039114606130326
+            },
+            "8.0": {
+              "off_expected_discrimination": -0.999329299739067,
+              "on_expected_discrimination": 0.9849671059236734,
+              "delta_expected_discrimination": 1.9842964056627403
+            }
+          }
+        },
+        "H3_A_leading": {
+          "off_state": "A",
+          "on_state": "A",
+          "off_evidence": 1.0,
+          "on_evidence": 0.4155844155844156,
+          "delta_evidence": -0.5844155844155844,
+          "off_nci": 1.0,
+          "on_nci": 0.4000000000000001,
+          "delta_nci": -0.5999999999999999,
+          "off_tagged_reactivation": 1.0,
+          "on_tagged_reactivation": 0.75,
+          "delta_tagged_reactivation": -0.25,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": 0.46211715726000974,
+              "on_expected_discrimination": 0.20485231597435477,
+              "delta_expected_discrimination": -0.25726484128565497
+            },
+            "2.0": {
+              "off_expected_discrimination": 0.7615941559557649,
+              "on_expected_discrimination": 0.39320403258465203,
+              "delta_expected_discrimination": -0.3683901233711128
+            },
+            "4.0": {
+              "off_expected_discrimination": 0.9640275800758169,
+              "on_expected_discrimination": 0.6811031137570319,
+              "delta_expected_discrimination": -0.282924466318785
+            },
+            "8.0": {
+              "off_expected_discrimination": 0.999329299739067,
+              "on_expected_discrimination": 0.9305313728964284,
+              "delta_expected_discrimination": -0.06879792684263863
+            }
+          }
+        },
+        "H3_A_trailing": {
+          "off_state": "B",
+          "on_state": "B",
+          "off_evidence": -1.0,
+          "on_evidence": -0.961038961038961,
+          "delta_evidence": 0.038961038961038974,
+          "off_nci": -1.0,
+          "on_nci": -0.925,
+          "delta_nci": 0.07499999999999996,
+          "off_tagged_reactivation": 0.19791666666666666,
+          "on_tagged_reactivation": 0.19791666666666666,
+          "delta_tagged_reactivation": 0.0,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": -0.46211715726000974,
+              "on_expected_discrimination": -0.4466595484090612,
+              "delta_expected_discrimination": 0.015457608850948545
+            },
+            "2.0": {
+              "off_expected_discrimination": -0.7615941559557649,
+              "on_expected_discrimination": -0.7447399397050122,
+              "delta_expected_discrimination": 0.016854216250752674
+            },
+            "4.0": {
+              "off_expected_discrimination": -0.9640275800758169,
+              "on_expected_discrimination": -0.9580881748179859,
+              "delta_expected_discrimination": 0.0059394052578309875
+            },
+            "8.0": {
+              "off_expected_discrimination": -0.999329299739067,
+              "on_expected_discrimination": -0.9990841175707301,
+              "delta_expected_discrimination": 0.0002451821683369104
+            }
+          }
+        }
+      },
+      {
+        "seed": 20260838,
+        "H1": {
+          "off_state": "A",
+          "on_state": "A",
+          "off_evidence": 1.0,
+          "on_evidence": 0.5844155844155844,
+          "delta_evidence": -0.4155844155844156,
+          "off_nci": 1.0,
+          "on_nci": 0.5625,
+          "delta_nci": -0.4375,
+          "off_tagged_reactivation": 1.0,
+          "on_tagged_reactivation": 0.8177083333333334,
+          "delta_tagged_reactivation": -0.18229166666666663,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": 0.46211715726000974,
+              "on_expected_discrimination": 0.2841655962371393,
+              "delta_expected_discrimination": -0.17795156102287046
+            },
+            "2.0": {
+              "off_expected_discrimination": 0.7615941559557649,
+              "on_expected_discrimination": 0.5258673580431067,
+              "delta_expected_discrimination": -0.23572679791265816
+            },
+            "4.0": {
+              "off_expected_discrimination": 0.9640275800758169,
+              "on_expected_discrimination": 0.8238971106597115,
+              "delta_expected_discrimination": -0.1401304694161054
+            },
+            "8.0": {
+              "off_expected_discrimination": 0.999329299739067,
+              "on_expected_discrimination": 0.9815272167596621,
+              "delta_expected_discrimination": -0.017802082979404887
+            }
+          }
+        },
+        "H2": {
+          "off_state": "B",
+          "on_state": "A",
+          "off_evidence": -1.0,
+          "on_evidence": 0.6103896103896105,
+          "delta_evidence": 1.6103896103896105,
+          "off_nci": -1.0,
+          "on_nci": 0.6103896103896105,
+          "delta_nci": 1.6103896103896105,
+          "off_tagged_reactivation": 0.19791666666666666,
+          "on_tagged_reactivation": 0.84375,
+          "delta_tagged_reactivation": 0.6458333333333334,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": -0.46211715726000974,
+              "on_expected_discrimination": 0.29605934470830425,
+              "delta_expected_discrimination": 0.758176501968314
+            },
+            "2.0": {
+              "off_expected_discrimination": -0.7615941559557649,
+              "on_expected_discrimination": 0.5444012974765994,
+              "delta_expected_discrimination": 1.3059954534323643
+            },
+            "4.0": {
+              "off_expected_discrimination": -0.9640275800758169,
+              "on_expected_discrimination": 0.8398838805372157,
+              "delta_expected_discrimination": 1.8039114606130326
+            },
+            "8.0": {
+              "off_expected_discrimination": -0.999329299739067,
+              "on_expected_discrimination": 0.9849671059236734,
+              "delta_expected_discrimination": 1.9842964056627403
+            }
+          }
+        },
+        "H3_A_leading": {
+          "off_state": "A",
+          "on_state": "A",
+          "off_evidence": 1.0,
+          "on_evidence": 0.44805194805194803,
+          "delta_evidence": -0.551948051948052,
+          "off_nci": 1.0,
+          "on_nci": 0.42857142857142855,
+          "delta_nci": -0.5714285714285714,
+          "off_tagged_reactivation": 1.0,
+          "on_tagged_reactivation": 0.7604166666666666,
+          "delta_tagged_reactivation": -0.23958333333333337,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": 0.46211715726000974,
+              "on_expected_discrimination": 0.22035193488484542,
+              "delta_expected_discrimination": -0.24176522237516432
+            },
+            "2.0": {
+              "off_expected_discrimination": 0.7615941559557649,
+              "on_expected_discrimination": 0.42029638902097755,
+              "delta_expected_discrimination": -0.3412977669347873
+            },
+            "4.0": {
+              "off_expected_discrimination": 0.9640275800758169,
+              "on_expected_discrimination": 0.714395490089877,
+              "delta_expected_discrimination": -0.2496320899859399
+            },
+            "8.0": {
+              "off_expected_discrimination": 0.999329299739067,
+              "on_expected_discrimination": 0.9459930833731142,
+              "delta_expected_discrimination": -0.05333621636595287
+            }
+          }
+        },
+        "H3_A_trailing": {
+          "off_state": "B",
+          "on_state": "B",
+          "off_evidence": -1.0,
+          "on_evidence": -0.9675324675324676,
+          "delta_evidence": 0.03246753246753242,
+          "off_nci": -1.0,
+          "on_nci": -0.9371069182389937,
+          "delta_nci": 0.06289308176100628,
+          "off_tagged_reactivation": 0.19791666666666666,
+          "on_tagged_reactivation": 0.18229166666666666,
+          "delta_tagged_reactivation": -0.015625,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": -0.46211715726000974,
+              "on_expected_discrimination": -0.4492547862381563,
+              "delta_expected_discrimination": 0.012862371021853447
+            },
+            "2.0": {
+              "off_expected_discrimination": -0.7615941559557649,
+              "on_expected_discrimination": -0.7476179450766349,
+              "delta_expected_discrimination": 0.013976210879129924
+            },
+            "4.0": {
+              "off_expected_discrimination": -0.9640275800758169,
+              "on_expected_discrimination": -0.9591408236748908,
+              "delta_expected_discrimination": 0.004886756400926062
+            },
+            "8.0": {
+              "off_expected_discrimination": -0.999329299739067,
+              "on_expected_discrimination": -0.9991304610451335,
+              "delta_expected_discrimination": 0.00019883869393355624
+            }
+          }
+        }
+      },
+      {
+        "seed": 20260839,
+        "H1": {
+          "off_state": "A",
+          "on_state": "A",
+          "off_evidence": 1.0,
+          "on_evidence": 0.8116883116883117,
+          "delta_evidence": -0.18831168831168832,
+          "off_nci": 1.0,
+          "on_nci": 1.0,
+          "delta_nci": 0.0,
+          "off_tagged_reactivation": 1.0,
+          "on_tagged_reactivation": 0.8020833333333334,
+          "delta_tagged_reactivation": -0.19791666666666663,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": 0.46211715726000974,
+              "on_expected_discrimination": 0.38493831310664894,
+              "delta_expected_discrimination": -0.07717884415336079
+            },
+            "2.0": {
+              "off_expected_discrimination": 0.7615941559557649,
+              "on_expected_discrimination": 0.6705205623080887,
+              "delta_expected_discrimination": -0.0910735936476762
+            },
+            "4.0": {
+              "off_expected_discrimination": 0.9640275800758169,
+              "on_expected_discrimination": 0.9251125394721997,
+              "delta_expected_discrimination": -0.03891504060361717
+            },
+            "8.0": {
+              "off_expected_discrimination": 0.999329299739067,
+              "on_expected_discrimination": 0.9969781057306213,
+              "delta_expected_discrimination": -0.002351194008445745
+            }
+          }
+        },
+        "H2": {
+          "off_state": "B",
+          "on_state": "A",
+          "off_evidence": -1.0,
+          "on_evidence": 0.6103896103896105,
+          "delta_evidence": 1.6103896103896105,
+          "off_nci": -1.0,
+          "on_nci": 0.6103896103896105,
+          "delta_nci": 1.6103896103896105,
+          "off_tagged_reactivation": 0.19791666666666666,
+          "on_tagged_reactivation": 0.84375,
+          "delta_tagged_reactivation": 0.6458333333333334,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": -0.46211715726000974,
+              "on_expected_discrimination": 0.29605934470830425,
+              "delta_expected_discrimination": 0.758176501968314
+            },
+            "2.0": {
+              "off_expected_discrimination": -0.7615941559557649,
+              "on_expected_discrimination": 0.5444012974765994,
+              "delta_expected_discrimination": 1.3059954534323643
+            },
+            "4.0": {
+              "off_expected_discrimination": -0.9640275800758169,
+              "on_expected_discrimination": 0.8398838805372157,
+              "delta_expected_discrimination": 1.8039114606130326
+            },
+            "8.0": {
+              "off_expected_discrimination": -0.999329299739067,
+              "on_expected_discrimination": 0.9849671059236734,
+              "delta_expected_discrimination": 1.9842964056627403
+            }
+          }
+        },
+        "H3_A_leading": {
+          "off_state": "A",
+          "on_state": "A",
+          "off_evidence": 1.0,
+          "on_evidence": 0.487012987012987,
+          "delta_evidence": -0.512987012987013,
+          "off_nci": 1.0,
+          "on_nci": 0.460122699386503,
+          "delta_nci": -0.5398773006134969,
+          "off_tagged_reactivation": 1.0,
+          "on_tagged_reactivation": 0.7708333333333334,
+          "delta_tagged_reactivation": -0.22916666666666663,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": 0.46211715726000974,
+              "on_expected_discrimination": 0.23880503280720075,
+              "delta_expected_discrimination": -0.22331212445280899
+            },
+            "2.0": {
+              "off_expected_discrimination": 0.7615941559557649,
+              "on_expected_discrimination": 0.4518424641921197,
+              "delta_expected_discrimination": -0.30975169176364514
+            },
+            "4.0": {
+              "off_expected_discrimination": 0.9640275800758169,
+              "on_expected_discrimination": 0.7504681423514976,
+              "delta_expected_discrimination": -0.2135594377243193
+            },
+            "8.0": {
+              "off_expected_discrimination": 0.999329299739067,
+              "on_expected_discrimination": 0.9601675722352978,
+              "delta_expected_discrimination": -0.03916172750376923
+            }
+          }
+        },
+        "H3_A_trailing": {
+          "off_state": "B",
+          "on_state": "B",
+          "off_evidence": -1.0,
+          "on_evidence": -0.948051948051948,
+          "delta_evidence": 0.051948051948051965,
+          "off_nci": -1.0,
+          "on_nci": -0.9012345679012346,
+          "delta_nci": 0.09876543209876543,
+          "off_tagged_reactivation": 0.19791666666666666,
+          "on_tagged_reactivation": 0.1875,
+          "delta_tagged_reactivation": -0.010416666666666657,
+          "behavior": {
+            "1.0": {
+              "off_expected_discrimination": -0.46211715726000974,
+              "on_expected_discrimination": -0.44144648067770365,
+              "delta_expected_discrimination": 0.02067067658230609
+            },
+            "2.0": {
+              "off_expected_discrimination": -0.7615941559557649,
+              "on_expected_discrimination": -0.7388998554879961,
+              "delta_expected_discrimination": 0.02269430046776877
+            },
+            "4.0": {
+              "off_expected_discrimination": -0.9640275800758169,
+              "on_expected_discrimination": -0.9559026673679503,
+              "delta_expected_discrimination": 0.008124912707866638
+            },
+            "8.0": {
+              "off_expected_discrimination": -0.999329299739067,
+              "on_expected_discrimination": -0.9989838929655188,
+              "delta_expected_discrimination": 0.000345406773548218
+            }
+          }
+        }
+      }
+    ]
+  },
+  "primary_decisions": {
+    "H1_minimal_neural_necessity": {
+      "criterion": "negative deltaE in at least 80% of structural realizations",
+      "met": true,
+      "value": 1
+    },
+    "H1_original_chance_collapse": {
+      "criterion": "near-chance on evidence in at least 80% of realizations",
+      "met": false,
+      "value": 0
+    },
+    "H2_A_basin_sufficiency": {
+      "criterion": "A basin after activation in at least 80% of realizations",
+      "met": true,
+      "value": 1
+    },
+    "H3_positional_asymmetry": {
+      "criterion": "qualified baselines, negative signed interaction and positive-magnitude asymmetry in at least 80% of realizations",
+      "met": true,
+      "value": 1
+    },
+    "H3_original_rival_reversal": {
+      "criterion": "B basin after suppressing cue-leading A in at least 80% of realizations",
+      "met": false,
+      "value": 0
+    }
+  },
+  "default_thresholds": {
+    "overlap_fraction": 0.2,
+    "manipulation_strength": 1.0,
+    "H1_robust_neural_weakening_access": 0.025,
+    "H1_majority_non_A_access": 0.5,
+    "H1_majority_near_chance_access": null,
+    "H2_reliable_A_basin_access": 0.225,
+    "H3_baseline_qualified_fraction": 1.0,
+    "H3_robust_positional_access": 0.05,
+    "H3_reliable_rival_B_reversal_access": null
+  },
+  "threshold_surface": [
+    {
+      "overlap_fraction": 0.0,
+      "manipulation_strength": 0.25,
+      "H1_robust_neural_weakening_access": null,
+      "H1_majority_non_A_access": null,
+      "H1_majority_near_chance_access": null,
+      "H2_reliable_A_basin_access": 0.225,
+      "H3_baseline_qualified_fraction": 0.0,
+      "H3_robust_positional_access": null,
+      "H3_reliable_rival_B_reversal_access": null
+    },
+    {
+      "overlap_fraction": 0.0,
+      "manipulation_strength": 0.5,
+      "H1_robust_neural_weakening_access": 0.5,
+      "H1_majority_non_A_access": null,
+      "H1_majority_near_chance_access": null,
+      "H2_reliable_A_basin_access": 0.225,
+      "H3_baseline_qualified_fraction": 0.0,
+      "H3_robust_positional_access": null,
+      "H3_reliable_rival_B_reversal_access": null
+    },
+    {
+      "overlap_fraction": 0.0,
+      "manipulation_strength": 1.0,
+      "H1_robust_neural_weakening_access": 0.025,
+      "H1_majority_non_A_access": 0.4,
+      "H1_majority_near_chance_access": null,
+      "H2_reliable_A_basin_access": 0.225,
+      "H3_baseline_qualified_fraction": 0.0,
+      "H3_robust_positional_access": null,
+      "H3_reliable_rival_B_reversal_access": null
+    },
+    {
+      "overlap_fraction": 0.0,
+      "manipulation_strength": 2.0,
+      "H1_robust_neural_weakening_access": 0.025,
+      "H1_majority_non_A_access": 0.4,
+      "H1_majority_near_chance_access": null,
+      "H2_reliable_A_basin_access": 0.225,
+      "H3_baseline_qualified_fraction": 0.0,
+      "H3_robust_positional_access": null,
+      "H3_reliable_rival_B_reversal_access": null
+    },
+    {
+      "overlap_fraction": 0.0,
+      "manipulation_strength": 4.0,
+      "H1_robust_neural_weakening_access": 0.025,
+      "H1_majority_non_A_access": 0.4,
+      "H1_majority_near_chance_access": null,
+      "H2_reliable_A_basin_access": 0.225,
+      "H3_baseline_qualified_fraction": 0.0,
+      "H3_robust_positional_access": null,
+      "H3_reliable_rival_B_reversal_access": null
+    },
+    {
+      "overlap_fraction": 0.05,
+      "manipulation_strength": 0.25,
+      "H1_robust_neural_weakening_access": null,
+      "H1_majority_non_A_access": null,
+      "H1_majority_near_chance_access": null,
+      "H2_reliable_A_basin_access": 0.225,
+      "H3_baseline_qualified_fraction": 1.0,
+      "H3_robust_positional_access": null,
+      "H3_reliable_rival_B_reversal_access": null
+    },
+    {
+      "overlap_fraction": 0.05,
+      "manipulation_strength": 0.5,
+      "H1_robust_neural_weakening_access": 0.5,
+      "H1_majority_non_A_access": null,
+      "H1_majority_near_chance_access": null,
+      "H2_reliable_A_basin_access": 0.225,
+      "H3_baseline_qualified_fraction": 1.0,
+      "H3_robust_positional_access": 0.075,
+      "H3_reliable_rival_B_reversal_access": null
+    },
+    {
+      "overlap_fraction": 0.05,
+      "manipulation_strength": 1.0,
+      "H1_robust_neural_weakening_access": 0.025,
+      "H1_majority_non_A_access": 0.4,
+      "H1_majority_near_chance_access": 0.5,
+      "H2_reliable_A_basin_access": 0.225,
+      "H3_baseline_qualified_fraction": 1.0,
+      "H3_robust_positional_access": 0.05,
+      "H3_reliable_rival_B_reversal_access": null
+    },
+    {
+      "overlap_fraction": 0.05,
+      "manipulation_strength": 2.0,
+      "H1_robust_neural_weakening_access": 0.025,
+      "H1_majority_non_A_access": 0.4,
+      "H1_majority_near_chance_access": 0.5,
+      "H2_reliable_A_basin_access": 0.225,
+      "H3_baseline_qualified_fraction": 1.0,
+      "H3_robust_positional_access": 0.05,
+      "H3_reliable_rival_B_reversal_access": null
+    },
+    {
+      "overlap_fraction": 0.05,
+      "manipulation_strength": 4.0,
+      "H1_robust_neural_weakening_access": 0.025,
+      "H1_majority_non_A_access": 0.4,
+      "H1_majority_near_chance_access": 0.5,
+      "H2_reliable_A_basin_access": 0.225,
+      "H3_baseline_qualified_fraction": 1.0,
+      "H3_robust_positional_access": 0.05,
+      "H3_reliable_rival_B_reversal_access": null
+    },
+    {
+      "overlap_fraction": 0.1,
+      "manipulation_strength": 0.25,
+      "H1_robust_neural_weakening_access": null,
+      "H1_majority_non_A_access": null,
+      "H1_majority_near_chance_access": null,
+      "H2_reliable_A_basin_access": 0.225,
+      "H3_baseline_qualified_fraction": 1.0,
+      "H3_robust_positional_access": null,
+      "H3_reliable_rival_B_reversal_access": null
+    },
+    {
+      "overlap_fraction": 0.1,
+      "manipulation_strength": 0.5,
+      "H1_robust_neural_weakening_access": 0.5,
+      "H1_majority_non_A_access": null,
+      "H1_majority_near_chance_access": null,
+      "H2_reliable_A_basin_access": 0.225,
+      "H3_baseline_qualified_fraction": 1.0,
+      "H3_robust_positional_access": 0.075,
+      "H3_reliable_rival_B_reversal_access": null
+    },
+    {
+      "overlap_fraction": 0.1,
+      "manipulation_strength": 1.0,
+      "H1_robust_neural_weakening_access": 0.025,
+      "H1_majority_non_A_access": 0.4,
+      "H1_majority_near_chance_access": 0.5,
+      "H2_reliable_A_basin_access": 0.225,
+      "H3_baseline_qualified_fraction": 1.0,
+      "H3_robust_positional_access": 0.05,
+      "H3_reliable_rival_B_reversal_access": null
+    },
+    {
+      "overlap_fraction": 0.1,
+      "manipulation_strength": 2.0,
+      "H1_robust_neural_weakening_access": 0.025,
+      "H1_majority_non_A_access": 0.4,
+      "H1_majority_near_chance_access": 0.5,
+      "H2_reliable_A_basin_access": 0.225,
+      "H3_baseline_qualified_fraction": 1.0,
+      "H3_robust_positional_access": 0.05,
+      "H3_reliable_rival_B_reversal_access": null
+    },
+    {
+      "overlap_fraction": 0.1,
+      "manipulation_strength": 4.0,
+      "H1_robust_neural_weakening_access": 0.025,
+      "H1_majority_non_A_access": 0.4,
+      "H1_majority_near_chance_access": 0.5,
+      "H2_reliable_A_basin_access": 0.225,
+      "H3_baseline_qualified_fraction": 1.0,
+      "H3_robust_positional_access": 0.05,
+      "H3_reliable_rival_B_reversal_access": null
+    },
+    {
+      "overlap_fraction": 0.15,
+      "manipulation_strength": 0.25,
+      "H1_robust_neural_weakening_access": null,
+      "H1_majority_non_A_access": null,
+      "H1_majority_near_chance_access": null,
+      "H2_reliable_A_basin_access": 0.225,
+      "H3_baseline_qualified_fraction": 1.0,
+      "H3_robust_positional_access": null,
+      "H3_reliable_rival_B_reversal_access": null
+    },
+    {
+      "overlap_fraction": 0.15,
+      "manipulation_strength": 0.5,
+      "H1_robust_neural_weakening_access": 0.5,
+      "H1_majority_non_A_access": null,
+      "H1_majority_near_chance_access": null,
+      "H2_reliable_A_basin_access": 0.225,
+      "H3_baseline_qualified_fraction": 1.0,
+      "H3_robust_positional_access": 0.075,
+      "H3_reliable_rival_B_reversal_access": null
+    },
+    {
+      "overlap_fraction": 0.15,
+      "manipulation_strength": 1.0,
+      "H1_robust_neural_weakening_access": 0.025,
+      "H1_majority_non_A_access": 0.5,
+      "H1_majority_near_chance_access": null,
+      "H2_reliable_A_basin_access": 0.225,
+      "H3_baseline_qualified_fraction": 1.0,
+      "H3_robust_positional_access": 0.05,
+      "H3_reliable_rival_B_reversal_access": null
+    },
+    {
+      "overlap_fraction": 0.15,
+      "manipulation_strength": 2.0,
+      "H1_robust_neural_weakening_access": 0.025,
+      "H1_majority_non_A_access": 0.5,
+      "H1_majority_near_chance_access": null,
+      "H2_reliable_A_basin_access": 0.225,
+      "H3_baseline_qualified_fraction": 1.0,
+      "H3_robust_positional_access": 0.05,
+      "H3_reliable_rival_B_reversal_access": null
+    },
+    {
+      "overlap_fraction": 0.15,
+      "manipulation_strength": 4.0,
+      "H1_robust_neural_weakening_access": 0.025,
+      "H1_majority_non_A_access": 0.5,
+      "H1_majority_near_chance_access": null,
+      "H2_reliable_A_basin_access": 0.225,
+      "H3_baseline_qualified_fraction": 1.0,
+      "H3_robust_positional_access": 0.05,
+      "H3_reliable_rival_B_reversal_access": null
+    },
+    {
+      "overlap_fraction": 0.2,
+      "manipulation_strength": 0.25,
+      "H1_robust_neural_weakening_access": null,
+      "H1_majority_non_A_access": null,
+      "H1_majority_near_chance_access": null,
+      "H2_reliable_A_basin_access": 0.225,
+      "H3_baseline_qualified_fraction": 1.0,
+      "H3_robust_positional_access": null,
+      "H3_reliable_rival_B_reversal_access": null
+    },
+    {
+      "overlap_fraction": 0.2,
+      "manipulation_strength": 0.5,
+      "H1_robust_neural_weakening_access": 0.5,
+      "H1_majority_non_A_access": null,
+      "H1_majority_near_chance_access": null,
+      "H2_reliable_A_basin_access": 0.225,
+      "H3_baseline_qualified_fraction": 1.0,
+      "H3_robust_positional_access": 0.075,
+      "H3_reliable_rival_B_reversal_access": null
+    },
+    {
+      "overlap_fraction": 0.2,
+      "manipulation_strength": 1.0,
+      "H1_robust_neural_weakening_access": 0.025,
+      "H1_majority_non_A_access": 0.5,
+      "H1_majority_near_chance_access": null,
+      "H2_reliable_A_basin_access": 0.225,
+      "H3_baseline_qualified_fraction": 1.0,
+      "H3_robust_positional_access": 0.05,
+      "H3_reliable_rival_B_reversal_access": null
+    },
+    {
+      "overlap_fraction": 0.2,
+      "manipulation_strength": 2.0,
+      "H1_robust_neural_weakening_access": 0.025,
+      "H1_majority_non_A_access": 0.5,
+      "H1_majority_near_chance_access": null,
+      "H2_reliable_A_basin_access": 0.225,
+      "H3_baseline_qualified_fraction": 1.0,
+      "H3_robust_positional_access": 0.05,
+      "H3_reliable_rival_B_reversal_access": null
+    },
+    {
+      "overlap_fraction": 0.2,
+      "manipulation_strength": 4.0,
+      "H1_robust_neural_weakening_access": 0.025,
+      "H1_majority_non_A_access": 0.5,
+      "H1_majority_near_chance_access": null,
+      "H2_reliable_A_basin_access": 0.225,
+      "H3_baseline_qualified_fraction": 1.0,
+      "H3_robust_positional_access": 0.05,
+      "H3_reliable_rival_B_reversal_access": null
+    },
+    {
+      "overlap_fraction": 0.25,
+      "manipulation_strength": 0.25,
+      "H1_robust_neural_weakening_access": null,
+      "H1_majority_non_A_access": null,
+      "H1_majority_near_chance_access": null,
+      "H2_reliable_A_basin_access": 0.225,
+      "H3_baseline_qualified_fraction": 1.0,
+      "H3_robust_positional_access": 0.075,
+      "H3_reliable_rival_B_reversal_access": null
+    },
+    {
+      "overlap_fraction": 0.25,
+      "manipulation_strength": 0.5,
+      "H1_robust_neural_weakening_access": 0.5,
+      "H1_majority_non_A_access": 0.5,
+      "H1_majority_near_chance_access": null,
+      "H2_reliable_A_basin_access": 0.225,
+      "H3_baseline_qualified_fraction": 1.0,
+      "H3_robust_positional_access": 0.075,
+      "H3_reliable_rival_B_reversal_access": null
+    },
+    {
+      "overlap_fraction": 0.25,
+      "manipulation_strength": 1.0,
+      "H1_robust_neural_weakening_access": 0.025,
+      "H1_majority_non_A_access": 0.4,
+      "H1_majority_near_chance_access": null,
+      "H2_reliable_A_basin_access": 0.225,
+      "H3_baseline_qualified_fraction": 1.0,
+      "H3_robust_positional_access": 0.05,
+      "H3_reliable_rival_B_reversal_access": null
+    },
+    {
+      "overlap_fraction": 0.25,
+      "manipulation_strength": 2.0,
+      "H1_robust_neural_weakening_access": 0.025,
+      "H1_majority_non_A_access": 0.5,
+      "H1_majority_near_chance_access": null,
+      "H2_reliable_A_basin_access": 0.225,
+      "H3_baseline_qualified_fraction": 1.0,
+      "H3_robust_positional_access": 0.05,
+      "H3_reliable_rival_B_reversal_access": null
+    },
+    {
+      "overlap_fraction": 0.25,
+      "manipulation_strength": 4.0,
+      "H1_robust_neural_weakening_access": 0.025,
+      "H1_majority_non_A_access": 0.5,
+      "H1_majority_near_chance_access": null,
+      "H2_reliable_A_basin_access": 0.225,
+      "H3_baseline_qualified_fraction": 1.0,
+      "H3_robust_positional_access": 0.05,
+      "H3_reliable_rival_B_reversal_access": null
+    },
+    {
+      "overlap_fraction": 0.3,
+      "manipulation_strength": 0.25,
+      "H1_robust_neural_weakening_access": null,
+      "H1_majority_non_A_access": null,
+      "H1_majority_near_chance_access": null,
+      "H2_reliable_A_basin_access": 0.225,
+      "H3_baseline_qualified_fraction": 1.0,
+      "H3_robust_positional_access": 0.075,
+      "H3_reliable_rival_B_reversal_access": null
+    },
+    {
+      "overlap_fraction": 0.3,
+      "manipulation_strength": 0.5,
+      "H1_robust_neural_weakening_access": 0.5,
+      "H1_majority_non_A_access": 0.5,
+      "H1_majority_near_chance_access": null,
+      "H2_reliable_A_basin_access": 0.225,
+      "H3_baseline_qualified_fraction": 1.0,
+      "H3_robust_positional_access": 0.075,
+      "H3_reliable_rival_B_reversal_access": 0.5
+    },
+    {
+      "overlap_fraction": 0.3,
+      "manipulation_strength": 1.0,
+      "H1_robust_neural_weakening_access": 0.025,
+      "H1_majority_non_A_access": 0.4,
+      "H1_majority_near_chance_access": 0.5,
+      "H2_reliable_A_basin_access": 0.225,
+      "H3_baseline_qualified_fraction": 1.0,
+      "H3_robust_positional_access": 0.075,
+      "H3_reliable_rival_B_reversal_access": 0.5
+    },
+    {
+      "overlap_fraction": 0.3,
+      "manipulation_strength": 2.0,
+      "H1_robust_neural_weakening_access": 0.025,
+      "H1_majority_non_A_access": 0.35,
+      "H1_majority_near_chance_access": 0.4,
+      "H2_reliable_A_basin_access": 0.225,
+      "H3_baseline_qualified_fraction": 1.0,
+      "H3_robust_positional_access": 0.05,
+      "H3_reliable_rival_B_reversal_access": 0.5
+    },
+    {
+      "overlap_fraction": 0.3,
+      "manipulation_strength": 4.0,
+      "H1_robust_neural_weakening_access": 0.025,
+      "H1_majority_non_A_access": 0.35,
+      "H1_majority_near_chance_access": 0.4,
+      "H2_reliable_A_basin_access": 0.225,
+      "H3_baseline_qualified_fraction": 1.0,
+      "H3_robust_positional_access": 0.05,
+      "H3_reliable_rival_B_reversal_access": 0.5
+    },
+    {
+      "overlap_fraction": 0.4,
+      "manipulation_strength": 0.25,
+      "H1_robust_neural_weakening_access": null,
+      "H1_majority_non_A_access": null,
+      "H1_majority_near_chance_access": null,
+      "H2_reliable_A_basin_access": 0.225,
+      "H3_baseline_qualified_fraction": 1.0,
+      "H3_robust_positional_access": 0.075,
+      "H3_reliable_rival_B_reversal_access": null
+    },
+    {
+      "overlap_fraction": 0.4,
+      "manipulation_strength": 0.5,
+      "H1_robust_neural_weakening_access": 0.35,
+      "H1_majority_non_A_access": 0.5,
+      "H1_majority_near_chance_access": null,
+      "H2_reliable_A_basin_access": 0.225,
+      "H3_baseline_qualified_fraction": 1.0,
+      "H3_robust_positional_access": 0.125,
+      "H3_reliable_rival_B_reversal_access": 0.5
+    },
+    {
+      "overlap_fraction": 0.4,
+      "manipulation_strength": 1.0,
+      "H1_robust_neural_weakening_access": 0.025,
+      "H1_majority_non_A_access": 0.35,
+      "H1_majority_near_chance_access": null,
+      "H2_reliable_A_basin_access": 0.225,
+      "H3_baseline_qualified_fraction": 1.0,
+      "H3_robust_positional_access": 0.075,
+      "H3_reliable_rival_B_reversal_access": 0.4
+    },
+    {
+      "overlap_fraction": 0.4,
+      "manipulation_strength": 2.0,
+      "H1_robust_neural_weakening_access": 0.025,
+      "H1_majority_non_A_access": 0.3,
+      "H1_majority_near_chance_access": 0.35,
+      "H2_reliable_A_basin_access": 0.225,
+      "H3_baseline_qualified_fraction": 1.0,
+      "H3_robust_positional_access": 0.05,
+      "H3_reliable_rival_B_reversal_access": 0.4
+    },
+    {
+      "overlap_fraction": 0.4,
+      "manipulation_strength": 4.0,
+      "H1_robust_neural_weakening_access": 0.025,
+      "H1_majority_non_A_access": 0.3,
+      "H1_majority_near_chance_access": 0.35,
+      "H2_reliable_A_basin_access": 0.225,
+      "H3_baseline_qualified_fraction": 1.0,
+      "H3_robust_positional_access": 0.05,
+      "H3_reliable_rival_B_reversal_access": 0.4
+    },
+    {
+      "overlap_fraction": 0.5,
+      "manipulation_strength": 0.25,
+      "H1_robust_neural_weakening_access": null,
+      "H1_majority_non_A_access": null,
+      "H1_majority_near_chance_access": null,
+      "H2_reliable_A_basin_access": 0.225,
+      "H3_baseline_qualified_fraction": 1.0,
+      "H3_robust_positional_access": null,
+      "H3_reliable_rival_B_reversal_access": null
+    },
+    {
+      "overlap_fraction": 0.5,
+      "manipulation_strength": 0.5,
+      "H1_robust_neural_weakening_access": 0.125,
+      "H1_majority_non_A_access": 0.5,
+      "H1_majority_near_chance_access": null,
+      "H2_reliable_A_basin_access": 0.225,
+      "H3_baseline_qualified_fraction": 1.0,
+      "H3_robust_positional_access": 0.2,
+      "H3_reliable_rival_B_reversal_access": 0.4
+    },
+    {
+      "overlap_fraction": 0.5,
+      "manipulation_strength": 1.0,
+      "H1_robust_neural_weakening_access": 0.025,
+      "H1_majority_non_A_access": 0.3,
+      "H1_majority_near_chance_access": 0.4,
+      "H2_reliable_A_basin_access": 0.225,
+      "H3_baseline_qualified_fraction": 1.0,
+      "H3_robust_positional_access": 0.125,
+      "H3_reliable_rival_B_reversal_access": 0.35
+    },
+    {
+      "overlap_fraction": 0.5,
+      "manipulation_strength": 2.0,
+      "H1_robust_neural_weakening_access": 0.025,
+      "H1_majority_non_A_access": 0.25,
+      "H1_majority_near_chance_access": 0.3,
+      "H2_reliable_A_basin_access": 0.225,
+      "H3_baseline_qualified_fraction": 1.0,
+      "H3_robust_positional_access": 0.1,
+      "H3_reliable_rival_B_reversal_access": 0.35
+    },
+    {
+      "overlap_fraction": 0.5,
+      "manipulation_strength": 4.0,
+      "H1_robust_neural_weakening_access": 0.025,
+      "H1_majority_non_A_access": 0.25,
+      "H1_majority_near_chance_access": 0.3,
+      "H2_reliable_A_basin_access": 0.225,
+      "H3_baseline_qualified_fraction": 1.0,
+      "H3_robust_positional_access": 0.1,
+      "H3_reliable_rival_B_reversal_access": 0.35
+    },
+    {
+      "overlap_fraction": 0.6,
+      "manipulation_strength": 0.25,
+      "H1_robust_neural_weakening_access": null,
+      "H1_majority_non_A_access": null,
+      "H1_majority_near_chance_access": null,
+      "H2_reliable_A_basin_access": 0.225,
+      "H3_baseline_qualified_fraction": 1.0,
+      "H3_robust_positional_access": 0.5,
+      "H3_reliable_rival_B_reversal_access": null
+    },
+    {
+      "overlap_fraction": 0.6,
+      "manipulation_strength": 0.5,
+      "H1_robust_neural_weakening_access": 0.025,
+      "H1_majority_non_A_access": 0.5,
+      "H1_majority_near_chance_access": null,
+      "H2_reliable_A_basin_access": 0.225,
+      "H3_baseline_qualified_fraction": 1.0,
+      "H3_robust_positional_access": 0.15,
+      "H3_reliable_rival_B_reversal_access": 0.4
+    },
+    {
+      "overlap_fraction": 0.6,
+      "manipulation_strength": 1.0,
+      "H1_robust_neural_weakening_access": 0.025,
+      "H1_majority_non_A_access": 0.25,
+      "H1_majority_near_chance_access": 0.35,
+      "H2_reliable_A_basin_access": 0.225,
+      "H3_baseline_qualified_fraction": 1.0,
+      "H3_robust_positional_access": 0.1,
+      "H3_reliable_rival_B_reversal_access": 0.3
+    },
+    {
+      "overlap_fraction": 0.6,
+      "manipulation_strength": 2.0,
+      "H1_robust_neural_weakening_access": 0.025,
+      "H1_majority_non_A_access": 0.2,
+      "H1_majority_near_chance_access": null,
+      "H2_reliable_A_basin_access": 0.225,
+      "H3_baseline_qualified_fraction": 1.0,
+      "H3_robust_positional_access": 0.075,
+      "H3_reliable_rival_B_reversal_access": 0.3
+    },
+    {
+      "overlap_fraction": 0.6,
+      "manipulation_strength": 4.0,
+      "H1_robust_neural_weakening_access": 0.025,
+      "H1_majority_non_A_access": 0.2,
+      "H1_majority_near_chance_access": null,
+      "H2_reliable_A_basin_access": 0.225,
+      "H3_baseline_qualified_fraction": 1.0,
+      "H3_robust_positional_access": 0.075,
+      "H3_reliable_rival_B_reversal_access": 0.3
+    }
+  ],
+  "experimental_falsifiers": {
+    "H1": "At verified overlap near 0.20 and effective access near 0.25, a reproducible near-chance/categorical collapse would reject the random-distributed-tag version of this model even though partial neural weakening is expected.",
+    "H2": "At effective access >=0.225 and comparable manipulation strength, absence of an A-directed neural/behavioral shift would reject the current sufficiency surface.",
+    "H3": "A nonnegative position-by-suppression interaction under qualified 65/35 versus 35/65 baselines would reject the positional-asymmetry prediction."
+  }
+}

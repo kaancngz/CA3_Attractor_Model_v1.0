@@ -1,0 +1,138 @@
+{
+  "status": "complete_parameter_role_audit_v1",
+  "all_config_fields_classified": true,
+  "n_config_parameters": 15,
+  "n_external_mapping_parameters": 6,
+  "n_free_pilot_primitives": 9,
+  "n_fitted_to_H1_H2_H3": 0,
+  "phase_map_axes": [
+    "overlap_fraction",
+    "effective_access_fraction",
+    "manipulation_strength"
+  ],
+  "note": "Effective access is derived from tagging, coverage and tag-test match; it is counted as an axis but not as an additional fitted primitive.",
+  "config_parameters": [
+    {
+      "name": "profile",
+      "default": "pilot",
+      "role": "computational",
+      "justification": "runtime scale profile"
+    },
+    {
+      "name": "n_cells",
+      "default": 2400,
+      "role": "computational",
+      "justification": "network resolution, not mouse CA3 cell count"
+    },
+    {
+      "name": "engram_fraction",
+      "default": 0.08,
+      "role": "free_pilot",
+      "justification": "replace with cellular activity estimate"
+    },
+    {
+      "name": "overlap_fraction",
+      "default": 0.2,
+      "role": "free_pilot",
+      "justification": "replace with measured A/B cellular overlap"
+    },
+    {
+      "name": "recurrent_gain",
+      "default": 1.0,
+      "role": "theory_normalization",
+      "justification": "defines normalized recurrent field unit"
+    },
+    {
+      "name": "activation_threshold",
+      "default": 0.12,
+      "role": "independently_qualified",
+      "justification": "midpoint of H1-H3-blind attractor-validity plateau"
+    },
+    {
+      "name": "max_active_fraction",
+      "default": 0.08,
+      "role": "theory_linked",
+      "justification": "fast inhibition reduction, tied to engram fraction"
+    },
+    {
+      "name": "cue_gain",
+      "default": 1.0,
+      "role": "theory_normalization",
+      "justification": "defines external-field unit"
+    },
+    {
+      "name": "cue_target_fraction",
+      "default": 0.2,
+      "role": "free_design",
+      "justification": "strong partial-cue fraction used in independent qualification"
+    },
+    {
+      "name": "weak_cue_target_fraction",
+      "default": 0.05,
+      "role": "free_design",
+      "justification": "subthreshold cue control used in independent qualification"
+    },
+    {
+      "name": "tagging_efficiency",
+      "default": 0.5,
+      "role": "free_pilot",
+      "justification": "replace with RAM histology"
+    },
+    {
+      "name": "fiber_coverage",
+      "default": 0.5,
+      "role": "free_pilot",
+      "justification": "replace with expression/light-volume estimate"
+    },
+    {
+      "name": "tag_test_match_fraction",
+      "default": 1.0,
+      "role": "free_pilot",
+      "justification": "replace with bare-A versus final-A cellular match"
+    },
+    {
+      "name": "max_steps",
+      "default": 100,
+      "role": "computational",
+      "justification": "convergence safety ceiling"
+    },
+    {
+      "name": "seed",
+      "default": 20260815,
+      "role": "computational",
+      "justification": "reproducible structural realization"
+    }
+  ],
+  "external_parameters": [
+    {
+      "name": "learned_support_lambda",
+      "role": "free_pilot",
+      "justification": "replace probability-to-retrieval mapping with tone pilot"
+    },
+    {
+      "name": "tone_cue_scale",
+      "role": "free_pilot",
+      "justification": "calibrate cue efficacy, separate from lambda"
+    },
+    {
+      "name": "manipulation_strength",
+      "role": "free_pilot",
+      "justification": "calibrate ArchT/ChR2 efficacy; phase map sweeps it"
+    },
+    {
+      "name": "behavior_inverse_temperature_beta",
+      "role": "free_pilot",
+      "justification": "calibrate signed neural evidence to digging discrimination"
+    },
+    {
+      "name": "pre_cue_light_steps",
+      "role": "computational_protocol",
+      "justification": "represents light-before-cue ordering, not elapsed biological seconds"
+    },
+    {
+      "name": "effective_access_fraction",
+      "role": "derived",
+      "justification": "exact accessible-tag intersection with final A; phase-map axis"
+    }
+  ]
+}

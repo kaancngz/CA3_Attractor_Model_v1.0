@@ -1,5 +1,14 @@
 # CA3 Engram Rekabeti — Hesaplamalı Model Projesi
 
+**Sürüm:** `CA3_Attractor_Model_v1.0`
+
+**Durum:** Veri-öncesi, dondurulmuş minimal CA3 attractor modeli
+
+Bu depo yalnızca güncel seyrek CA3 attractor modelini, yeniden üretim
+betiklerini, dondurulmuş öngörüleri ve bunlara ait sonuçları içerir. Eski
+spiking prototipler ve üçüncü taraf referans kodları v1.0 kapsamına dahil
+değildir.
+
 > **Bu dosya ne için:** Bu depo, bir *in vivo* optogenetik deneyin hesaplamalı bir eşdeğerini kurar.
 > Deney başka bir yerde (fiziksel laboratuvarda) yürütülüyor; burada kod var, hayvan yok.
 > Bu README'yi okuyan ajan, projeyi sıfırdan anlayıp kurmaya başlayabilecek kadar bilgiye burada sahip olmalıdır.
@@ -245,42 +254,20 @@ Bu, modelin en olası gerçek katkısıdır.
 
 ---
 
-## 5. Model katmanları — sırayla kur, atlamadan
+## 5. Dondurulmuş v1.0 mimarisi — seyrek ikili çekici ağ
 
-Ucuzdan pahalıya. **Katman 0'ı atlama.** Çoğu içgörü orada çıkar ve daha pahalı katmanların
-sağlaması için gerekir.
-
-### Katman 0 — Oran temelli rekabetçi model (BAŞLANGIÇ NOKTASI)
-İki (gerekirse üç) popülasyon oranı + ortak inhibisyon; ODE ya da ayrık zaman.
-- Ne yakalar: kademeli/eşikli sorusu (§3.2.1), ipucu-tercih eşlemesi (§3.2.3), ArchT/ChR2 asimetrisi
-  için ilk bakış (§3.2.2).
-- Ne yakalamaz: örtüşmeyi hücre düzeyinde temsil edemez; "etiketli hücrelerin %15'ini sustur"
-  işlemi burada ancak soyut bir kazanç düşüşü olarak girer.
-- Ölçek: onlarca satır, anında koşar. numpy + scipy yeter.
-- **Bitmeden Katman 1'e geçme.** Faz portresi ve bifurkasyon analizi burada yapılır; sonraki
-  katmanların ne yapması gerektiğini bu belirler.
-
-### Katman 1 — Seyrek ikili çekici ağ (PROJENİN OMURGASI)
-Hopfield tipi ya da seyrek kodlu otoasosiyatif ağ; örtüşen örüntüler **açıkça** tanımlı.
+Seyrek kodlu otoasosiyatif ağda örtüşen A/B örüntüleri **açıkça** tanımlıdır.
 - Neden gerekli: (a) örtüşme oranı doğrudan bir parametreye çevrilir; (b) "A örüntüsünün
   hücrelerinin %15'ini sustur" işlemi **birebir** yapılabilir — ArchT'nin yaptığı şey soyutlanmadan
   modellenir; (c) etiketleme verimi, eksik örneklem olarak doğal biçimde temsil edilir;
   (d) reaktivasyon oranı ve şans düzeyi örtüşme doğrudan hesaplanabilir (§1.7).
 - Birincil sorunun (§3.1) cevabı burada üretilir.
 - Ölçek: numpy; birkaç bin nöron rahat.
-- Dikkat: klasik Hopfield örtüşen örüntülerde kapasite sorunları verir. Seyrek kodlama ve
-  normalize edici inhibisyon şart. Öğrenme kuralının seçimi (Hebbian, pseudo-inverse, seyrek
-  kodlu varyantlar) sonuçları etkiler — **hangisinin seçildiği ve neden, yazıya geçmeli.**
-
-### Katman 2 — Ani ateşlemeli ağ (KOŞULLU — gerekirse)
-LIF (ya da AdEx) + yavaş NMDA dinamikleriyle kazanan-hepsini-alır.
-- Yalnızca şunlar modellenmek istenirse gerekli: ışık darbe treni frekansı (20 Hz) ve puls süresi
-  (15 ms), görev döngüsü, ışığın deneme-öncesi bekleme döneminde başlaması, geri getirme
-  penceresinin zaman ölçeği, ArchT'nin sürekli vs ChR2'nin darbeli sürülmesi arasındaki fark.
-- Deneyin optogenetik parametreleri (§1.5) ancak burada gerçek karşılığını bulur. Katman 1'de
-  "sustur/sür" anlıktır; Katman 2'de zaman ölçeği var.
-- Ölçek: birkaç bin nöron, 12 çekirdekte rahat koşar. **GPU gerekmiyor.** Brian2, NEST ya da elle
-  yazılmış Euler — seçim ajana bırakılabilir, ama seçim gerekçelendirilmeli.
+- Öğrenme kuralı merkezlenmiş covariance-Hebbian biçimidir; öz-bağlantılar
+  sıfırdır ve hızlı global inhibisyon seyrek etkinlik tavanıyla indirgenir.
+- v1.0 milisaniye ölçeğinde spike veya optogenetik darbe treni üretmez;
+  deneysel müdahaleleri etiketli hücrelere uygulanan pozitif/negatif alan
+  olarak temsil eder.
 
 ---
 
@@ -370,44 +357,69 @@ eşlemesi, P4 tonun yokluğunun yordayıcılığı, P5 örtüşme oranının kri
 
 ## 10. Teknik çerçeve
 
-- Python, numpy/scipy temelli. Katman 2 için ani ateşleme simülatörü (Brian2 / NEST) veya elle
-  yazılmış entegratör.
-- Yerel donanım: 12 çekirdek, 15 GiB RAM. Hiçbir katman için GPU gerekmiyor; parametre taramaları
-  çekirdekler arasında paralelleştirilir.
-- Önerilen yapı:
+- Python 3.8.20 ve NumPy 1.20.1 ile doğrulandı; figür üretimi için
+  Matplotlib 3.5.3 kullanılır.
+- Model GPU veya spiking simülatörü gerektirmez.
+- Dondurulmuş v1.0 depo yapısı:
 ```
-params/          # yaml, provenance zorunlu
-src/
-  tier0_rate/    # oran temelli rekabet modeli
-  tier1_attractor/ # seyrek ikili çekici ağ
-  tier2_spiking/ # koşullu
-  readout.py     # model durumu -> ayrım oranı, reaktivasyon oranı
-  virtual_cohort.py # sanal hayvan, karşı-dengeleme, hayvan-içi tasarım
-predictions/     # tarihli, dondurulmuş öngörü dosyaları
-results/         # tohumlu koşu çıktıları
-figures/
-notes/           # kararlar ve gerekçeleri
+models/ca3_sparse_attractor/          # birincil hücre-düzeyi teorik çekici modeli
+apps/ca3_hypothesis_lab.html           # etkileşimli H1-H3 faz haritası ve mekanizma görünümü
+params/ca3_sparse_attractor_v1.yaml
+analysis/                              # güncel çıkarım ve figür betikleri
+outputs/ca3_sparse_attractor/          # birincil geçerlik ve veri-öncesi öngörüler
+predictions/                           # tarihli ve değiştirilmeyen veri-öncesi öngörüler
+notes/                                 # güncel kararlar, doğrulama ve sonuç yorumu
 ```
+- Kurulum:
+  `python -m venv .venv` ve ardından
+  `.\.venv\Scripts\python.exe -m pip install -r requirements.txt`.
+- Hızlı doğrulama:
+  `.\.venv\Scripts\python.exe -m unittest discover -s models\ca3_sparse_attractor\tests -v`.
 - Her figür yayın kalitesinde olmalı: eksen etiketleri birimli, örneklem sayısı belirtilmiş,
   gösterilen şeyin ne olduğu başlıktan anlaşılır. Eşik eğrisi figürü projenin ana figürü olacak.
 
 ---
 
-## 11. İlk oturumda yapılacaklar (öneri sırası)
+## 11. Güncel durum ve sıradaki adım
 
-1. Bu README'yi oku, `notes/00_anlasilan.md` içine **kendi cümlelerinle** projenin ne olduğunu yaz;
-   belirsiz bulduğun ya da eksik gördüğün her şeyi ayrı bir listede topla ve **sor.**
-2. `params/` iskeletini kur. `design` kaynaklı tüm değerleri bu README'den doldur.
-   `literature` ve `pilot` olanları `null` bırak. **Tahminle doldurma.**
-3. Katman 0'ı kur ve iki şeyi üret: faz portresi + susturma oranı → ayrım oranı eğrisi.
-   Eşik var mı, nerede?
-4. Literatür parametrelerini topla (§6 minimum küme), her birini kaynağıyla kaydet, `verified: true`
-   yalnızca kaynağı birebir okuduktan sonra.
-5. Katman 1'i kur. Birincil soruyu (§3.1) cevapla: etiketleme verimi × ışık kapsaması × örtüşme
-   çarpımının makul aralığında, beklenen ayrım oranı kayması ne, dz eşdeğeri ne?
-6. Öngörüleri yaz ve dondur (§7). **Bu adımı geciktirme.**
-7. Doğrulama paketini koştur (§8).
-
+1. Birincil teorik omurga `models/ca3_sparse_attractor/` altındaki seyrek
+   hücre-düzeyi çekici modelidir. Eşik 0,08–0,16 bağımsız geçerlik platosunun
+   orta noktası 0,12'de donduruldu; 2.400 hücre × 5 tohum 50/50 kapı geçti.
+2. `%65/%35`, fiziksel akım değil öğrenilmiş normalize bağlam desteğidir;
+   sabit toplam afferent hedef bütçesine çevrilir. Ton yokluğu için
+   `full_contingency` ve `presence_only` rakip öngörüleri korunur.
+3. RAM etiketi; çıplak-A/test-A eşleşmesi, etiketleme verimi ve fiber erişimi
+   olarak üç ayrı kayıptır. Ana eksen nominal değil etkili nihai-A erişimidir.
+4. İlk veri-öncesi H1-H3 öngörüleri
+   `predictions/2026-08-15_sparse_attractor_v1_predata.md` içinde korunur.
+   Birleşik 750-hücreli faz haritası ve açık çürütme kuralları
+   `predictions/2026-08-15_joint_phase_map_v2_predata.md` içinde donduruldu.
+5. Çekici kimliği (`NCI`), mutlak imzalı geri-getirme kanıtı
+   (`E=A_özgün-B_özgün`) ve etiketli reaktivasyon ayrı tutulur; davranış
+   duyarlılık zarfı mutlak kanıt üzerinden kurulur.
+6. Aynı mimaride `%4–%12` seyreklik × `%0–%60` örtüşme × 5 tohum taraması
+   tamamlandı: 175 ağın tamamı çekici kapılarını geçti. Örtüşme H1 büyüklüğü ve
+   H3 asimetrisinin moderatörüdür; sonuç
+   `outputs/ca3_sparse_attractor/robustness_overlap_sparsity_v1.json` içindedir.
+7. `%0–%60` örtüşme × `%0–%50` etkili erişim × 5 manipülasyon gücü, aynı 25
+   yapısal ağın eşleşmiş ışık-kapalı/açık koşullarında tarandı. Birincil
+   noktada H1 kısmi nöral zayıflama, H2 kategorik A geçişi ve H3 pozisyonel
+   asimetri üretir; H1 şansa çöküşü ve H3 tam B dönüşü üretmez.
+8. Rekürrens, seyrek inhibisyon ve örtüşme ablasyonları tamamlandı. Rekürrens
+   olmadan örüntü tamamlama; seyrek inhibisyon olmadan seçici H2; sıfır
+   örtüşmede seçilen 65/35 rejimi altında H3 başlangıç rekabeti kurulmaz.
+9. `apps/ca3_hypothesis_lab.html`, hesaplanan yüzeyleri etkileşimli gösterir;
+   elle çizilmiş bir sonuç değil, JSON faz haritasının gömülü görünümüdür.
+10. Deney eşlemeli recall–probe koşusu tamamlandı: 25/25 ağ A ve B'yi kısmi
+   ipucundan tamamladı; 8 prob kolunda 400/400 kayıt ve bütün eşleşmiş ışık
+   çiftleri üretildi. H2 B→A geçişi, H1 kısmi zayıflama ve H3 konumsal
+   asimetri verdi; dört EGFP aynasında etki sıfırdı. Ayrıntı
+   `notes/16_recall_probe_protocol_v1.md` içindedir.
+11. Sıradaki bilimsel iş yeni mimari kurmak değildir. Pilot ölçümleri
+   geldiğinde örtüşme, etkili erişim, ton desteği, manipülasyon gücü ve
+   `E→ayrım oranı` eğimi kilitlenecek; ardından hayvan-içi varyansla gerçek
+   `dz`/güç analizi yapılacaktır. Arka-plan bellek yükü aynı çekirdekte ikincil
+   sağlamlık testi olarak kalır.
 ---
 
 ## 12. Çalışma kuralları
