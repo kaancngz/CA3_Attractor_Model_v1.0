@@ -1,152 +1,195 @@
-# Birincil seyrek CA3 çekici modeli
+# Sparse CA3 attractor implementation
 
-Bu klasör, projenin README'sinde “Katman 1 — projenin omurgası” olarak tarif
-edilen bağımsız hücre-düzeyi otoasosiyatif modeli içerir.
+This package implements the frozen v1.0 sparse binary autoassociative network
+used to study CA3 pattern completion and competition between two overlapping
+engrams.
 
-Modelin kuramsal bileşenleri:
+## Package contents
 
-- iki eşit büyüklükte, kısmen örtüşen ikili A/B engramı,
-- standart merkezlenmiş Hebbian/covariance rekürren ağırlık kuralı,
-- hızlı global inhibisyonun indirgenmiş karşılığı olarak seyrek etkinlik tavanı,
-- kısmi ipucundan sabit noktaya örüntü tamamlama,
-- ayrı çıplak-A etiket kaynağı, RAM verimi, test-A uyuşması ve fiber erişimi,
-- etiketli altkümenin aktivasyonu veya susturulması,
-- çekici kimliği, mutlak geri-getirme kanıtı ve etiketli reaktivasyon için ayrı
-  okumalar; mutlak kanıt ile davranışsal ayrım arasında ayrı ölçüm modeli.
+| File | Purpose |
+|---|---|
+| `config.py` | Validated model parameters and runtime profiles |
+| `engrams.py` | A/B layout, overlap, tag-source, and accessibility sampling |
+| `model.py` | Recurrent attractor dynamics, cues, manipulations, and readouts |
+| `theory_mapping.py` | Cue-support and neural-to-behavioral measurement mappings |
+| `run_validation.py` | Attractor qualification across thresholds and seeds |
+| `run_theory_experiments.py` | Cue basin and H1–H3 response surfaces |
+| `run_robustness.py` | Sparsity-by-overlap robustness grid |
+| `run_hypothesis_phase_map.py` | Joint overlap/access/strength phase map |
+| `run_mechanism_ablations.py` | Recurrence, inhibition, and overlap ablations |
+| `run_recall_probe_protocol.py` | Experiment-matched paired recall–probe protocol |
+| `parameter_audit.py` | Explicit classification of all model parameters |
+| `tests/test_sparse_attractor.py` | Unit and protocol-level regression tests |
 
-Yoğun `N×N` ağırlık matrisi kurulmaz. Öz-bağlantıları sıfırlanmış (`W_ii=0`)
-iki-örüntülü yoğun Hebbian matrisin alanı matematiksel olarak tam eşdeğer
-faktörize biçimde hesaplanır; bu nedenle 10.000 hücre profili de hafiftir.
+## Core dynamics
 
-Bağımsız geçerlik taraması:
+Two equal-size binary patterns are generated with a specified overlap. The
+centered pattern matrix `X` defines the covariance-Hebbian recurrent field:
+
+```text
+m(x)   = X x / [N a (1-a)]
+h_rec  = recurrent_gain × (m(x) X - diagonal_coupling × x)
+```
+
+The diagonal term removes autapses exactly. This factorized computation is
+mathematically equivalent to applying the dense two-pattern covariance matrix
+with `W_ii = 0`.
+
+At each update:
+
+1. recurrent, cue, and manipulation fields are summed;
+2. cells below the activation threshold are removed;
+3. if necessary, the strongest cells are retained up to the sparse activity
+   cap;
+4. deterministic infinitesimal tie-breaking resolves exactly equal fields.
+
+The network is iterated until a fixed point, a previously seen state, or the
+configured maximum number of steps is reached.
+
+## Engram and intervention sets
+
+The following cellular sets remain distinct:
+
+- final test-time A and B engrams;
+- A-only, B-only, shared, and outside cells;
+- the representation active during RAM tagging;
+- tagged cells sampled from that representation;
+- light-accessible tagged cells;
+- the intersection between accessible tagged cells and final memory A.
+
+This separation prevents tagging efficiency, optical coverage, and
+representation stability from being collapsed into a single parameter.
+
+## Cue construction
+
+Pure and mixed cues use a fixed target-slot budget. For mixed evidence,
+`lambda_A = cue_A / (cue_A + cue_B)` determines how many slots are allocated to
+A versus B. Shared and unique cells are interleaved so nested cue sizes retain
+approximately balanced shared-cell content.
+
+The external cue can be removed after one or more update steps to test
+autonomous completion. Manipulation fields can begin before the cue and remain
+active during convergence.
+
+## State readouts
+
+Each state summary contains:
+
+- covariance overlap with A and B;
+- A-only, B-only, shared, and outside activity;
+- neural competition index;
+- signed retrieval evidence `E = A_only - B_only`;
+- active fraction and attractor class;
+- tagged reactivation and structural chance reactivation.
+
+Attractor classes (`A`, `B`, `mixed`, `silent`, `undecided`) are determined by
+explicit activity and competition thresholds in `model.py`.
+
+## Commands
+
+All commands are run from the repository root.
+
+### Unit tests
+
+```powershell
+& .\.venv\Scripts\python.exe -m unittest discover `
+  -s models\ca3_sparse_attractor\tests -v
+```
+
+### Independent attractor validation
 
 ```powershell
 & .\.venv\Scripts\python.exe `
   -m models.ca3_sparse_attractor.run_validation `
   --profile pilot `
-  --output .\outputs\ca3_sparse_attractor\independent_validation_pilot_v1.json
+  --output outputs\ca3_sparse_attractor\independent_validation_pilot_v1.json
 ```
 
-λ havzası ve H1-H3 yüzeyleri:
+### Cue basins and hypothesis surfaces
 
 ```powershell
 & .\.venv\Scripts\python.exe `
   -m models.ca3_sparse_attractor.run_theory_experiments `
   --profile pilot `
-  --output .\outputs\ca3_sparse_attractor\theory_experiments_pilot_v2.json
+  --output outputs\ca3_sparse_attractor\theory_experiments_pilot_v2.json
 ```
 
-Dondurulmuş mimarinin seyreklik × örtüşme sağlamlığı:
+### Sparsity-by-overlap robustness
 
 ```powershell
 & .\.venv\Scripts\python.exe `
   -m models.ca3_sparse_attractor.run_robustness `
-  --output .\outputs\ca3_sparse_attractor\robustness_overlap_sparsity_v1.json
+  --output outputs\ca3_sparse_attractor\robustness_overlap_sparsity_v1.json
+
+& .\.venv\Scripts\python.exe `
+  analysis\plot_sparse_attractor_robustness.py `
+  --input outputs\ca3_sparse_attractor\robustness_overlap_sparsity_v1.json `
+  --output outputs\ca3_sparse_attractor\robustness_overlap_sparsity_v1.png
 ```
 
-Çalışma noktası `activation_threshold=0.12`, H1-H3 görülmeden önce 5 tohumda
-geçen `0.08–0.16` bandının orta noktası olarak seçildi. Engram oranı, örtüşme,
-RAM verimi, fiber erişimi, tag-test uyuşması ve davranış okuma eğimi biyolojik
-ölçüm değildir; pilot/serbest parametredir.
-
-Mevcut sağlamlık taramasında `%4–%12` seyreklik ve `%0–%60` örtüşmenin tümü
-bağımsız çekici kapılarını geçti. Buna karşılık örtüşme H1 etki büyüklüğünü ve
-H3'ün 65/35 ipucuyla kurulmasını belirledi; bu nedenle biyolojik pilotta
-ölçülmesi gereken moderatördür, ayarlanacak bir “sonuç uydurma” düğmesi değildir.
-
-## Hipotez sınama hattı
-
-Yeni bir mimari kurmadan, aynı dondurulmuş çekirdek üzerinde birleşik faz
-haritasını üretmek için:
+### Joint H1–H3 phase map
 
 ```powershell
 & .\.venv\Scripts\python.exe `
   -m models.ca3_sparse_attractor.run_hypothesis_phase_map `
-  --output .\outputs\ca3_sparse_attractor\hypothesis_phase_map_v1.json
+  --output outputs\ca3_sparse_attractor\hypothesis_phase_map_v1.json
+
+& .\.venv\Scripts\python.exe `
+  analysis\summarize_hypothesis_phase_map.py `
+  --input outputs\ca3_sparse_attractor\hypothesis_phase_map_v1.json `
+  --json-output outputs\ca3_sparse_attractor\hypothesis_decision_report_v1.json `
+  --markdown-output notes\15_hypothesis_decision_report_v1.md
+
+& .\.venv\Scripts\python.exe `
+  analysis\plot_hypothesis_phase_map.py `
+  --input outputs\ca3_sparse_attractor\hypothesis_phase_map_v1.json `
+  --strength 1.0 `
+  --output outputs\ca3_sparse_attractor\hypothesis_phase_map_strength1_v1.png
 ```
 
-Karar raporu, mekanizma ablasyonları ve parametre rol denetimi:
+### Mechanism ablations and parameter audit
 
 ```powershell
 & .\.venv\Scripts\python.exe `
-  .\analysis\summarize_hypothesis_phase_map.py `
-  --input .\outputs\ca3_sparse_attractor\hypothesis_phase_map_v1.json `
-  --json-output .\outputs\ca3_sparse_attractor\hypothesis_decision_report_v1.json `
-  --markdown-output .\notes\15_hypothesis_decision_report_v1.md
-
-& .\.venv\Scripts\python.exe `
   -m models.ca3_sparse_attractor.run_mechanism_ablations `
-  --output .\outputs\ca3_sparse_attractor\mechanism_ablations_v1.json
+  --output outputs\ca3_sparse_attractor\mechanism_ablations_v1.json
 
 & .\.venv\Scripts\python.exe `
   -m models.ca3_sparse_attractor.parameter_audit `
-  --output .\outputs\ca3_sparse_attractor\parameter_audit_v1.json
+  --output outputs\ca3_sparse_attractor\parameter_audit_v1.json
 ```
 
-Faz figürünü ve etkileşimli hipotez laboratuvarını yeniden oluşturmak için:
-
-```powershell
-& .\.venv\Scripts\python.exe `
-  .\analysis\plot_hypothesis_phase_map.py `
-  --input .\outputs\ca3_sparse_attractor\hypothesis_phase_map_v1.json `
-  --strength 1.0 `
-  --output .\outputs\ca3_sparse_attractor\hypothesis_phase_map_strength1_v1.png
-
-& .\.venv\Scripts\python.exe `
-  .\analysis\build_ca3_hypothesis_lab.py `
-  --phase-map .\outputs\ca3_sparse_attractor\hypothesis_phase_map_v1.json `
-  --ablations .\outputs\ca3_sparse_attractor\mechanism_ablations_v1.json `
-  --template .\analysis\templates\ca3-hypothesis-lab.fragment.html `
-  --output .\apps\ca3_hypothesis_lab.fragment.html `
-  --standalone-output .\apps\ca3_hypothesis_lab.html
-```
-
-Birincil nokta `%20` örtüşme, `%25` etkili erişim ve güç `1,0`'dır. Bu
-değerler “en iyi sonuç” için fit edilmemiştir; faz haritasındaki işaretli bir
-referans kesittir. 25 yapısal ağ aynı ışık-kapalı/açık çiftinde kullanılır.
-Yapısal ağlar hayvan varyansı değildir ve pilot gelmeden `dz` üretmez.
-
-Güncel kararlar:
-
-- H1: kısmi nöral gereklilik var; varsayılan noktada şansa çöküş yok.
-- H2: A'ya kategorik geçiş var; `%20` örtüşmede yaklaşık eşik `%22,5` etkili
-  erişim.
-- H3: konuma bağlı asimetri var; varsayılan noktada rakip B'ye tam geçiş yok.
-
-`no_recurrence`, `no_sparse_inhibition` ve `zero_overlap` kontrolleri sonuçların
-sırasıyla çekici rekürrensine, seçici rekabete ve H3'ün kurulabildiği ortak
-temsil zeminine bağlı olduğunu sınar. Tüm yapılandırma ve dış eşleme
-parametreleri `parameter_audit.py` tarafından sınıflandırılır; H1–H3'e fit
-edilmiş parametre sayısı sıfır olmak zorundadır.
-
-## Deney eşlemeli recall–probe protokolü
-
-Bu koşu, ağırlıkları değiştirmeden önce A/B örüntü tamamlama yeterliliğini
-sınar; ardından H1, H2, H3 ve EGFP aynalarını aynı yapısal ağ içinde eşleşmiş
-ışık-kapalı/açık problarla yürütür:
+### Recall–probe protocol
 
 ```powershell
 & .\.venv\Scripts\python.exe `
   -m models.ca3_sparse_attractor.run_recall_probe_protocol `
-  --json-output .\outputs\ca3_sparse_attractor\recall_probe_protocol_v1.json `
-  --csv-output .\outputs\ca3_sparse_attractor\recall_probe_trials_v1.csv `
-  --markdown-output .\notes\16_recall_probe_protocol_v1.md
+  --json-output outputs\ca3_sparse_attractor\recall_probe_protocol_v1.json `
+  --csv-output outputs\ca3_sparse_attractor\recall_probe_trials_v1.csv `
+  --markdown-output notes\16_recall_probe_protocol_v1.md
 
 & .\.venv\Scripts\python.exe `
-  .\analysis\plot_recall_probe_protocol.py `
-  --input .\outputs\ca3_sparse_attractor\recall_probe_protocol_v1.json `
-  --output .\outputs\ca3_sparse_attractor\recall_probe_protocol_v1.png
+  analysis\plot_recall_probe_protocol.py `
+  --input outputs\ca3_sparse_attractor\recall_probe_protocol_v1.json `
+  --output outputs\ca3_sparse_attractor\recall_probe_protocol_v1.png
 ```
 
-Problar ödülsüzdür, her prob öncesi dinamik durum sıfırlanır ve prob sırasında
-plastisite yoktur. Işık bir soyut güncelleme adımı önce başlar ve ipucuyla
-birlikte sürer; bu adım 10–20 saniyenin biyofiziksel karşılığı değildir,
-yalnızca deneysel olay sırasını korur. Fiziksel A/B etiketi, ödüllü koku ve
-ışık sırası karşı-dengelenir. Aynı tohumların farklı vektör kollarında yeniden
-kullanılması mekanistik karşı-olgusal bloklamadır; tek hayvanın bütün gruplara
-girdiği anlamına gelmez.
+### Interactive phase-map viewer
 
-Sürekli dış alan altındaki senkron ikili güncellemeler kısa mikrodurum
-döngüleri üretebilir. Protokol son fazı keyfî seçmez; tam döngü ortalamasını
-okur ve çekici sınıfının döngü boyunca sabit kalmasını kalite kapısı olarak
-zorunlu tutar.
+```powershell
+& .\.venv\Scripts\python.exe `
+  analysis\build_ca3_hypothesis_lab.py `
+  --phase-map outputs\ca3_sparse_attractor\hypothesis_phase_map_v1.json `
+  --ablations outputs\ca3_sparse_attractor\mechanism_ablations_v1.json `
+  --template analysis\templates\ca3-hypothesis-lab.fragment.html `
+  --output apps\ca3_hypothesis_lab.fragment.html `
+  --standalone-output apps\ca3_hypothesis_lab.html
+```
+
+## Interpretation boundary
+
+The implementation tests attractor-level mechanisms and conditional model
+predictions. Structural seeds quantify sensitivity to cellular layout; they do
+not represent animals. Signed intervention fields do not reproduce biological
+light delivery or opsin dynamics. Behavioral statistics require calibration
+with pilot neural and behavioral measurements.
